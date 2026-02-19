@@ -1,0 +1,1133 @@
+2026-02-18 13:51:58.949 +03:00 [INF] Farm Management API started
+2026-02-18 13:51:59.168 +03:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 13:51:59.200 +03:00 [INF] Creating key {a7c497ba-1e46-47e1-8335-df5e66b1649b} with creation date 2026-02-18 10:51:59Z, activation date 2026-02-18 10:51:59Z, and expiration date 2026-05-19 10:51:59Z.
+2026-02-18 13:51:59.224 +03:00 [INF] Writing data to file 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys\key-a7c497ba-1e46-47e1-8335-df5e66b1649b.xml'.
+2026-02-18 13:51:59.723 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-18 13:51:59.726 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-18 13:51:59.967 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 13:51:59.969 +03:00 [INF] Hosting environment: Development
+2026-02-18 13:51:59.971 +03:00 [INF] Content root path: C:\Users\USER\source\repos\Farm\ApiLayer
+2026-02-18 13:53:00.823 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5183/swagger - null null
+2026-02-18 13:53:00.895 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5183/swagger - 301 null null 87.9819ms
+2026-02-18 13:53:00.902 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5183/swagger/index.html - null null
+2026-02-18 13:53:00.983 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5183/swagger/index.html - 200 null text/html;charset=utf-8 81.1865ms
+2026-02-18 13:53:01.043 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5183/swagger/index.css - null null
+2026-02-18 13:53:01.043 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5183/swagger/swagger-ui.css - null null
+2026-02-18 13:53:01.088 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5183/swagger/swagger-ui-standalone-preset.js - null null
+2026-02-18 13:53:01.112 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5183/swagger/swagger-ui-bundle.js - null null
+2026-02-18 13:53:01.111 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5183/swagger/index.js - null null
+2026-02-18 13:53:01.116 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5183/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 13:53:01.136 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5183/swagger/index.js - 200 null application/javascript;charset=utf-8 50.9109ms
+2026-02-18 13:53:01.177 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2026-02-18 13:53:01.178 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5183/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 63.6932ms
+2026-02-18 13:53:01.181 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5183/swagger/index.css - 200 202 text/css 137.5249ms
+2026-02-18 13:53:01.185 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-02-18 13:53:01.185 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-02-18 13:53:01.199 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5183/swagger/swagger-ui.css - 200 152035 text/css 155.9529ms
+2026-02-18 13:53:01.199 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5183/swagger/swagger-ui-standalone-preset.js - 200 230007 text/javascript 114.8998ms
+2026-02-18 13:53:01.216 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-02-18 13:53:01.218 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5183/swagger/swagger-ui-bundle.js - 200 1426050 text/javascript 106.3633ms
+2026-02-18 13:53:01.491 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5183/swagger/v1/swagger.json - null null
+2026-02-18 13:53:01.505 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5183/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.3724ms
+2026-02-18 13:53:01.519 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5183/swagger/favicon-32x32.png - null null
+2026-02-18 13:53:01.524 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-02-18 13:53:01.527 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5183/swagger/favicon-32x32.png - 200 628 image/png 7.8513ms
+2026-02-18 13:53:30.020 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5183/api/User/profile - null null
+2026-02-18 13:53:30.034 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5183/api/User/profile - 307 0 null 72.0404ms
+2026-02-18 13:53:30.147 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/profile - null null
+2026-02-18 13:53:30.278 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 13:53:30.282 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 13:53:30.284 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/profile - 401 0 null 136.8495ms
+2026-02-18 13:54:03.630 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5183/api/Auth/register - application/json 44
+2026-02-18 13:54:03.643 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5183/api/Auth/register - 307 0 null 13.1128ms
+2026-02-18 13:54:03.660 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7026/api/Auth/register - null null
+2026-02-18 13:54:03.704 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2026-02-18 13:54:03.706 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2026-02-18 13:54:03.708 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7026/api/Auth/register - 405 0 null 49.9905ms
+2026-02-18 13:55:23.316 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5183/api/User/profile - null null
+2026-02-18 13:55:23.350 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5183/api/User/profile - 307 0 null 69.6071ms
+2026-02-18 13:55:23.354 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/profile - null null
+2026-02-18 13:55:23.362 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 13:55:23.364 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 13:55:23.364 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/profile - 401 0 null 11.5526ms
+2026-02-18 13:55:50.593 +03:00 [INF] Farm Management API started
+2026-02-18 13:55:50.694 +03:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 13:55:51.210 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-18 13:55:51.211 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-18 13:55:51.306 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 13:55:51.307 +03:00 [INF] Hosting environment: Development
+2026-02-18 13:55:51.308 +03:00 [INF] Content root path: C:\Users\USER\source\repos\Farm\ApiLayer
+2026-02-18 13:56:00.074 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger - null null
+2026-02-18 13:56:00.114 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger - 301 null null 48.2182ms
+2026-02-18 13:56:00.119 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-18 13:56:00.184 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 64.8765ms
+2026-02-18 13:56:00.250 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.css - null null
+2026-02-18 13:56:00.252 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 13:56:00.251 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-18 13:56:00.251 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/swagger-ui-standalone-preset.js - null null
+2026-02-18 13:56:00.250 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/swagger-ui.css - null null
+2026-02-18 13:56:00.272 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 21.2247ms
+2026-02-18 13:56:00.251 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/swagger-ui-bundle.js - null null
+2026-02-18 13:56:00.305 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 53.8219ms
+2026-02-18 13:56:00.306 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2026-02-18 13:56:00.311 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-02-18 13:56:00.311 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-02-18 13:56:00.321 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.css - 200 202 text/css 71.7577ms
+2026-02-18 13:56:00.325 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/swagger-ui.css - 200 152035 text/css 75.6159ms
+2026-02-18 13:56:00.325 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/swagger-ui-standalone-preset.js - 200 230007 text/javascript 74.1352ms
+2026-02-18 13:56:00.329 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-02-18 13:56:00.341 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/swagger-ui-bundle.js - 200 1426050 text/javascript 90.2401ms
+2026-02-18 13:56:00.619 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-18 13:56:00.636 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.4337ms
+2026-02-18 13:56:00.645 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/favicon-32x32.png - null null
+2026-02-18 13:56:00.649 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-02-18 13:56:00.654 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/favicon-32x32.png - 200 628 image/png 8.5947ms
+2026-02-18 13:56:14.671 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/register - application/json 47
+2026-02-18 13:56:14.753 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Register (ApiLayer)'
+2026-02-18 13:56:14.786 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(EntityLayer.DTOs.Auth.RegisterDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-18 13:56:17.075 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-18 13:56:17.636 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Decimal), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Users` (`Balance`, `CreatedAt`, `PasswordHash`, `Username`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `Users`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-18 13:56:17.675 +03:00 [INF] User can registered successfully
+2026-02-18 13:56:17.683 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 13:56:17.691 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Register (ApiLayer) in 2900.155ms
+2026-02-18 13:56:17.693 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Register (ApiLayer)'
+2026-02-18 13:56:17.705 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/register - 200 null application/json; charset=utf-8 3034.0504ms
+2026-02-18 13:57:27.663 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 47
+2026-02-18 13:57:27.676 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 13:57:27.680 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-18 13:57:27.824 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-18 13:57:28.213 +03:00 [INF] User can logged in successfully
+2026-02-18 13:57:28.215 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 13:57:28.217 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 535.1322ms
+2026-02-18 13:57:28.219 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 13:57:28.220 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 557.5529ms
+2026-02-18 13:59:45.976 +03:00 [INF] Farm Management API started
+2026-02-18 13:59:46.123 +03:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 13:59:46.980 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-18 13:59:46.981 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-18 13:59:47.206 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 13:59:47.207 +03:00 [INF] Hosting environment: Development
+2026-02-18 13:59:47.208 +03:00 [INF] Content root path: C:\Users\USER\source\repos\Farm\ApiLayer
+2026-02-18 14:00:11.877 +03:00 [INF] Farm Management API started
+2026-02-18 14:00:11.956 +03:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 14:00:12.285 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-18 14:00:12.288 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-18 14:00:12.410 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 14:00:12.411 +03:00 [INF] Hosting environment: Development
+2026-02-18 14:00:12.412 +03:00 [INF] Content root path: C:\Users\USER\source\repos\Farm\ApiLayer
+2026-02-18 14:00:17.635 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-18 14:00:17.762 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 142.8802ms
+2026-02-18 14:00:17.781 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 14:00:17.781 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-18 14:00:17.914 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 133.5967ms
+2026-02-18 14:00:17.915 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 134.0965ms
+2026-02-18 14:00:18.069 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-18 14:00:18.090 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.771ms
+2026-02-18 14:00:25.290 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-18 14:00:25.295 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 5.7062ms
+2026-02-18 14:00:25.311 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-18 14:00:25.311 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 14:00:25.316 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 5.05ms
+2026-02-18 14:00:25.319 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 8.1333ms
+2026-02-18 14:00:25.363 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-18 14:00:25.377 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.6369ms
+2026-02-18 14:00:58.854 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 47
+2026-02-18 14:00:58.959 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 14:00:58.990 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-18 14:01:00.341 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-18 14:01:00.766 +03:00 [INF] User can logged in successfully
+2026-02-18 14:01:00.773 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:01:00.783 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 1787.0317ms
+2026-02-18 14:01:00.786 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 14:01:00.795 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 1940.4672ms
+2026-02-18 14:01:51.733 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/profile - null null
+2026-02-18 14:01:51.817 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:01:51.826 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:01:51.828 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/profile - 401 0 null 129.618ms
+2026-02-18 14:02:29.215 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Animal/buy - application/json 54
+2026-02-18 14:02:29.228 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:02:29.229 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:02:29.231 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Animal/buy - 401 0 null 15.7419ms
+2026-02-18 14:12:19.568 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/profile - null null
+2026-02-18 14:12:19.606 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:12:19.608 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:12:19.609 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/profile - 401 0 null 63.0923ms
+2026-02-18 14:12:24.614 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-18 14:12:24.622 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 7.9928ms
+2026-02-18 14:12:24.649 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-18 14:12:24.649 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 14:12:24.656 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 6.579ms
+2026-02-18 14:12:24.675 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 25.7436ms
+2026-02-18 14:12:24.796 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-18 14:12:24.807 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.5087ms
+2026-02-18 14:12:35.585 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/balance - null null
+2026-02-18 14:12:35.589 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:12:35.591 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:12:35.592 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/balance - 401 0 null 6.8386ms
+2026-02-18 14:13:36.140 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Animal/buy - application/json 57
+2026-02-18 14:13:36.158 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:13:36.160 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:13:36.161 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Animal/buy - 401 0 null 20.2842ms
+2026-02-18 14:13:56.859 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 47
+2026-02-18 14:13:56.863 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 14:13:56.866 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-18 14:13:57.020 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-18 14:13:57.335 +03:00 [INF] User can logged in successfully
+2026-02-18 14:13:57.338 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:13:57.339 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 472.0376ms
+2026-02-18 14:13:57.341 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 14:13:57.342 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 483.4508ms
+2026-02-18 14:14:16.617 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/balance - null null
+2026-02-18 14:14:16.620 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:14:16.621 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:14:16.622 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/balance - 401 0 null 5.2376ms
+2026-02-18 14:14:33.631 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/profile - null null
+2026-02-18 14:14:33.636 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:14:33.637 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:14:33.639 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/profile - 401 0 null 7.8424ms
+2026-02-18 14:14:37.048 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/profile - null null
+2026-02-18 14:14:37.068 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:14:37.069 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:14:37.071 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/profile - 401 0 null 22.6639ms
+2026-02-18 14:14:50.000 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/animal/1 - null null
+2026-02-18 14:14:50.004 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:14:50.005 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:14:50.006 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/animal/1 - 401 0 null 6.2588ms
+2026-02-18 14:15:32.981 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Farm - application/json 21
+2026-02-18 14:15:32.990 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:15:32.992 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:15:32.992 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Farm - 401 0 null 50.2898ms
+2026-02-18 14:15:51.780 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Farm/my-farms - null null
+2026-02-18 14:15:51.792 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:15:51.793 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:15:51.796 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Farm/my-farms - 401 0 null 15.76ms
+2026-02-18 14:18:12.017 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Farm - application/json 21
+2026-02-18 14:18:12.029 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:18:12.030 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:18:12.031 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Farm - 401 0 null 50.5281ms
+2026-02-18 14:20:18.319 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Farm - application/json 21
+2026-02-18 14:20:18.360 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-18 14:20:18.362 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:20:18.364 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Farm - 401 0 null 47.0842ms
+2026-02-18 14:21:08.838 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Farm - application/json 21
+2026-02-18 14:21:08.979 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.CreateFarm (ApiLayer)'
+2026-02-18 14:21:09.008 +03:00 [INF] Route matched with {action = "CreateFarm", controller = "Farm"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateFarm(EntityLayer.DTOs.Farm.CreateFarmDto) on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-02-18 14:21:09.237 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:21:09.432 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Farms` (`CreatedAt`, `Name`, `UserId`)
+VALUES (@p0, @p1, @p2);
+SELECT `Id`
+FROM `Farms`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-18 14:21:09.471 +03:00 [INF] Farm bursa created by user 1
+2026-02-18 14:21:09.474 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:21:09.478 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.CreateFarm (ApiLayer) in 466.9973ms
+2026-02-18 14:21:09.480 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.CreateFarm (ApiLayer)'
+2026-02-18 14:21:09.481 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Farm - 200 null application/json; charset=utf-8 677.4823ms
+2026-02-18 14:21:20.444 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Farm/1 - null null
+2026-02-18 14:21:20.449 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.GetFarm (ApiLayer)'
+2026-02-18 14:21:20.453 +03:00 [INF] Route matched with {action = "GetFarm", controller = "Farm"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFarm(Int32) on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-02-18 14:21:20.486 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:21:20.489 +03:00 [INF] Executing OkObjectResult, writing value of type 'EntityLayer.Entities.Farm'.
+2026-02-18 14:21:20.512 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.GetFarm (ApiLayer) in 54.7869ms
+2026-02-18 14:21:20.514 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.GetFarm (ApiLayer)'
+2026-02-18 14:21:20.515 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Farm/1 - 200 null application/json; charset=utf-8 71.1325ms
+2026-02-18 14:22:32.972 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Farm/my-farms - null null
+2026-02-18 14:22:32.983 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer)'
+2026-02-18 14:22:32.985 +03:00 [INF] Route matched with {action = "GetMyFarms", controller = "Farm"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetMyFarms() on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-02-18 14:22:33.014 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`UserId` = @__userId_0
+2026-02-18 14:22:33.018 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Farm, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 14:22:33.020 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer) in 32.7213ms
+2026-02-18 14:22:33.021 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer)'
+2026-02-18 14:22:33.022 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Farm/my-farms - 200 null application/json; charset=utf-8 52.0128ms
+2026-02-18 14:22:55.109 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Animal/buy - application/json 61
+2026-02-18 14:22:55.112 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AnimalController.BuyAnimal (ApiLayer)'
+2026-02-18 14:22:55.114 +03:00 [INF] Route matched with {action = "BuyAnimal", controller = "Animal"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult BuyAnimal(EntityLayer.DTOs.Animal.BuyAnimalDto) on controller ApiLayer.Controller.AnimalController (ApiLayer).
+2026-02-18 14:22:55.216 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:22:55.220 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:22:55.469 +03:00 [ERR] Buy animal failed
+System.Exception: Farm not found or not owned by user
+   at BusinessLayer.Concrete.AnimalService.BuyAnimal(Int32 userId, BuyAnimalDto dto) in C:\Users\USER\source\repos\Farm\BusinessLayer\Concrete\AnimalService.cs:line 35
+   at ApiLayer.Controller.AnimalController.BuyAnimal(BuyAnimalDto dto) in C:\Users\USER\source\repos\Farm\ApiLayer\Controller\AnimalController.cs:line 29
+2026-02-18 14:22:55.666 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:22:55.669 +03:00 [INF] Executed action ApiLayer.Controller.AnimalController.BuyAnimal (ApiLayer) in 553.3054ms
+2026-02-18 14:22:55.729 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AnimalController.BuyAnimal (ApiLayer)'
+2026-02-18 14:22:55.730 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Animal/buy - 400 null application/json; charset=utf-8 650.99ms
+2026-02-18 14:23:59.917 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Animal/buy - application/json 61
+2026-02-18 14:23:59.932 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AnimalController.BuyAnimal (ApiLayer)'
+2026-02-18 14:23:59.933 +03:00 [INF] Route matched with {action = "BuyAnimal", controller = "Animal"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult BuyAnimal(EntityLayer.DTOs.Animal.BuyAnimalDto) on controller ApiLayer.Controller.AnimalController (ApiLayer).
+2026-02-18 14:23:59.954 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:23:59.957 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:23:59.990 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Users` SET `Balance` = @p0, `CreatedAt` = @p1, `PasswordHash` = @p2, `Username` = @p3
+WHERE `Id` = @p4;
+SELECT ROW_COUNT();
+2026-02-18 14:24:00.053 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Animals` (`FarmId`, `LastProductionDate`, `LifeSpanDays`, `Name`, `Price`, `ProductionIntervalHours`, `PurchaseDate`, `Type`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT `Id`
+FROM `Animals`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-18 14:24:00.068 +03:00 [INF] User 1 bought animal denemehayvan
+2026-02-18 14:24:00.070 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:24:00.073 +03:00 [INF] Executed action ApiLayer.Controller.AnimalController.BuyAnimal (ApiLayer) in 137.1245ms
+2026-02-18 14:24:00.074 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AnimalController.BuyAnimal (ApiLayer)'
+2026-02-18 14:24:00.075 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Animal/buy - 200 null application/json; charset=utf-8 189.389ms
+2026-02-18 14:24:29.744 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/profile - null null
+2026-02-18 14:24:29.754 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.UserController.GetProfile (ApiLayer)'
+2026-02-18 14:24:29.757 +03:00 [INF] Route matched with {action = "GetProfile", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProfile() on controller ApiLayer.Controller.UserController (ApiLayer).
+2026-02-18 14:24:29.779 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:24:29.783 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:24:29.789 +03:00 [INF] Executed action ApiLayer.Controller.UserController.GetProfile (ApiLayer) in 30.8595ms
+2026-02-18 14:24:29.796 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.UserController.GetProfile (ApiLayer)'
+2026-02-18 14:24:29.798 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/profile - 200 null application/json; charset=utf-8 54.2266ms
+2026-02-18 14:24:40.371 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/balance - null null
+2026-02-18 14:24:40.384 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.UserController.GetBalance (ApiLayer)'
+2026-02-18 14:24:40.386 +03:00 [INF] Route matched with {action = "GetBalance", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetBalance() on controller ApiLayer.Controller.UserController (ApiLayer).
+2026-02-18 14:24:40.484 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:24:40.488 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:24:40.490 +03:00 [INF] Executed action ApiLayer.Controller.UserController.GetBalance (ApiLayer) in 102.708ms
+2026-02-18 14:24:40.492 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.UserController.GetBalance (ApiLayer)'
+2026-02-18 14:24:40.493 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/balance - 200 null application/json; charset=utf-8 121.9439ms
+2026-02-18 14:25:04.364 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Animal/farm/1 - null null
+2026-02-18 14:25:04.374 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AnimalController.GetFarmAnimals (ApiLayer)'
+2026-02-18 14:25:04.376 +03:00 [INF] Route matched with {action = "GetFarmAnimals", controller = "Animal"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFarmAnimals(Int32) on controller ApiLayer.Controller.AnimalController (ApiLayer).
+2026-02-18 14:25:04.392 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__farmId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+WHERE `a`.`FarmId` = @__farmId_0
+2026-02-18 14:25:04.396 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Animal, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 14:25:04.398 +03:00 [INF] Executed action ApiLayer.Controller.AnimalController.GetFarmAnimals (ApiLayer) in 20.0367ms
+2026-02-18 14:25:04.399 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AnimalController.GetFarmAnimals (ApiLayer)'
+2026-02-18 14:25:04.400 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Animal/farm/1 - 200 null application/json; charset=utf-8 36.3231ms
+2026-02-18 14:26:14.686 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/animal/1 - null null
+2026-02-18 14:26:14.695 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:26:14.696 +03:00 [INF] Route matched with {action = "GetAnimalProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAnimalProducts(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 14:26:14.741 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__animalId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`AnimalId` = @__animalId_0
+2026-02-18 14:26:14.744 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Product, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 14:26:14.745 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer) in 46.5937ms
+2026-02-18 14:26:14.746 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:26:14.747 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/animal/1 - 200 null application/json; charset=utf-8 92.0637ms
+2026-02-18 14:27:54.742 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/animal/1 - null null
+2026-02-18 14:27:54.750 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:27:54.752 +03:00 [INF] Route matched with {action = "GetAnimalProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAnimalProducts(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 14:27:54.775 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__animalId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`AnimalId` = @__animalId_0
+2026-02-18 14:27:54.796 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Product, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 14:27:54.800 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer) in 44.8624ms
+2026-02-18 14:27:54.803 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:27:54.807 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/animal/1 - 200 null application/json; charset=utf-8 67.9382ms
+2026-02-18 14:28:03.909 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-18 14:28:03.913 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-18 14:28:03.915 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 14:28:03.942 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:28:03.958 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:28:03.964 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+WHERE `a`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:28:03.995 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Users` SET `Balance` = @p0, `CreatedAt` = @p1, `PasswordHash` = @p2, `Username` = @p3
+WHERE `Id` = @p4;
+SELECT ROW_COUNT();
+2026-02-18 14:28:04.009 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 50), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Products` SET `AnimalId` = @p0, `IsSold` = @p1, `Name` = @p2, `Price` = @p3, `ProducedAt` = @p4, `SoldAt` = @p5
+WHERE `Id` = @p6;
+SELECT ROW_COUNT();
+2026-02-18 14:28:04.012 +03:00 [INF] User 1 sold product 1
+2026-02-18 14:28:04.013 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:28:04.014 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 95.8832ms
+2026-02-18 14:28:04.015 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-18 14:28:04.017 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 200 null application/json; charset=utf-8 107.8423ms
+2026-02-18 14:28:05.070 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-18 14:28:05.074 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-18 14:28:05.075 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 14:28:05.092 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:28:05.096 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:28:05.142 +03:00 [ERR] Sell product failed
+System.Exception: Product already sold
+   at BusinessLayer.Concrete.ProductService.SellProduct(Int32 userId, Int32 productId) in C:\Users\USER\source\repos\Farm\BusinessLayer\Concrete\ProductService.cs:line 37
+   at ApiLayer.Controller.ProductController.SellProduct(Int32 id) in C:\Users\USER\source\repos\Farm\ApiLayer\Controller\ProductController.cs:line 28
+2026-02-18 14:28:05.145 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:28:05.146 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 69.023ms
+2026-02-18 14:28:05.147 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-18 14:28:05.148 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 400 null application/json; charset=utf-8 77.8423ms
+2026-02-18 14:28:16.408 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/balance - null null
+2026-02-18 14:28:16.412 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.UserController.GetBalance (ApiLayer)'
+2026-02-18 14:28:16.413 +03:00 [INF] Route matched with {action = "GetBalance", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetBalance() on controller ApiLayer.Controller.UserController (ApiLayer).
+2026-02-18 14:28:16.431 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:28:16.435 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:28:16.438 +03:00 [INF] Executed action ApiLayer.Controller.UserController.GetBalance (ApiLayer) in 21.8655ms
+2026-02-18 14:28:16.439 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.UserController.GetBalance (ApiLayer)'
+2026-02-18 14:28:16.440 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/balance - 200 null application/json; charset=utf-8 32.0167ms
+2026-02-18 14:28:30.184 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-18 14:28:30.187 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-18 14:28:30.189 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 14:28:30.207 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:28:30.210 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:28:30.240 +03:00 [ERR] Sell product failed
+System.Exception: Product already sold
+   at BusinessLayer.Concrete.ProductService.SellProduct(Int32 userId, Int32 productId) in C:\Users\USER\source\repos\Farm\BusinessLayer\Concrete\ProductService.cs:line 37
+   at ApiLayer.Controller.ProductController.SellProduct(Int32 id) in C:\Users\USER\source\repos\Farm\ApiLayer\Controller\ProductController.cs:line 28
+2026-02-18 14:28:30.243 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:28:30.244 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 53.6623ms
+2026-02-18 14:28:30.245 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-18 14:28:30.248 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 400 null application/json; charset=utf-8 63.5228ms
+2026-02-18 14:28:35.536 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/balance - null null
+2026-02-18 14:28:35.540 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.UserController.GetBalance (ApiLayer)'
+2026-02-18 14:28:35.542 +03:00 [INF] Route matched with {action = "GetBalance", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetBalance() on controller ApiLayer.Controller.UserController (ApiLayer).
+2026-02-18 14:28:35.561 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:28:35.568 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:28:35.570 +03:00 [INF] Executed action ApiLayer.Controller.UserController.GetBalance (ApiLayer) in 26.3796ms
+2026-02-18 14:28:35.571 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.UserController.GetBalance (ApiLayer)'
+2026-02-18 14:28:35.572 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/balance - 200 null application/json; charset=utf-8 35.5455ms
+2026-02-18 14:28:55.820 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/animal/1 - null null
+2026-02-18 14:28:55.845 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:28:55.847 +03:00 [INF] Route matched with {action = "GetAnimalProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAnimalProducts(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 14:28:55.867 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__animalId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`AnimalId` = @__animalId_0
+2026-02-18 14:28:55.870 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Product, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 14:28:55.871 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer) in 20.9905ms
+2026-02-18 14:28:55.872 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:28:55.873 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/animal/1 - 200 null application/json; charset=utf-8 53.1268ms
+2026-02-18 14:32:42.425 +03:00 [INF] Farm Management API started
+2026-02-18 14:32:42.557 +03:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 14:32:42.636 +03:00 [INF] Product Generation Service started
+2026-02-18 14:32:42.636 +03:00 [INF] Animal LifeCycle Service started
+2026-02-18 14:32:43.228 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-18 14:32:43.229 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-18 14:32:43.369 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 14:32:43.371 +03:00 [INF] Hosting environment: Development
+2026-02-18 14:32:43.372 +03:00 [INF] Content root path: C:\Users\USER\source\repos\Farm\ApiLayer
+2026-02-18 14:32:44.311 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 14:32:44.311 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 14:32:48.835 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-18 14:32:48.987 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 163.3682ms
+2026-02-18 14:32:49.061 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 14:32:49.061 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-18 14:32:49.084 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 23.8076ms
+2026-02-18 14:32:49.095 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 34.5229ms
+2026-02-18 14:32:49.338 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-18 14:32:49.360 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.4999ms
+2026-02-18 14:33:14.487 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 14:33:16.618 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 47
+2026-02-18 14:33:16.723 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 14:33:16.749 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-18 14:33:16.919 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-18 14:33:17.299 +03:00 [INF] User can logged in successfully
+2026-02-18 14:33:17.306 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:33:17.315 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 561.5407ms
+2026-02-18 14:33:17.318 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 14:33:17.323 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 705.6174ms
+2026-02-18 14:33:44.605 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 14:34:14.634 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 14:34:24.374 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Animal/1 - null null
+2026-02-18 14:34:24.434 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AnimalController.GetAnimal (ApiLayer)'
+2026-02-18 14:34:24.441 +03:00 [INF] Route matched with {action = "GetAnimal", controller = "Animal"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAnimal(Int32) on controller ApiLayer.Controller.AnimalController (ApiLayer).
+2026-02-18 14:34:24.491 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+WHERE `a`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:34:24.494 +03:00 [INF] Executing OkObjectResult, writing value of type 'EntityLayer.Entities.Animal'.
+2026-02-18 14:34:24.518 +03:00 [INF] Executed action ApiLayer.Controller.AnimalController.GetAnimal (ApiLayer) in 75.0071ms
+2026-02-18 14:34:24.520 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AnimalController.GetAnimal (ApiLayer)'
+2026-02-18 14:34:24.524 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Animal/1 - 200 null application/json; charset=utf-8 150.4895ms
+2026-02-18 14:34:44.659 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 14:35:14.703 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 14:35:40.400 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Animal/1 - null null
+2026-02-18 14:35:40.413 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AnimalController.GetAnimal (ApiLayer)'
+2026-02-18 14:35:40.415 +03:00 [INF] Route matched with {action = "GetAnimal", controller = "Animal"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAnimal(Int32) on controller ApiLayer.Controller.AnimalController (ApiLayer).
+2026-02-18 14:35:40.433 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+WHERE `a`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:35:40.436 +03:00 [INF] Executing OkObjectResult, writing value of type 'EntityLayer.Entities.Animal'.
+2026-02-18 14:35:40.437 +03:00 [INF] Executed action ApiLayer.Controller.AnimalController.GetAnimal (ApiLayer) in 20.5298ms
+2026-02-18 14:35:40.466 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AnimalController.GetAnimal (ApiLayer)'
+2026-02-18 14:35:40.467 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Animal/1 - 200 null application/json; charset=utf-8 67.0273ms
+2026-02-18 14:35:44.831 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 14:35:45.156 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 50), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-18 14:35:45.456 +03:00 [INF] Executed DbCommand (200ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-18 14:35:45.460 +03:00 [INF] Product Product generated from denemehayvan (ID: 1)
+2026-02-18 14:36:04.224 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/animal/1 - null null
+2026-02-18 14:36:04.235 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:36:04.237 +03:00 [INF] Route matched with {action = "GetAnimalProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAnimalProducts(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 14:36:04.270 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__animalId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`AnimalId` = @__animalId_0
+2026-02-18 14:36:04.278 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Product, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 14:36:04.283 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer) in 44.2962ms
+2026-02-18 14:36:04.285 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:36:04.287 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/animal/1 - 200 null application/json; charset=utf-8 68.54ms
+2026-02-18 14:36:15.491 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 14:36:15.497 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 50), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-18 14:36:15.514 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-18 14:36:15.517 +03:00 [INF] Product Product generated from denemehayvan (ID: 1)
+2026-02-18 14:36:16.722 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/animal/1 - null null
+2026-02-18 14:36:16.735 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:36:16.739 +03:00 [INF] Route matched with {action = "GetAnimalProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAnimalProducts(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 14:36:16.751 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__animalId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`AnimalId` = @__animalId_0
+2026-02-18 14:36:16.755 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Product, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 14:36:16.758 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer) in 16.53ms
+2026-02-18 14:36:16.759 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:36:16.760 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/animal/1 - 200 null application/json; charset=utf-8 37.9591ms
+2026-02-18 14:36:22.251 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/animal/1 - null null
+2026-02-18 14:36:22.260 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:36:22.262 +03:00 [INF] Route matched with {action = "GetAnimalProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAnimalProducts(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 14:36:22.278 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__animalId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`AnimalId` = @__animalId_0
+2026-02-18 14:36:22.281 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Product, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 14:36:22.283 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer) in 18.9977ms
+2026-02-18 14:36:22.284 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:36:22.285 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/animal/1 - 200 null application/json; charset=utf-8 33.9228ms
+2026-02-18 14:36:36.572 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/2/sell - null 0
+2026-02-18 14:36:36.582 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-18 14:36:36.589 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 14:36:36.610 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:36:36.617 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:36:36.623 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+WHERE `a`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:36:36.720 +03:00 [INF] Executed DbCommand (89ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Users` SET `Balance` = @p0, `CreatedAt` = @p1, `PasswordHash` = @p2, `Username` = @p3
+WHERE `Id` = @p4;
+SELECT ROW_COUNT();
+2026-02-18 14:36:36.733 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 50), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Products` SET `AnimalId` = @p0, `IsSold` = @p1, `Name` = @p2, `Price` = @p3, `ProducedAt` = @p4, `SoldAt` = @p5
+WHERE `Id` = @p6;
+SELECT ROW_COUNT();
+2026-02-18 14:36:36.738 +03:00 [INF] User 1 sold product 2
+2026-02-18 14:36:36.739 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:36:36.741 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 148.9638ms
+2026-02-18 14:36:36.743 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-18 14:36:36.743 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/2/sell - 200 null application/json; charset=utf-8 171.9269ms
+2026-02-18 14:36:38.190 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/3/sell - null 0
+2026-02-18 14:36:38.194 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-18 14:36:38.195 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 14:36:38.208 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:36:38.211 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:36:38.213 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+WHERE `a`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 14:36:38.227 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Users` SET `Balance` = @p0, `CreatedAt` = @p1, `PasswordHash` = @p2, `Username` = @p3
+WHERE `Id` = @p4;
+SELECT ROW_COUNT();
+2026-02-18 14:36:38.238 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 50), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Products` SET `AnimalId` = @p0, `IsSold` = @p1, `Name` = @p2, `Price` = @p3, `ProducedAt` = @p4, `SoldAt` = @p5
+WHERE `Id` = @p6;
+SELECT ROW_COUNT();
+2026-02-18 14:36:38.240 +03:00 [INF] User 1 sold product 3
+2026-02-18 14:36:38.241 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 14:36:38.242 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 45.7361ms
+2026-02-18 14:36:38.244 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-18 14:36:38.245 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/3/sell - 200 null application/json; charset=utf-8 54.6805ms
+2026-02-18 14:36:41.436 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/animal/1 - null null
+2026-02-18 14:36:41.440 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:36:41.442 +03:00 [INF] Route matched with {action = "GetAnimalProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAnimalProducts(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 14:36:41.537 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__animalId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`AnimalId` = @__animalId_0
+2026-02-18 14:36:41.540 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Product, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 14:36:41.542 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer) in 97.4759ms
+2026-02-18 14:36:41.543 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 14:36:41.544 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/animal/1 - 200 null application/json; charset=utf-8 108.2828ms
+2026-02-18 14:36:45.541 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 14:36:45.549 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 50), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-18 14:36:45.569 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-18 14:36:45.572 +03:00 [INF] Product Product generated from denemehayvan (ID: 1)
+2026-02-18 14:40:05.878 +03:00 [INF] Farm Management API started
+2026-02-18 14:40:06.016 +03:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 14:40:06.096 +03:00 [INF] Product Generation Service started
+2026-02-18 14:40:06.096 +03:00 [INF] Animal LifeCycle Service started
+2026-02-18 14:40:06.820 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-18 14:40:06.822 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-18 14:40:07.024 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-18 14:40:07.067 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 14:40:07.069 +03:00 [INF] Hosting environment: Development
+2026-02-18 14:40:07.070 +03:00 [INF] Content root path: C:\Users\USER\source\repos\Farm\ApiLayer
+2026-02-18 14:40:07.212 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 201.6888ms
+2026-02-18 14:40:07.244 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 14:40:07.244 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-18 14:40:07.267 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 22.2081ms
+2026-02-18 14:40:07.277 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 32.8438ms
+2026-02-18 14:40:07.424 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-18 14:40:07.450 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.5022ms
+2026-02-18 14:40:08.227 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 14:40:08.227 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 14:40:08.490 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 50), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-18 14:40:08.532 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-18 14:40:08.536 +03:00 [INF] Product Product generated from denemehayvan (ID: 1)
+2026-02-18 15:29:36.293 +03:00 [INF] Farm Management API started
+2026-02-18 15:29:37.013 +03:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 15:29:37.226 +03:00 [INF] Animal LifeCycle Service started
+2026-02-18 15:29:37.226 +03:00 [INF] Product Generation Service started
+2026-02-18 15:29:37.813 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-18 15:29:37.816 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-18 15:29:38.209 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 15:29:38.210 +03:00 [INF] Hosting environment: Development
+2026-02-18 15:29:38.212 +03:00 [INF] Content root path: C:\Users\USER\source\repos\Farm\ApiLayer
+2026-02-18 15:29:39.406 +03:00 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 15:29:39.406 +03:00 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 15:29:39.762 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 50), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-18 15:29:39.817 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-18 15:29:39.821 +03:00 [INF] Product Product generated from denemehayvan (ID: 1)
+2026-02-18 15:29:39.961 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-18 15:29:40.321 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 372.134ms
+2026-02-18 15:29:40.344 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 15:29:40.344 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-18 15:29:40.355 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - null null
+2026-02-18 15:29:40.358 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 13.8275ms
+2026-02-18 15:29:40.367 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 22.8955ms
+2026-02-18 15:29:40.440 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - 200 null text/javascript; charset=UTF-8 84.5254ms
+2026-02-18 15:29:40.615 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-18 15:29:40.630 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.779ms
+2026-02-18 15:29:54.358 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 47
+2026-02-18 15:29:54.463 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 15:29:54.491 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-18 15:29:54.712 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-18 15:29:55.084 +03:00 [INF] User can logged in successfully
+2026-02-18 15:29:55.092 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 15:29:55.100 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 603.7973ms
+2026-02-18 15:29:55.103 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 15:29:55.110 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 751.4863ms
+2026-02-18 15:31:07.877 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Farm/my-farms - null null
+2026-02-18 15:31:07.945 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer)'
+2026-02-18 15:31:07.949 +03:00 [INF] Route matched with {action = "GetMyFarms", controller = "Farm"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetMyFarms() on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-02-18 15:31:07.991 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`UserId` = @__userId_0
+2026-02-18 15:31:08.002 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Farm, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 15:31:08.019 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer) in 68.5128ms
+2026-02-18 15:31:08.021 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer)'
+2026-02-18 15:31:08.022 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Farm/my-farms - 200 null application/json; charset=utf-8 145.141ms
+2026-02-18 15:31:31.668 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Animal/farm/1 - null null
+2026-02-18 15:31:31.683 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AnimalController.GetFarmAnimals (ApiLayer)'
+2026-02-18 15:31:31.687 +03:00 [INF] Route matched with {action = "GetFarmAnimals", controller = "Animal"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFarmAnimals(Int32) on controller ApiLayer.Controller.AnimalController (ApiLayer).
+2026-02-18 15:31:31.719 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__farmId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+WHERE `a`.`FarmId` = @__farmId_0
+2026-02-18 15:31:31.722 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Animal, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 15:31:31.728 +03:00 [INF] Executed action ApiLayer.Controller.AnimalController.GetFarmAnimals (ApiLayer) in 38.2539ms
+2026-02-18 15:31:31.730 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AnimalController.GetFarmAnimals (ApiLayer)'
+2026-02-18 15:31:31.732 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Animal/farm/1 - 200 null application/json; charset=utf-8 63.9064ms
+2026-02-18 15:31:57.148 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Animal/buy - application/json 62
+2026-02-18 15:31:57.165 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AnimalController.BuyAnimal (ApiLayer)'
+2026-02-18 15:31:57.167 +03:00 [INF] Route matched with {action = "BuyAnimal", controller = "Animal"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult BuyAnimal(EntityLayer.DTOs.Animal.BuyAnimalDto) on controller ApiLayer.Controller.AnimalController (ApiLayer).
+2026-02-18 15:31:57.219 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 15:31:57.227 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 15:31:57.254 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Users` SET `Balance` = @p0, `CreatedAt` = @p1, `PasswordHash` = @p2, `Username` = @p3
+WHERE `Id` = @p4;
+SELECT ROW_COUNT();
+2026-02-18 15:31:57.264 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Animals` (`FarmId`, `LastProductionDate`, `LifeSpanDays`, `Name`, `Price`, `ProductionIntervalHours`, `PurchaseDate`, `Type`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT `Id`
+FROM `Animals`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-18 15:31:57.279 +03:00 [INF] User 1 bought animal denemehayvan2
+2026-02-18 15:31:57.284 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 15:31:57.291 +03:00 [INF] Executed action ApiLayer.Controller.AnimalController.BuyAnimal (ApiLayer) in 123.3461ms
+2026-02-18 15:31:57.293 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AnimalController.BuyAnimal (ApiLayer)'
+2026-02-18 15:31:57.295 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Animal/buy - 200 null application/json; charset=utf-8 146.662ms
+2026-02-18 15:32:16.327 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Farm/1 - null null
+2026-02-18 15:32:16.331 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.GetFarm (ApiLayer)'
+2026-02-18 15:32:16.334 +03:00 [INF] Route matched with {action = "GetFarm", controller = "Farm"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFarm(Int32) on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-02-18 15:32:16.354 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 15:32:16.356 +03:00 [INF] Executing OkObjectResult, writing value of type 'EntityLayer.Entities.Farm'.
+2026-02-18 15:32:16.358 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.GetFarm (ApiLayer) in 20.6039ms
+2026-02-18 15:32:16.359 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.GetFarm (ApiLayer)'
+2026-02-18 15:32:16.360 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Farm/1 - 200 null application/json; charset=utf-8 33.3782ms
+2026-02-18 15:32:27.364 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Animal/farm/1 - null null
+2026-02-18 15:32:27.370 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AnimalController.GetFarmAnimals (ApiLayer)'
+2026-02-18 15:32:27.372 +03:00 [INF] Route matched with {action = "GetFarmAnimals", controller = "Animal"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFarmAnimals(Int32) on controller ApiLayer.Controller.AnimalController (ApiLayer).
+2026-02-18 15:32:27.458 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__farmId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+WHERE `a`.`FarmId` = @__farmId_0
+2026-02-18 15:32:27.461 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Animal, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 15:32:27.462 +03:00 [INF] Executed action ApiLayer.Controller.AnimalController.GetFarmAnimals (ApiLayer) in 88.3851ms
+2026-02-18 15:32:27.463 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AnimalController.GetFarmAnimals (ApiLayer)'
+2026-02-18 15:32:27.464 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Animal/farm/1 - 200 null application/json; charset=utf-8 100.1974ms
+2026-02-18 15:32:44.099 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/animal/1 - null null
+2026-02-18 15:32:44.114 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 15:32:44.118 +03:00 [INF] Route matched with {action = "GetAnimalProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAnimalProducts(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 15:32:44.145 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__animalId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`AnimalId` = @__animalId_0
+2026-02-18 15:32:44.152 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Product, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 15:32:44.155 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer) in 35.3278ms
+2026-02-18 15:32:44.157 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 15:32:44.157 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/animal/1 - 200 null application/json; charset=utf-8 58.3699ms
+2026-02-18 15:33:10.557 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/unsold - null null
+2026-02-18 15:33:10.582 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetUnsoldProducts (ApiLayer)'
+2026-02-18 15:33:10.584 +03:00 [INF] Route matched with {action = "GetUnsoldProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUnsoldProducts() on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 15:33:10.612 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE NOT (`p`.`IsSold`)
+2026-02-18 15:33:10.615 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Product, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 15:33:10.616 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetUnsoldProducts (ApiLayer) in 30.9333ms
+2026-02-18 15:33:10.618 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetUnsoldProducts (ApiLayer)'
+2026-02-18 15:33:10.619 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/unsold - 200 null application/json; charset=utf-8 61.6442ms
+2026-02-18 16:16:50.202 +03:00 [INF] Farm Management API started
+2026-02-18 16:16:50.403 +03:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 16:16:50.494 +03:00 [INF] Animal LifeCycle Service started
+2026-02-18 16:16:50.494 +03:00 [INF] Product Generation Service started
+2026-02-18 16:16:51.842 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-18 16:16:51.845 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-18 16:16:52.034 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-18 16:16:52.275 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 16:16:52.277 +03:00 [INF] Hosting environment: Development
+2026-02-18 16:16:52.278 +03:00 [INF] Content root path: C:\Users\USER\source\repos\Farm\ApiLayer
+2026-02-18 16:16:52.339 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 322.0238ms
+2026-02-18 16:16:52.462 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-18 16:16:52.462 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 16:16:52.462 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - null null
+2026-02-18 16:16:52.470 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 7.9931ms
+2026-02-18 16:16:52.495 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 33.5221ms
+2026-02-18 16:16:52.549 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - 200 null text/javascript; charset=UTF-8 86.9227ms
+2026-02-18 16:16:52.733 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-18 16:16:52.763 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.064ms
+2026-02-18 16:16:53.953 +03:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 16:16:53.953 +03:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 16:16:54.466 +03:00 [INF] Executed DbCommand (71ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 50), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-18 16:16:54.545 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-18 16:16:54.550 +03:00 [INF] Product Product generated from denemehayvan (ID: 1)
+2026-02-18 16:17:13.603 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 47
+2026-02-18 16:17:13.730 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 16:17:13.758 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-18 16:17:14.007 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-18 16:17:14.397 +03:00 [INF] User can logged in successfully
+2026-02-18 16:17:14.407 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 16:17:14.418 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 654.5503ms
+2026-02-18 16:17:14.421 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 16:17:14.429 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 826.0547ms
+2026-02-18 16:17:42.403 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/profile - null null
+2026-02-18 16:17:42.469 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.UserController.GetProfile (ApiLayer)'
+2026-02-18 16:17:42.472 +03:00 [INF] Route matched with {action = "GetProfile", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProfile() on controller ApiLayer.Controller.UserController (ApiLayer).
+2026-02-18 16:17:42.524 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 16:17:42.528 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 16:17:42.539 +03:00 [INF] Executed action ApiLayer.Controller.UserController.GetProfile (ApiLayer) in 65.7421ms
+2026-02-18 16:17:42.542 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.UserController.GetProfile (ApiLayer)'
+2026-02-18 16:17:42.542 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/profile - 200 null application/json; charset=utf-8 139.488ms
+2026-02-18 16:17:58.145 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Animal/farm/1 - null null
+2026-02-18 16:17:58.153 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AnimalController.GetFarmAnimals (ApiLayer)'
+2026-02-18 16:17:58.156 +03:00 [INF] Route matched with {action = "GetFarmAnimals", controller = "Animal"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFarmAnimals(Int32) on controller ApiLayer.Controller.AnimalController (ApiLayer).
+2026-02-18 16:17:58.180 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__farmId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+WHERE `a`.`FarmId` = @__farmId_0
+2026-02-18 16:17:58.184 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Animal, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 16:17:58.194 +03:00 [INF] Executed action ApiLayer.Controller.AnimalController.GetFarmAnimals (ApiLayer) in 37.0315ms
+2026-02-18 16:17:58.197 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AnimalController.GetFarmAnimals (ApiLayer)'
+2026-02-18 16:17:58.198 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Animal/farm/1 - 200 null application/json; charset=utf-8 52.9757ms
+2026-02-18 16:18:20.055 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/animal/1 - null null
+2026-02-18 16:18:20.060 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 16:18:20.063 +03:00 [INF] Route matched with {action = "GetAnimalProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAnimalProducts(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 16:18:20.088 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__animalId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`AnimalId` = @__animalId_0
+2026-02-18 16:18:20.093 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Product, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 16:18:20.098 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer) in 31.7782ms
+2026-02-18 16:18:20.101 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-18 16:18:20.102 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/animal/1 - 200 null application/json; charset=utf-8 47.2576ms
+2026-02-18 16:18:51.963 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/5/sell - null 0
+2026-02-18 16:18:51.973 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-18 16:18:51.977 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 16:18:51.999 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 16:18:52.006 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 16:18:52.016 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+WHERE `a`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 16:18:52.042 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Users` SET `Balance` = @p0, `CreatedAt` = @p1, `PasswordHash` = @p2, `Username` = @p3
+WHERE `Id` = @p4;
+SELECT ROW_COUNT();
+2026-02-18 16:18:52.058 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 50), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Products` SET `AnimalId` = @p0, `IsSold` = @p1, `Name` = @p2, `Price` = @p3, `ProducedAt` = @p4, `SoldAt` = @p5
+WHERE `Id` = @p6;
+SELECT ROW_COUNT();
+2026-02-18 16:18:52.063 +03:00 [INF] User 1 sold product 5
+2026-02-18 16:18:52.064 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 16:18:52.066 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 86.3449ms
+2026-02-18 16:18:52.067 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-18 16:18:52.068 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/5/sell - 200 null application/json; charset=utf-8 105.485ms
+2026-02-18 16:18:59.454 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/unsold - null null
+2026-02-18 16:18:59.472 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetUnsoldProducts (ApiLayer)'
+2026-02-18 16:18:59.477 +03:00 [INF] Route matched with {action = "GetUnsoldProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUnsoldProducts() on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-18 16:18:59.504 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE NOT (`p`.`IsSold`)
+2026-02-18 16:18:59.508 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Product, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 16:18:59.511 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetUnsoldProducts (ApiLayer) in 31.8988ms
+2026-02-18 16:18:59.513 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetUnsoldProducts (ApiLayer)'
+2026-02-18 16:18:59.514 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/unsold - 200 null application/json; charset=utf-8 60.7873ms
+2026-02-18 16:19:23.052 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/balance - null null
+2026-02-18 16:19:23.064 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.UserController.GetBalance (ApiLayer)'
+2026-02-18 16:19:23.066 +03:00 [INF] Route matched with {action = "GetBalance", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetBalance() on controller ApiLayer.Controller.UserController (ApiLayer).
+2026-02-18 16:19:23.083 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 16:19:23.086 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 16:19:23.090 +03:00 [INF] Executed action ApiLayer.Controller.UserController.GetBalance (ApiLayer) in 23.0392ms
+2026-02-18 16:19:23.092 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.UserController.GetBalance (ApiLayer)'
+2026-02-18 16:19:23.093 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/balance - 200 null application/json; charset=utf-8 41.1018ms
+2026-02-18 17:36:06.141 +03:00 [INF] Farm Management API started
+2026-02-18 17:36:06.459 +03:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 17:36:06.633 +03:00 [INF] Product Generation Service started
+2026-02-18 17:36:06.633 +03:00 [INF] Animal LifeCycle Service started
+2026-02-18 17:36:07.502 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-18 17:36:07.507 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-18 17:36:07.660 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 17:36:07.662 +03:00 [INF] Hosting environment: Development
+2026-02-18 17:36:07.664 +03:00 [INF] Content root path: C:\Users\USER\source\repos\Farm\ApiLayer
+2026-02-18 17:36:07.685 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-18 17:36:07.958 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-18 17:36:08.102 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 447.2441ms
+2026-02-18 17:36:08.130 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 172.4763ms
+2026-02-18 17:36:08.174 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 17:36:08.195 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-18 17:36:08.239 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - null null
+2026-02-18 17:36:08.252 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 57.0067ms
+2026-02-18 17:36:08.255 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 80.6552ms
+2026-02-18 17:36:08.887 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - 200 null text/javascript; charset=UTF-8 647.952ms
+2026-02-18 17:36:09.557 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-18 17:36:09.577 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.942ms
+2026-02-18 17:36:10.506 +03:00 [INF] Executed DbCommand (211ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 17:36:10.506 +03:00 [INF] Executed DbCommand (211ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-18 17:36:11.302 +03:00 [INF] Executed DbCommand (67ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 50), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-18 17:36:11.360 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-18 17:36:11.366 +03:00 [INF] Product Product generated from denemehayvan (ID: 1)
+2026-02-18 17:36:22.216 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 47
+2026-02-18 17:36:22.308 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 17:36:22.332 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-18 17:36:22.565 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-18 17:36:22.958 +03:00 [INF] User can logged in successfully
+2026-02-18 17:36:22.968 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 17:36:22.978 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 639.5311ms
+2026-02-18 17:36:22.981 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-18 17:36:22.987 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 771.0642ms
+2026-02-18 17:36:50.209 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/profile - null null
+2026-02-18 17:36:50.268 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.UserController.GetProfile (ApiLayer)'
+2026-02-18 17:36:50.274 +03:00 [INF] Route matched with {action = "GetProfile", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProfile() on controller ApiLayer.Controller.UserController (ApiLayer).
+2026-02-18 17:36:50.319 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 17:36:50.324 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 17:36:50.335 +03:00 [INF] Executed action ApiLayer.Controller.UserController.GetProfile (ApiLayer) in 58.136ms
+2026-02-18 17:36:50.337 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.UserController.GetProfile (ApiLayer)'
+2026-02-18 17:36:50.339 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/profile - 200 null application/json; charset=utf-8 130.9756ms
+2026-02-18 17:37:02.518 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Farm/1 - null null
+2026-02-18 17:37:02.526 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.GetFarm (ApiLayer)'
+2026-02-18 17:37:02.539 +03:00 [INF] Route matched with {action = "GetFarm", controller = "Farm"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFarm(Int32) on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-02-18 17:37:02.574 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`Id` = @__p_0
+LIMIT 1
+2026-02-18 17:37:02.582 +03:00 [INF] Executing OkObjectResult, writing value of type 'EntityLayer.Entities.Farm'.
+2026-02-18 17:37:02.595 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.GetFarm (ApiLayer) in 53.8842ms
+2026-02-18 17:37:02.597 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.GetFarm (ApiLayer)'
+2026-02-18 17:37:02.598 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Farm/1 - 200 null application/json; charset=utf-8 80.0804ms

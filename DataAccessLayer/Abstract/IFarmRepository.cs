@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using EntityLayer.Entities;
+
+namespace DataAccessLayer.Abstract
+{
+    public interface IFarmRepository
+    {
+        Farm GetById(int id);
+        List<Farm> GetByUserId(int userId);
+        List<Farm> GetAll();
+        void Add(Farm farm);
+        void Update(Farm farm);
+        void Delete(Farm farm);
+    }
+}
