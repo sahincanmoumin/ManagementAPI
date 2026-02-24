@@ -2,6 +2,7 @@
 using EntityLayer.Entities;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Entity.Enums;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BusinessLayer.BackgroundServices
@@ -40,7 +41,7 @@ namespace BusinessLayer.BackgroundServices
                             {
                                 var product = new Product
                                 {
-                                    Name = GetProductName(animal.Type),
+                                    Name = GetProductName(animal.Type), 
                                     Price = GetProductPrice(animal.Type),
                                     AnimalId = animal.Id,
                                     ProducedAt = DateTime.Now,
@@ -62,28 +63,28 @@ namespace BusinessLayer.BackgroundServices
                     _logger.LogError(ex, "Error in ProductGenerationService");
                 }
 
-                await Task.Delay(TimeSpan.FromHours(24), stoppingToken);
+                await Task.Delay(TimeSpan.FromMinutes(2), stoppingToken);
             }
         }
 
-        private string GetProductName(string animalType)
+        private ProductType GetProductName(AnimalType animalType)
         {
-            return animalType.ToLower() switch
+            return animalType switch
             {
-                "cow" => "Milk",
-                "chicken" => "Egg",
-                "sheep" => "Wool",
-                _ => "Product"
+                AnimalType.Cow => ProductType.Milk,
+                AnimalType.Chicken => ProductType.Egg,
+                AnimalType.Sheep => ProductType.Wool,
+                _ => ProductType.Milk
             };
         }
 
-        private decimal GetProductPrice(string animalType)
+        private decimal GetProductPrice(AnimalType animalType)
         {
-            return animalType.ToLower() switch
+            return animalType switch
             {
-                "cow" => 10,
-                "chicken" => 2,
-                "sheep" => 15,
+                AnimalType.Cow => 10,
+                AnimalType.Chicken => 2,
+                AnimalType.Sheep => 15,
                 _ => 5
             };
         }

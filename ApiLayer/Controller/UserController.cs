@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using BusinessLayer.Abstract;
 using EntityLayer.DTOs.User;
+using EntityLayer.Extensions;
 using System.Security.Claims;
 
 namespace ApiLayer.Controller
@@ -9,14 +10,16 @@ namespace ApiLayer.Controller
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class UserController : ControllerBase
+    public class UserController : BaseController
     {
         private readonly IUserService _userService;
+        private readonly IRoleService _roleService;
         private readonly ILogger<UserController> _logger;
 
-        public UserController(IUserService userService, ILogger<UserController> logger)
+        public UserController(IUserService userService, IRoleService roleService, ILogger<UserController> logger)
         {
             _userService = userService;
+            _roleService = roleService;
             _logger = logger;
         }
 
@@ -25,9 +28,18 @@ namespace ApiLayer.Controller
         {
             try
             {
-                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                var userId = CurrentUserId;
                 var user = _userService.GetById(userId);
-                return Ok(new { user.Id, user.Username, user.Balance, user.CreatedAt });
+                var roles = _roleService.GetUserRoles(userId);
+
+                return Ok(new
+                {
+                    user.Id,
+                    user.Username,
+                    user.Balance,
+                    user.CreatedAt,
+                    roles
+                });
             }
             catch (Exception ex)
             {
@@ -41,7 +53,7 @@ namespace ApiLayer.Controller
         {
             try
             {
-                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                var userId = CurrentUserId;
                 _userService.UpdateUser(userId, dto);
                 _logger.LogInformation($"User {userId} updated profile");
                 return Ok(new { message = "Profile updated successfully" });
@@ -58,13 +70,59 @@ namespace ApiLayer.Controller
         {
             try
             {
-                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                var userId = CurrentUserId;
                 var balance = _userService.GetBalance(userId);
                 return Ok(new { balance });
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Get balance failed");
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetUser(int id)
+        {
+            try
+            {
+       
+                if (!IsAdmin && CurrentUserId != id)
+                {
+                    return Forbid();
+                }
+
+                var user = _userService.GetById(id);
+                var roles = _roleService.GetUserRoles(id);
+
+                return Ok(new
+                {
+                    user.Id,
+                    user.Username,
+                    user.Balance,
+                    user.CreatedAt,
+                    roles
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Get user failed");
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpGet("all")]
+        [Authorize(Roles = "Admin")]
+        public IActionResult GetAllUsers()
+        {
+            try
+            {
+                var users = _userService.GetAllUsers();
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Get all users failed");
                 return BadRequest(new { message = ex.Message });
             }
         }

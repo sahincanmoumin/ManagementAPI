@@ -51,5 +51,9 @@ namespace BusinessLayer.Concrete
                 throw new Exception("User not found");
             return user.Balance;
         }
+        public List<User> GetAllUsers()
+        {
+            return _userRepository.GetAll();
+        }
     }
 }

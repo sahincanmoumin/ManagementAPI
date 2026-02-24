@@ -8,6 +8,7 @@ using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.DTOs.Animal;
 using EntityLayer.Entities;
+using Entity.Enums;
 
 namespace BusinessLayer.Concrete
 {
@@ -34,17 +35,17 @@ namespace BusinessLayer.Concrete
             if (farm == null || farm.UserId != userId)
                 throw new Exception("Farm not found or not owned by user");
 
-            // Hayvan fiyatını belirle (tip'e göre)
+            
             decimal animalPrice = GetAnimalPrice(dto.Type);
 
             if (user.Balance < animalPrice)
                 throw new Exception("Insufficient balance");
 
-            // Bakiyeden düş
+            
             user.Balance -= animalPrice;
             _userRepository.Update(user);
 
-            // Hayvanı ekle
+            
             var animal = new Animal
             {
                 Name = dto.Name,
@@ -75,7 +76,7 @@ namespace BusinessLayer.Concrete
             if (farm.UserId != userId)
                 throw new Exception("Animal not owned by user");
 
-            // Satış fiyatı alış fiyatının %70'i
+            
             decimal sellPrice = animal.Price * 0.7m;
             user.Balance += sellPrice;
             _userRepository.Update(user);
@@ -96,36 +97,36 @@ namespace BusinessLayer.Concrete
             return animal;
         }
 
-        // Yardımcı metodlar
-        private decimal GetAnimalPrice(string type)
+        
+        private decimal GetAnimalPrice(AnimalType type)
         {
-            return type.ToLower() switch
+            return type switch
             {
-                "cow" => 500,
-                "chicken" => 50,
-                "sheep" => 200,
+                AnimalType.Cow => 500,
+                AnimalType.Chicken => 50,
+                AnimalType.Sheep => 200,
                 _ => 100
             };
         }
 
-        private int GetProductionInterval(string type)
+        private int GetProductionInterval(AnimalType type)
         {
-            return type.ToLower() switch
+            return type switch
             {
-                "cow" => 24,      // 24 saatte bir süt
-                "chicken" => 12,  // 12 saatte bir yumurta
-                "sheep" => 48,    // 48 saatte bir yün
+                AnimalType.Cow => 0,      
+                AnimalType.Chicken => 12,  // 12 saatte bir yumurta
+                AnimalType.Sheep => 48,    // 48 saatte bir yün
                 _ => 24
             };
         }
 
-        private int GetLifeSpan(string type)
+        private int GetLifeSpan(AnimalType type)
         {
-            return type.ToLower() switch
+            return type switch
             {
-                "cow" => 365,     // 1 yıl
-                "chicken" => 180, // 6 ay
-                "sheep" => 270,   // 9 ay
+                AnimalType.Cow => 365,     // 1 yıl
+                AnimalType.Chicken => 180, // 6 ay
+                AnimalType.Sheep => 270,   // 9 ay
                 _ => 365
             };
         }

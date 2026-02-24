@@ -1,12 +1,12 @@
-﻿using System;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
+using EntityLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using BusinessLayer.Abstract;
-using DataAccessLayer.Abstract;
-using EntityLayer.Entities;
 
 namespace BusinessLayer.Concrete
 {
@@ -15,14 +15,19 @@ namespace BusinessLayer.Concrete
         private readonly IProductRepository _productRepository;
         private readonly IUserRepository _userRepository;
         private readonly IAnimalRepository _animalRepository;
+        
 
         public ProductService(IProductRepository productRepository, IUserRepository userRepository, IAnimalRepository animalRepository)
         {
             _productRepository = productRepository;
             _userRepository = userRepository;
             _animalRepository = animalRepository;
+            
         }
-
+        public Product GetProductWithOwnership(int productId)
+        { 
+            return _productRepository.GetByIdWithDetails(productId);
+        }
         public void SellProduct(int userId, int productId)
         {
             var user = _userRepository.GetById(userId);

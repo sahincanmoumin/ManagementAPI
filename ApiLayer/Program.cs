@@ -1,4 +1,3 @@
-using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -8,12 +7,12 @@ using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
-using BusinessLayer.BackgroundServices;
 using Serilog;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// log yapilandirmaaa
+// Serilog
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
@@ -21,14 +20,14 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-// sql
+// MySQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
     ));
 
-
+// JWT
 var jwtSecretKey = builder.Configuration["JwtSettings:SecretKey"];
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -42,23 +41,26 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// interface isterse verilicek olan
+// Repository kayıtları
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IFarmRepository, FarmRepository>();
 builder.Services.AddScoped<IAnimalRepository, AnimalRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
-
-
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
+// Service kayıtları
 builder.Services.AddScoped<IAuthService>(provider =>
-    new AuthService(provider.GetRequiredService<IUserRepository>(), jwtSecretKey));
+    new AuthService(
+        provider.GetRequiredService<IUserRepository>(),
+        provider.GetRequiredService<IRoleRepository>(),
+        provider.GetRequiredService<IUserRoleRepository>(),
+        jwtSecretKey
+    ));
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IFarmService, FarmService>();
 builder.Services.AddScoped<IAnimalService, AnimalService>();
 builder.Services.AddScoped<IProductService, ProductService>();
-
-
-builder.Services.AddHostedService<AnimalLifeCycleService>();
-builder.Services.AddHostedService<ProductGenerationService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -88,7 +90,6 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 
-    // Controller sıralaması
     c.TagActionsBy(api => new[] { api.GroupName ?? api.ActionDescriptor.RouteValues["controller"] });
     c.OrderActionsBy((apiDesc) =>
     {
@@ -98,7 +99,8 @@ builder.Services.AddSwaggerGen(c =>
             { "User", 2 },
             { "Farm", 3 },
             { "Animal", 4 },
-            { "Product", 5 }
+            { "Product", 5 },
+            { "Role", 6 }
         };
 
         var controller = apiDesc.ActionDescriptor.RouteValues["controller"];
@@ -108,7 +110,6 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -116,10 +117,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 Log.Information("Farm Management API started");

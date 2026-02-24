@@ -3,13 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using BusinessLayer.Abstract;
 using EntityLayer.DTOs.Farm;
 using System.Security.Claims;
+using EntityLayer.Extensions;
 
 namespace ApiLayer.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class FarmController : ControllerBase
+    public class FarmController : BaseController
     {
         private readonly IFarmService _farmService;
         private readonly ILogger<FarmController> _logger;
@@ -25,7 +26,7 @@ namespace ApiLayer.Controller
         {
             try
             {
-                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                var userId = CurrentUserId;
                 var farm = _farmService.CreateFarm(userId, dto);
                 _logger.LogInformation($"Farm {farm.Name} created by user {userId}");
                 return Ok(new { message = "Farm created successfully", farmId = farm.Id });
@@ -43,12 +44,24 @@ namespace ApiLayer.Controller
             try
             {
                 var farm = _farmService.GetById(id);
+
+                if (farm == null)
+                {
+                    return NotFound(new { message = "Çiftlik bulunamadı." });
+                }
+
+                
+                if (!User.IsAdmin() && farm.UserId != CurrentUserId)
+                {
+                    return Forbid();
+                }
+
                 return Ok(farm);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Get farm failed");
-                return NotFound(new { message = ex.Message });
+                return BadRequest(new { message = ex.Message }); // Hata durumunda BadRequest daha uygundur
             }
         }
 
@@ -57,8 +70,7 @@ namespace ApiLayer.Controller
         {
             try
             {
-                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-                var farms = _farmService.GetUserFarms(userId);
+                var farms = _farmService.GetUserFarms(CurrentUserId);
                 return Ok(farms);
             }
             catch (Exception ex)
@@ -73,6 +85,17 @@ namespace ApiLayer.Controller
         {
             try
             {
+                var farm = _farmService.GetById(id);
+
+                if (farm == null)
+                {
+                    return NotFound(new { message = "Güncellenecek çiftlik bulunamadı." });
+                }
+                if (!IsAdmin && farm.UserId != CurrentUserId)
+                {
+                    return Forbid();
+                }
+
                 _farmService.UpdateFarm(id, dto);
                 _logger.LogInformation($"Farm {id} updated");
                 return Ok(new { message = "Farm updated successfully" });
@@ -83,12 +106,20 @@ namespace ApiLayer.Controller
                 return BadRequest(new { message = ex.Message });
             }
         }
-
+            
         [HttpDelete("{id}")]
         public IActionResult DeleteFarm(int id)
         {
             try
             {
+                var farm = _farmService.GetById(id);
+                if (farm == null) {
+                    return NotFound(new { message = "Silinecek çiftlik bulunamadı." });
+                }
+                if (!IsAdmin && farm.UserId != CurrentUserId)
+                {
+                    return Forbid();
+                }
                 _farmService.DeleteFarm(id);
                 _logger.LogInformation($"Farm {id} deleted");
                 return Ok(new { message = "Farm deleted successfully" });

@@ -1,0 +1,956 @@
+2026-02-23 09:20:08.772 +03:00 [INF] Farm Management API started
+2026-02-23 09:20:08.895 +03:00 [INF] User profile is available. Using 'C:\Users\sahin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-23 09:20:08.953 +03:00 [INF] Animal LifeCycle Service started
+2026-02-23 09:20:08.953 +03:00 [INF] Product Generation Service started
+2026-02-23 09:20:10.136 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-23 09:20:10.139 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-23 09:20:10.283 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-23 09:20:10.285 +03:00 [INF] Hosting environment: Development
+2026-02-23 09:20:10.286 +03:00 [INF] Content root path: C:\Users\sahin\source\repos\Farm\ApiLayer
+2026-02-23 09:20:12.333 +03:00 [ERR] An error occurred using the connection to database 'farmmanagement' on server 'localhost'.
+2026-02-23 09:20:12.333 +03:00 [ERR] An error occurred using the connection to database 'farmmanagement' on server 'localhost'.
+2026-02-23 09:20:12.401 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'DataAccessLayer.Context.AppDbContext'.
+MySqlConnector.MySqlException (0x80004005): Unknown database 'farmmanagement'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ServerSession.SwitchAuthenticationAsync(ConnectionSettings cs, String password, PayloadData payload, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 888
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 539
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 522
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+MySqlConnector.MySqlException (0x80004005): Unknown database 'farmmanagement'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ServerSession.SwitchAuthenticationAsync(ConnectionSettings cs, String password, PayloadData payload, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 888
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 539
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 522
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2026-02-23 09:20:12.401 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'DataAccessLayer.Context.AppDbContext'.
+MySqlConnector.MySqlException (0x80004005): Unknown database 'farmmanagement'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ServerSession.SwitchAuthenticationAsync(ConnectionSettings cs, String password, PayloadData payload, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 888
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 539
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 522
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+MySqlConnector.MySqlException (0x80004005): Unknown database 'farmmanagement'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ServerSession.SwitchAuthenticationAsync(ConnectionSettings cs, String password, PayloadData payload, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 888
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 539
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 522
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2026-02-23 09:20:12.470 +03:00 [ERR] Error in AnimalLifeCycleService
+MySqlConnector.MySqlException (0x80004005): Unknown database 'farmmanagement'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ServerSession.SwitchAuthenticationAsync(ConnectionSettings cs, String password, PayloadData payload, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 888
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 539
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 522
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at DataAccessLayer.Concrete.AnimalRepository.GetAll() in C:\Users\sahin\source\repos\Farm\DataAccessLayer\Concrete\AnimalRepository.cs:line 34
+   at BusinessLayer.BackgroundServices.AnimalLifeCycleService.ExecuteAsync(CancellationToken stoppingToken) in C:\Users\sahin\source\repos\Farm\BusinessLayer\BackgroundServices\AnimalLifeCycleService.cs:line 30
+2026-02-23 09:20:12.511 +03:00 [ERR] Error in ProductGenerationService
+MySqlConnector.MySqlException (0x80004005): Unknown database 'farmmanagement'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ServerSession.SwitchAuthenticationAsync(ConnectionSettings cs, String password, PayloadData payload, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 888
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 539
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 697
+   at MySqlConnector.Core.ServerSession.ConnectAndRedirectAsync(ILogger connectionLogger, ILogger poolLogger, IConnectionPoolMetadata pool, ConnectionSettings cs, ILoadBalancer loadBalancer, MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 702
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 116
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 150
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1092
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 567
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 522
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlRelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at DataAccessLayer.Concrete.AnimalRepository.GetAll() in C:\Users\sahin\source\repos\Farm\DataAccessLayer\Concrete\AnimalRepository.cs:line 34
+   at BusinessLayer.BackgroundServices.ProductGenerationService.ExecuteAsync(CancellationToken stoppingToken) in C:\Users\sahin\source\repos\Farm\BusinessLayer\BackgroundServices\ProductGenerationService.cs:line 34
+2026-02-23 09:25:26.722 +03:00 [INF] Farm Management API started
+2026-02-23 09:25:26.852 +03:00 [INF] User profile is available. Using 'C:\Users\sahin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-23 09:25:26.919 +03:00 [INF] Animal LifeCycle Service started
+2026-02-23 09:25:26.921 +03:00 [INF] Product Generation Service started
+2026-02-23 09:25:27.330 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-23 09:25:27.332 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-23 09:25:27.487 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-23 09:25:27.489 +03:00 [INF] Hosting environment: Development
+2026-02-23 09:25:27.490 +03:00 [INF] Content root path: C:\Users\sahin\source\repos\Farm\ApiLayer
+2026-02-23 09:25:28.554 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:25:28.554 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:25:44.782 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger - null null
+2026-02-23 09:25:45.033 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger - 301 null null 263.3308ms
+2026-02-23 09:25:45.049 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-23 09:25:45.150 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 101.1381ms
+2026-02-23 09:25:45.195 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/swagger-ui.css - null null
+2026-02-23 09:25:45.197 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.css - null null
+2026-02-23 09:25:45.199 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/swagger-ui-bundle.js - null null
+2026-02-23 09:25:45.288 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-23 09:25:45.201 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/swagger-ui-standalone-preset.js - null null
+2026-02-23 09:25:45.290 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-23 09:25:45.344 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 56.7168ms
+2026-02-23 09:25:45.348 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2026-02-23 09:25:45.368 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 77.2646ms
+2026-02-23 09:25:45.368 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.css - 200 202 text/css 170.9971ms
+2026-02-23 09:25:45.369 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-02-23 09:25:45.369 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-02-23 09:25:45.381 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/swagger-ui-standalone-preset.js - 200 230007 text/javascript 180.0622ms
+2026-02-23 09:25:45.382 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/swagger-ui.css - 200 152035 text/css 187.0175ms
+2026-02-23 09:25:45.561 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-02-23 09:25:45.563 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/swagger-ui-bundle.js - 200 1426050 text/javascript 364.1145ms
+2026-02-23 09:25:45.572 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - null null
+2026-02-23 09:25:45.686 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - 200 null text/javascript; charset=UTF-8 113.778ms
+2026-02-23 09:25:46.023 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-23 09:25:46.046 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.3542ms
+2026-02-23 09:25:46.061 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/favicon-32x32.png - null null
+2026-02-23 09:25:46.066 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-02-23 09:25:46.068 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/favicon-32x32.png - 200 628 image/png 7.4889ms
+2026-02-23 09:25:51.611 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/register - application/json 50
+2026-02-23 09:25:53.524 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Register (ApiLayer)'
+2026-02-23 09:25:53.552 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(EntityLayer.DTOs.Auth.RegisterDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-23 09:25:53.879 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-23 09:25:54.585 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Decimal), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Users` (`Balance`, `CreatedAt`, `PasswordHash`, `Username`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `Users`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:25:54.625 +03:00 [INF] User string registered successfully
+2026-02-23 09:25:54.632 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:25:54.642 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Register (ApiLayer) in 1083.2879ms
+2026-02-23 09:25:54.644 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Register (ApiLayer)'
+2026-02-23 09:25:54.652 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/register - 200 null application/json; charset=utf-8 3040.9586ms
+2026-02-23 09:26:01.201 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 50
+2026-02-23 09:26:01.208 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-23 09:26:01.215 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-23 09:26:01.244 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-23 09:26:01.805 +03:00 [INF] User string logged in successfully
+2026-02-23 09:26:01.807 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:26:01.811 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 593.1767ms
+2026-02-23 09:26:01.814 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-23 09:26:01.815 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 613.8957ms
+2026-02-23 09:26:28.607 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:26:30.143 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Farm - application/json 21
+2026-02-23 09:26:30.217 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.CreateFarm (ApiLayer)'
+2026-02-23 09:26:30.221 +03:00 [INF] Route matched with {action = "CreateFarm", controller = "Farm"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateFarm(EntityLayer.DTOs.Farm.CreateFarmDto) on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-02-23 09:26:30.265 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:26:30.310 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Farms` (`CreatedAt`, `Name`, `UserId`)
+VALUES (@p0, @p1, @p2);
+SELECT `Id`
+FROM `Farms`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:26:30.319 +03:00 [INF] Farm bursa created by user 1
+2026-02-23 09:26:30.320 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:26:30.323 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.CreateFarm (ApiLayer) in 99.6152ms
+2026-02-23 09:26:30.325 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.CreateFarm (ApiLayer)'
+2026-02-23 09:26:30.326 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Farm - 200 null application/json; charset=utf-8 183.0414ms
+2026-02-23 09:26:48.597 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Animal/buy - application/json 58
+2026-02-23 09:26:48.603 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AnimalController.BuyAnimal (ApiLayer)'
+2026-02-23 09:26:48.608 +03:00 [INF] Route matched with {action = "BuyAnimal", controller = "Animal"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult BuyAnimal(EntityLayer.DTOs.Animal.BuyAnimalDto) on controller ApiLayer.Controller.AnimalController (ApiLayer).
+2026-02-23 09:26:48.638 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:26:48.649 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:26:48.663 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Users` SET `Balance` = @p0, `CreatedAt` = @p1, `PasswordHash` = @p2, `Username` = @p3
+WHERE `Id` = @p4;
+SELECT ROW_COUNT();
+2026-02-23 09:26:48.700 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Animals` (`FarmId`, `LastProductionDate`, `LifeSpanDays`, `Name`, `Price`, `ProductionIntervalHours`, `PurchaseDate`, `Type`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT `Id`
+FROM `Animals`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:26:48.708 +03:00 [INF] User 1 bought animal testanimal
+2026-02-23 09:26:48.709 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:26:48.712 +03:00 [INF] Executed action ApiLayer.Controller.AnimalController.BuyAnimal (ApiLayer) in 100.3147ms
+2026-02-23 09:26:48.715 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AnimalController.BuyAnimal (ApiLayer)'
+2026-02-23 09:26:48.717 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Animal/buy - 200 null application/json; charset=utf-8 119.9288ms
+2026-02-23 09:27:04.256 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-23 09:27:04.269 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:04.275 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-23 09:27:04.296 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:04.311 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:04.368 +03:00 [ERR] Sell product failed
+System.Exception: Product not found
+   at BusinessLayer.Concrete.ProductService.SellProduct(Int32 userId, Int32 productId) in C:\Users\sahin\source\repos\Farm\BusinessLayer\Concrete\ProductService.cs:line 34
+   at ApiLayer.Controller.ProductController.SellProduct(Int32 id) in C:\Users\sahin\source\repos\Farm\ApiLayer\Controller\ProductController.cs:line 28
+2026-02-23 09:27:04.405 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:27:04.408 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 130.5808ms
+2026-02-23 09:27:04.410 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:04.412 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 400 null application/json; charset=utf-8 155.9603ms
+2026-02-23 09:27:06.822 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-23 09:27:06.828 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:06.830 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-23 09:27:06.849 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:06.855 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:06.888 +03:00 [ERR] Sell product failed
+System.Exception: Product not found
+   at BusinessLayer.Concrete.ProductService.SellProduct(Int32 userId, Int32 productId) in C:\Users\sahin\source\repos\Farm\BusinessLayer\Concrete\ProductService.cs:line 34
+   at ApiLayer.Controller.ProductController.SellProduct(Int32 id) in C:\Users\sahin\source\repos\Farm\ApiLayer\Controller\ProductController.cs:line 28
+2026-02-23 09:27:06.891 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:27:06.893 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 60.4591ms
+2026-02-23 09:27:06.894 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:06.896 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 400 null application/json; charset=utf-8 73.5732ms
+2026-02-23 09:27:10.028 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-23 09:27:10.033 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:10.035 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-23 09:27:10.054 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:10.058 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:10.097 +03:00 [ERR] Sell product failed
+System.Exception: Product not found
+   at BusinessLayer.Concrete.ProductService.SellProduct(Int32 userId, Int32 productId) in C:\Users\sahin\source\repos\Farm\BusinessLayer\Concrete\ProductService.cs:line 34
+   at ApiLayer.Controller.ProductController.SellProduct(Int32 id) in C:\Users\sahin\source\repos\Farm\ApiLayer\Controller\ProductController.cs:line 28
+2026-02-23 09:27:10.099 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:27:10.101 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 63.8755ms
+2026-02-23 09:27:10.104 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:10.106 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 400 null application/json; charset=utf-8 78.528ms
+2026-02-23 09:27:11.730 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-23 09:27:11.735 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:11.736 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-23 09:27:11.754 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:11.759 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:11.794 +03:00 [ERR] Sell product failed
+System.Exception: Product not found
+   at BusinessLayer.Concrete.ProductService.SellProduct(Int32 userId, Int32 productId) in C:\Users\sahin\source\repos\Farm\BusinessLayer\Concrete\ProductService.cs:line 34
+   at ApiLayer.Controller.ProductController.SellProduct(Int32 id) in C:\Users\sahin\source\repos\Farm\ApiLayer\Controller\ProductController.cs:line 28
+2026-02-23 09:27:11.796 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:27:11.798 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 58.8556ms
+2026-02-23 09:27:11.799 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:11.801 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 400 null application/json; charset=utf-8 70.6102ms
+2026-02-23 09:27:17.835 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-23 09:27:17.840 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:17.842 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-23 09:27:17.859 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:17.865 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:17.898 +03:00 [ERR] Sell product failed
+System.Exception: Product not found
+   at BusinessLayer.Concrete.ProductService.SellProduct(Int32 userId, Int32 productId) in C:\Users\sahin\source\repos\Farm\BusinessLayer\Concrete\ProductService.cs:line 34
+   at ApiLayer.Controller.ProductController.SellProduct(Int32 id) in C:\Users\sahin\source\repos\Farm\ApiLayer\Controller\ProductController.cs:line 28
+2026-02-23 09:27:17.900 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:27:17.901 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 56.9075ms
+2026-02-23 09:27:17.903 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:17.905 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 400 null application/json; charset=utf-8 69.6028ms
+2026-02-23 09:27:18.964 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-23 09:27:18.969 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:18.970 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-23 09:27:18.988 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:18.994 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:19.027 +03:00 [ERR] Sell product failed
+System.Exception: Product not found
+   at BusinessLayer.Concrete.ProductService.SellProduct(Int32 userId, Int32 productId) in C:\Users\sahin\source\repos\Farm\BusinessLayer\Concrete\ProductService.cs:line 34
+   at ApiLayer.Controller.ProductController.SellProduct(Int32 id) in C:\Users\sahin\source\repos\Farm\ApiLayer\Controller\ProductController.cs:line 28
+2026-02-23 09:27:19.029 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:27:19.031 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 58.5454ms
+2026-02-23 09:27:19.033 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:19.034 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 400 null application/json; charset=utf-8 69.7614ms
+2026-02-23 09:27:19.823 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-23 09:27:19.828 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:19.830 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-23 09:27:19.851 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:19.857 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:19.895 +03:00 [ERR] Sell product failed
+System.Exception: Product not found
+   at BusinessLayer.Concrete.ProductService.SellProduct(Int32 userId, Int32 productId) in C:\Users\sahin\source\repos\Farm\BusinessLayer\Concrete\ProductService.cs:line 34
+   at ApiLayer.Controller.ProductController.SellProduct(Int32 id) in C:\Users\sahin\source\repos\Farm\ApiLayer\Controller\ProductController.cs:line 28
+2026-02-23 09:27:19.898 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:27:19.900 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 62.1972ms
+2026-02-23 09:27:19.902 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:19.904 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 400 null application/json; charset=utf-8 80.9498ms
+2026-02-23 09:27:25.811 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-23 09:27:25.816 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:25.818 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-23 09:27:25.838 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:25.845 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:25.885 +03:00 [ERR] Sell product failed
+System.Exception: Product not found
+   at BusinessLayer.Concrete.ProductService.SellProduct(Int32 userId, Int32 productId) in C:\Users\sahin\source\repos\Farm\BusinessLayer\Concrete\ProductService.cs:line 34
+   at ApiLayer.Controller.ProductController.SellProduct(Int32 id) in C:\Users\sahin\source\repos\Farm\ApiLayer\Controller\ProductController.cs:line 28
+2026-02-23 09:27:25.887 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:27:25.890 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 69.2335ms
+2026-02-23 09:27:25.892 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:25.893 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 400 null application/json; charset=utf-8 82.2503ms
+2026-02-23 09:27:26.601 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-23 09:27:26.607 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:26.608 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-23 09:27:26.622 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:26.626 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:26.656 +03:00 [ERR] Sell product failed
+System.Exception: Product not found
+   at BusinessLayer.Concrete.ProductService.SellProduct(Int32 userId, Int32 productId) in C:\Users\sahin\source\repos\Farm\BusinessLayer\Concrete\ProductService.cs:line 34
+   at ApiLayer.Controller.ProductController.SellProduct(Int32 id) in C:\Users\sahin\source\repos\Farm\ApiLayer\Controller\ProductController.cs:line 28
+2026-02-23 09:27:26.658 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:27:26.660 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 48.4995ms
+2026-02-23 09:27:26.661 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:26.662 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 400 null application/json; charset=utf-8 61.1096ms
+2026-02-23 09:27:27.377 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-23 09:27:27.382 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:27.383 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-23 09:27:27.400 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:27.403 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:27.436 +03:00 [ERR] Sell product failed
+System.Exception: Product not found
+   at BusinessLayer.Concrete.ProductService.SellProduct(Int32 userId, Int32 productId) in C:\Users\sahin\source\repos\Farm\BusinessLayer\Concrete\ProductService.cs:line 34
+   at ApiLayer.Controller.ProductController.SellProduct(Int32 id) in C:\Users\sahin\source\repos\Farm\ApiLayer\Controller\ProductController.cs:line 28
+2026-02-23 09:27:27.439 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:27:27.441 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 54.4239ms
+2026-02-23 09:27:27.443 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:27.444 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 400 null application/json; charset=utf-8 67.0123ms
+2026-02-23 09:27:28.634 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:27:28.677 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:27:28.697 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-23 09:27:28.701 +03:00 [INF] Product Milk generated from testanimal (ID: 1)
+2026-02-23 09:27:33.833 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Product/1/sell - null 0
+2026-02-23 09:27:33.837 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:33.840 +03:00 [INF] Route matched with {action = "SellProduct", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SellProduct(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-23 09:27:33.860 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:33.866 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:33.879 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+WHERE `a`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:27:33.891 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Users` SET `Balance` = @p0, `CreatedAt` = @p1, `PasswordHash` = @p2, `Username` = @p3
+WHERE `Id` = @p4;
+SELECT ROW_COUNT();
+2026-02-23 09:27:33.898 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Products` SET `AnimalId` = @p0, `IsSold` = @p1, `Name` = @p2, `Price` = @p3, `ProducedAt` = @p4, `SoldAt` = @p5
+WHERE `Id` = @p6;
+SELECT ROW_COUNT();
+2026-02-23 09:27:33.902 +03:00 [INF] User 1 sold product 1
+2026-02-23 09:27:33.904 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:27:33.906 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.SellProduct (ApiLayer) in 62.427ms
+2026-02-23 09:27:33.907 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.SellProduct (ApiLayer)'
+2026-02-23 09:27:33.909 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Product/1/sell - 200 null application/json; charset=utf-8 76.5218ms
+2026-02-23 09:27:43.628 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/animal/1 - null null
+2026-02-23 09:27:43.634 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-23 09:27:43.639 +03:00 [INF] Route matched with {action = "GetAnimalProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAnimalProducts(Int32) on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-23 09:27:43.661 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__animalId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AnimalId`, `p`.`IsSold`, `p`.`Name`, `p`.`Price`, `p`.`ProducedAt`, `p`.`SoldAt`
+FROM `Products` AS `p`
+WHERE `p`.`AnimalId` = @__animalId_0
+2026-02-23 09:27:43.664 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Product, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-23 09:27:43.720 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer) in 77.1503ms
+2026-02-23 09:27:43.722 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetAnimalProducts (ApiLayer)'
+2026-02-23 09:27:43.724 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/animal/1 - 200 null application/json; charset=utf-8 96.0919ms
+2026-02-23 09:52:19.120 +03:00 [INF] Farm Management API started
+2026-02-23 09:52:19.311 +03:00 [INF] User profile is available. Using 'C:\Users\sahin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-23 09:52:19.418 +03:00 [INF] Animal LifeCycle Service started
+2026-02-23 09:52:19.419 +03:00 [INF] Product Generation Service started
+2026-02-23 09:52:20.201 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-23 09:52:20.204 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-23 09:52:20.402 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-23 09:52:20.403 +03:00 [INF] Hosting environment: Development
+2026-02-23 09:52:20.405 +03:00 [INF] Content root path: C:\Users\sahin\source\repos\Farm\ApiLayer
+2026-02-23 09:52:22.144 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:52:22.144 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:52:22.669 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:52:22.726 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-23 09:52:22.736 +03:00 [INF] Product Milk generated from testanimal (ID: 1)
+2026-02-23 09:52:44.710 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-23 09:52:45.090 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 396.5759ms
+2026-02-23 09:52:45.159 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/swagger-ui-bundle.js - null null
+2026-02-23 09:52:45.159 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/swagger-ui.css - null null
+2026-02-23 09:52:45.162 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/swagger-ui-standalone-preset.js - null null
+2026-02-23 09:52:45.162 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.css - null null
+2026-02-23 09:52:45.387 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-23 09:52:45.387 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-23 09:52:45.408 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2026-02-23 09:52:45.421 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 33.7561ms
+2026-02-23 09:52:45.422 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.css - 200 202 text/css 259.3608ms
+2026-02-23 09:52:45.428 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 41.4118ms
+2026-02-23 09:52:45.431 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-02-23 09:52:45.431 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-02-23 09:52:45.447 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/swagger-ui.css - 200 152035 text/css 288.2725ms
+2026-02-23 09:52:45.448 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/swagger-ui-standalone-preset.js - 200 230007 text/javascript 285.2935ms
+2026-02-23 09:52:45.660 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-02-23 09:52:45.663 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/swagger-ui-bundle.js - 200 1426050 text/javascript 503.8221ms
+2026-02-23 09:52:45.664 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - null null
+2026-02-23 09:52:45.723 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.3061ms
+2026-02-23 09:52:46.072 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-23 09:52:46.091 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/favicon-32x32.png - null null
+2026-02-23 09:52:46.098 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-02-23 09:52:46.101 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/favicon-32x32.png - 200 628 image/png 9.7638ms
+2026-02-23 09:52:46.104 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 32.9735ms
+2026-02-23 09:53:03.194 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 50
+2026-02-23 09:53:03.308 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-23 09:53:03.350 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-23 09:53:03.683 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-23 09:53:04.358 +03:00 [INF] User string logged in successfully
+2026-02-23 09:53:04.363 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:53:04.377 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 1015.6886ms
+2026-02-23 09:53:04.380 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-23 09:53:04.390 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 1195.2839ms
+2026-02-23 09:53:22.770 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:53:22.780 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:53:22.793 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-23 09:53:22.797 +03:00 [INF] Product Milk generated from testanimal (ID: 1)
+2026-02-23 09:53:34.145 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Farm/my-farms - null null
+2026-02-23 09:53:34.242 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer)'
+2026-02-23 09:53:34.248 +03:00 [INF] Route matched with {action = "GetMyFarms", controller = "Farm"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetMyFarms() on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-02-23 09:53:34.281 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`UserId` = @__userId_0
+2026-02-23 09:53:34.295 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Farm, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-23 09:53:34.339 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer) in 87.0797ms
+2026-02-23 09:53:34.342 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer)'
+2026-02-23 09:53:34.345 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Farm/my-farms - 200 null application/json; charset=utf-8 200.059ms
+2026-02-23 09:54:04.414 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Farm - application/json 19
+2026-02-23 09:54:04.423 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.CreateFarm (ApiLayer)'
+2026-02-23 09:54:04.428 +03:00 [INF] Route matched with {action = "CreateFarm", controller = "Farm"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateFarm(EntityLayer.DTOs.Farm.CreateFarmDto) on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-02-23 09:54:04.486 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:54:04.515 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Farms` (`CreatedAt`, `Name`, `UserId`)
+VALUES (@p0, @p1, @p2);
+SELECT `Id`
+FROM `Farms`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:54:04.526 +03:00 [INF] Farm tst created by user 1
+2026-02-23 09:54:04.528 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:54:04.532 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.CreateFarm (ApiLayer) in 99.4456ms
+2026-02-23 09:54:04.537 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.CreateFarm (ApiLayer)'
+2026-02-23 09:54:04.540 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Farm - 200 null application/json; charset=utf-8 126.0527ms
+2026-02-23 09:54:22.823 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:54:22.831 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:54:22.843 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-23 09:54:22.848 +03:00 [INF] Product Milk generated from testanimal (ID: 1)
+2026-02-23 09:55:09.415 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/register - application/json 44
+2026-02-23 09:55:09.430 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Register (ApiLayer)'
+2026-02-23 09:55:09.434 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(EntityLayer.DTOs.Auth.RegisterDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-23 09:55:09.465 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-23 09:55:09.982 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Decimal), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Users` (`Balance`, `CreatedAt`, `PasswordHash`, `Username`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `Users`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:55:09.993 +03:00 [INF] User tst registered successfully
+2026-02-23 09:55:09.997 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:55:10.002 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Register (ApiLayer) in 563.7991ms
+2026-02-23 09:55:10.004 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Register (ApiLayer)'
+2026-02-23 09:55:10.006 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/register - 200 null application/json; charset=utf-8 591.5457ms
+2026-02-23 09:55:22.871 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:55:22.879 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:55:22.891 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-23 09:55:22.895 +03:00 [INF] Product Milk generated from testanimal (ID: 1)
+2026-02-23 09:55:36.830 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 44
+2026-02-23 09:55:36.835 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-23 09:55:36.837 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-23 09:55:36.874 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-23 09:55:37.104 +03:00 [INF] User tst logged in successfully
+2026-02-23 09:55:37.106 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:55:37.109 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 255.2035ms
+2026-02-23 09:55:37.111 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-23 09:55:37.113 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 282.7071ms
+2026-02-23 09:56:06.052 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Farm/my-farms - null null
+2026-02-23 09:56:06.096 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer)'
+2026-02-23 09:56:06.099 +03:00 [INF] Route matched with {action = "GetMyFarms", controller = "Farm"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetMyFarms() on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-02-23 09:56:06.125 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`UserId` = @__userId_0
+2026-02-23 09:56:06.131 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.Farm, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-23 09:56:06.134 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer) in 31.2385ms
+2026-02-23 09:56:06.137 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer)'
+2026-02-23 09:56:06.140 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Farm/my-farms - 200 null application/json; charset=utf-8 88.3252ms
+2026-02-23 09:56:22.918 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:56:22.925 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:56:22.936 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-23 09:56:22.942 +03:00 [INF] Product Milk generated from testanimal (ID: 1)
+2026-02-23 09:57:22.973 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:57:22.987 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:57:22.998 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-23 09:57:23.002 +03:00 [INF] Product Milk generated from testanimal (ID: 1)
+2026-02-23 09:57:41.732 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Farm/1 - null null
+2026-02-23 09:57:41.742 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.GetFarm (ApiLayer)'
+2026-02-23 09:57:41.747 +03:00 [INF] Route matched with {action = "GetFarm", controller = "Farm"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFarm(Int32) on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-02-23 09:57:41.776 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:57:41.781 +03:00 [INF] Executing OkObjectResult, writing value of type 'EntityLayer.Entities.Farm'.
+2026-02-23 09:57:41.784 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.GetFarm (ApiLayer) in 33.8674ms
+2026-02-23 09:57:41.787 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.GetFarm (ApiLayer)'
+2026-02-23 09:57:41.789 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Farm/1 - 200 null application/json; charset=utf-8 60.6986ms
+2026-02-23 09:58:23.018 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:58:23.034 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:58:23.047 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-23 09:58:23.052 +03:00 [INF] Product Milk generated from testanimal (ID: 1)
+2026-02-23 09:58:44.747 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Farm - application/json 22
+2026-02-23 09:58:44.753 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.CreateFarm (ApiLayer)'
+2026-02-23 09:58:44.765 +03:00 [INF] Route matched with {action = "CreateFarm", controller = "Farm"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateFarm(EntityLayer.DTOs.Farm.CreateFarmDto) on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-02-23 09:58:44.787 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 09:58:44.795 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 100), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Farms` (`CreatedAt`, `Name`, `UserId`)
+VALUES (@p0, @p1, @p2);
+SELECT `Id`
+FROM `Farms`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:58:44.802 +03:00 [INF] Farm tst123 created by user 2
+2026-02-23 09:58:44.804 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 09:58:44.807 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.CreateFarm (ApiLayer) in 37.5988ms
+2026-02-23 09:58:44.810 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.CreateFarm (ApiLayer)'
+2026-02-23 09:58:44.812 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Farm - 200 null application/json; charset=utf-8 65.3007ms
+2026-02-23 09:59:23.069 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-02-23 09:59:23.076 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 09:59:23.087 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-02-23 09:59:23.092 +03:00 [INF] Product Milk generated from testanimal (ID: 1)
+2026-02-23 16:01:49.804 +03:00 [INF] Farm Management API started
+2026-02-23 16:01:49.954 +03:00 [INF] User profile is available. Using 'C:\Users\sahin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-23 16:01:50.459 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-23 16:01:50.463 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-23 16:01:50.609 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-23 16:01:50.612 +03:00 [INF] Hosting environment: Development
+2026-02-23 16:01:50.616 +03:00 [INF] Content root path: C:\Users\sahin\source\repos\Farm\ApiLayer
+2026-02-23 16:01:55.137 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-23 16:01:55.634 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 508.1373ms
+2026-02-23 16:01:55.690 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-23 16:01:55.690 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-23 16:01:55.710 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 19.9009ms
+2026-02-23 16:01:55.730 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 40.8504ms
+2026-02-23 16:01:55.739 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - null null
+2026-02-23 16:01:55.884 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - 200 null text/javascript; charset=UTF-8 144.2489ms
+2026-02-23 16:01:56.176 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-23 16:01:56.212 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 35.801ms
+2026-02-23 16:02:02.343 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/register - application/json 50
+2026-02-23 16:02:02.510 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Register (ApiLayer)'
+2026-02-23 16:02:02.533 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(EntityLayer.DTOs.Auth.RegisterDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-23 16:02:04.247 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-23 16:02:04.948 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Decimal), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Users` (`Balance`, `CreatedAt`, `PasswordHash`, `Username`)
+VALUES (@p0, @p1, @p2, @p3);
+SELECT `Id`
+FROM `Users`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-02-23 16:02:04.995 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Name`
+FROM `Roles` AS `r`
+WHERE `r`.`Name` = @__name_0
+LIMIT 1
+2026-02-23 16:02:05.052 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `UserRoles` (`RoleId`, `UserId`)
+VALUES (@p0, @p1);
+2026-02-23 16:02:05.059 +03:00 [INF] User string registered successfully
+2026-02-23 16:02:05.072 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 16:02:05.086 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Register (ApiLayer) in 2544.1632ms
+2026-02-23 16:02:05.091 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Register (ApiLayer)'
+2026-02-23 16:02:05.108 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/register - 200 null application/json; charset=utf-8 2764.6577ms
+2026-02-23 16:02:11.115 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 50
+2026-02-23 16:02:11.127 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-23 16:02:11.133 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-23 16:02:11.166 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-23 16:02:11.618 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Name`
+FROM `UserRoles` AS `u`
+INNER JOIN `Roles` AS `r` ON `u`.`RoleId` = `r`.`Id`
+WHERE `u`.`UserId` = @__userId_0
+2026-02-23 16:02:11.703 +03:00 [INF] User string logged in successfully
+2026-02-23 16:02:11.706 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 16:02:11.712 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 573.7358ms
+2026-02-23 16:02:11.716 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-23 16:02:11.720 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 605.2063ms
+2026-02-23 16:02:47.001 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/profile - null null
+2026-02-23 16:02:47.072 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.UserController.GetProfile (ApiLayer)'
+2026-02-23 16:02:47.079 +03:00 [INF] Route matched with {action = "GetProfile", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProfile() on controller ApiLayer.Controller.UserController (ApiLayer).
+2026-02-23 16:02:47.178 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-02-23 16:02:47.186 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Name`
+FROM `UserRoles` AS `u`
+INNER JOIN `Roles` AS `r` ON `u`.`RoleId` = `r`.`Id`
+WHERE `u`.`UserId` = @__userId_0
+2026-02-23 16:02:47.194 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`5[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 16:02:47.212 +03:00 [INF] Executed action ApiLayer.Controller.UserController.GetProfile (ApiLayer) in 128.2288ms
+2026-02-23 16:02:47.216 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.UserController.GetProfile (ApiLayer)'
+2026-02-23 16:02:47.219 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/profile - 200 null application/json; charset=utf-8 218.8726ms
+2026-02-23 16:02:58.036 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/1 - null null
+2026-02-23 16:02:58.047 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.UserController.GetUser (ApiLayer)'
+2026-02-23 16:02:58.053 +03:00 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUser(Int32) on controller ApiLayer.Controller.UserController (ApiLayer).
+2026-02-23 16:02:58.074 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2026-02-23 16:02:58.080 +03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-02-23 16:02:58.083 +03:00 [INF] Executed action ApiLayer.Controller.UserController.GetUser (ApiLayer) in 24.7491ms
+2026-02-23 16:02:58.087 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.UserController.GetUser (ApiLayer)'
+2026-02-23 16:02:58.092 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/1 - 403 0 null 56.0925ms
+2026-02-23 16:03:16.942 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/all - null null
+2026-02-23 16:03:16.957 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-02-23 16:03:16.962 +03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-02-23 16:03:16.967 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/all - 403 0 null 24.8236ms
+2026-02-23 16:03:43.225 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 52
+2026-02-23 16:03:43.236 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-23 16:03:43.240 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-23 16:03:43.267 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-23 16:03:43.677 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Name`
+FROM `UserRoles` AS `u`
+INNER JOIN `Roles` AS `r` ON `u`.`RoleId` = `r`.`Id`
+WHERE `u`.`UserId` = @__userId_0
+2026-02-23 16:03:43.684 +03:00 [INF] User testadmin logged in successfully
+2026-02-23 16:03:43.686 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 16:03:43.693 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 447.0603ms
+2026-02-23 16:03:43.698 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-23 16:03:43.703 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 477.3794ms
+2026-02-23 16:03:59.894 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/all - null null
+2026-02-23 16:03:59.902 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.UserController.GetAllUsers (ApiLayer)'
+2026-02-23 16:03:59.907 +03:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllUsers() on controller ApiLayer.Controller.UserController (ApiLayer).
+2026-02-23 16:03:59.935 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+2026-02-23 16:03:59.942 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntityLayer.Entities.User, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-23 16:03:59.970 +03:00 [INF] Executed action ApiLayer.Controller.UserController.GetAllUsers (ApiLayer) in 59.2963ms
+2026-02-23 16:03:59.974 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.UserController.GetAllUsers (ApiLayer)'
+2026-02-23 16:03:59.977 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/all - 200 null application/json; charset=utf-8 83.1003ms
+2026-02-23 16:04:31.119 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Role/user/1 - null null
+2026-02-23 16:04:31.130 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.RoleController.GetUserRoles (ApiLayer)'
+2026-02-23 16:04:31.135 +03:00 [INF] Route matched with {action = "GetUserRoles", controller = "Role"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserRoles(Int32) on controller ApiLayer.Controller.RoleController (ApiLayer).
+2026-02-23 16:04:31.153 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Name`
+FROM `UserRoles` AS `u`
+INNER JOIN `Roles` AS `r` ON `u`.`RoleId` = `r`.`Id`
+WHERE `u`.`UserId` = @__userId_0
+2026-02-23 16:04:31.159 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 16:04:31.166 +03:00 [INF] Executed action ApiLayer.Controller.RoleController.GetUserRoles (ApiLayer) in 27.8873ms
+2026-02-23 16:04:31.170 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.RoleController.GetUserRoles (ApiLayer)'
+2026-02-23 16:04:31.173 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Role/user/1 - 200 null application/json; charset=utf-8 64.5702ms
+2026-02-23 16:04:33.880 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Role/user/2 - null null
+2026-02-23 16:04:33.892 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.RoleController.GetUserRoles (ApiLayer)'
+2026-02-23 16:04:33.896 +03:00 [INF] Route matched with {action = "GetUserRoles", controller = "Role"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserRoles(Int32) on controller ApiLayer.Controller.RoleController (ApiLayer).
+2026-02-23 16:04:33.912 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Name`
+FROM `UserRoles` AS `u`
+INNER JOIN `Roles` AS `r` ON `u`.`RoleId` = `r`.`Id`
+WHERE `u`.`UserId` = @__userId_0
+2026-02-23 16:04:33.918 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-23 16:04:33.921 +03:00 [INF] Executed action ApiLayer.Controller.RoleController.GetUserRoles (ApiLayer) in 21.048ms
+2026-02-23 16:04:33.926 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.RoleController.GetUserRoles (ApiLayer)'
+2026-02-23 16:04:33.930 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Role/user/2 - 200 null application/json; charset=utf-8 50.0572ms

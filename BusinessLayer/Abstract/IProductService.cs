@@ -13,5 +13,7 @@ namespace BusinessLayer.Abstract
         void SellProduct(int userId, int productId);
         List<Product> GetAnimalProducts(int animalId);
         List<Product> GetUnsoldProducts();
+        Product GetProductWithOwnership(int productId);
+
     }
 }

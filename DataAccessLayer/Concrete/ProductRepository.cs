@@ -1,11 +1,12 @@
-﻿using System;
+﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Context;
+using EntityLayer.Entities;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccessLayer.Abstract;
-using DataAccessLayer.Context;
-using EntityLayer.Entities;
 
 namespace DataAccessLayer.Concrete
 {
@@ -17,7 +18,14 @@ namespace DataAccessLayer.Concrete
         {
             _context = context;
         }
-
+        public Product GetByIdWithDetails(int id)
+        {
+            
+            return _context.Products
+                .Include(p => p.Animal)          
+                    .ThenInclude(a => a.Farm)    
+                .FirstOrDefault(p => p.Id == id);
+        }
         public Product GetById(int id)
         {
             return _context.Products.Find(id);

@@ -2,20 +2,25 @@
 using Microsoft.AspNetCore.Mvc;
 using BusinessLayer.Abstract;
 using System.Security.Claims;
+using EntityLayer.DTOs.Product;
 
 namespace ApiLayer.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class ProductController : ControllerBase
+    public class ProductController : BaseController
     {
         private readonly IProductService _productService;
+        private readonly IFarmService _farmService;
+        private readonly IAnimalService _animalService;
         private readonly ILogger<ProductController> _logger;
 
-        public ProductController(IProductService productService, ILogger<ProductController> logger)
+        public ProductController(IProductService productService,IFarmService farmService,IAnimalService animaService, ILogger<ProductController> logger)
         {
             _productService = productService;
+            _farmService = farmService;
+            _animalService = animaService;
             _logger = logger;
         }
 
@@ -24,9 +29,24 @@ namespace ApiLayer.Controller
         {
             try
             {
-                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-                _productService.SellProduct(userId, id);
-                _logger.LogInformation($"User {userId} sold product {id}");
+
+                var product = _productService.GetProductWithOwnership(id);
+
+                if(product == null)
+                {
+                    _logger.LogWarning($"Product {id} not found");
+                    return NotFound(new { message = "Product not found" });
+                }
+
+                if (!IsAdmin && CurrentUserId != product.Animal.Farm.UserId) {//**********************************
+
+                    return Forbid();
+
+                }
+
+
+                _productService.SellProduct(CurrentUserId, id);
+                _logger.LogInformation($"User {CurrentUserId} sold product {id}");
                 return Ok(new { message = "Product sold successfully" });
             }
             catch (Exception ex)
@@ -41,8 +61,23 @@ namespace ApiLayer.Controller
         {
             try
             {
+                
+                var animal = _animalService.GetById(animalId);
+                if (animal == null) return NotFound("Hayvan bulunamadı.");
+                                                                             
+                var farm = _farmService.GetById(animal.FarmId);
+                if (farm == null) return NotFound("Çiftlik bulunamadı.");
+
+                
+                if (!IsAdmin && farm.UserId != CurrentUserId)
+                {
+                    return Forbid();
+                }
+
+               
                 var products = _productService.GetAnimalProducts(animalId);
                 return Ok(products);
+                ;
             }
             catch (Exception ex)
             {

@@ -51,10 +51,17 @@
     <Compile Include="DTOs\Farm\CreateFarmDto.cs" />
     <Compile Include="DTOs\Farm\UpdateFarmDto.cs" />
     <Compile Include="DTOs\Product\SellProductDto.cs" />
+    <Compile Include="DTOs\Role\AssignRoleDto.cs" />
+    <Compile Include="DTOs\Role\RemoveRoleDto.cs" />
     <Compile Include="DTOs\User\UpdateUserDto.cs" />
     <Compile Include="Entities\Animal.cs" />
     <Compile Include="Entities\Farm.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\UserRole.cs" />
+    <Compile Include="Enums\AnimalType.cs" />
+    <Compile Include="Enums\ProductType.cs" />
+    <Compile Include="Extensions\UserExtentions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\User.cs" />
   </ItemGroup>

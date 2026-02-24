@@ -15,11 +15,19 @@ namespace BusinessLayer.Concrete
     public class AuthService : IAuthService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IRoleRepository _roleRepository;
+        private readonly IUserRoleRepository _userRoleRepository;
         private readonly string _jwtSecretKey;
 
-        public AuthService(IUserRepository userRepository, string jwtSecretKey)
+        public AuthService(
+            IUserRepository userRepository,
+            IRoleRepository roleRepository,
+            IUserRoleRepository userRoleRepository,
+            string jwtSecretKey)
         {
             _userRepository = userRepository;
+            _roleRepository = roleRepository;
+            _userRoleRepository = userRoleRepository;
             _jwtSecretKey = jwtSecretKey;
         }
 
@@ -34,10 +42,17 @@ namespace BusinessLayer.Concrete
                 Username = dto.Username,
                 PasswordHash = PasswordHelper.HashPassword(dto.Password),
                 Balance = 1000,
-                CreatedAt = DateTime.Now
+                CreatedAt = DateTime.Now,   
             };
 
             _userRepository.Add(user);
+
+            var userRole = _roleRepository.GetByName("User");
+            if (userRole != null)
+            {
+                _userRoleRepository.AddUserRole(user.Id, userRole.Id);
+            }
+
             return user;
         }
 
@@ -50,7 +65,12 @@ namespace BusinessLayer.Concrete
             if (!PasswordHelper.VerifyPassword(dto.Password, user.PasswordHash))
                 throw new Exception("Invalid username or password");
 
-            return JwtHelper.GenerateToken(user.Id, user.Username, _jwtSecretKey);
+            var roles = _userRoleRepository.GetUserRoles(user.Id);
+            var roleNames = string.Join(",", roles.Select(r => r.Name));
+
+            return JwtHelper.GenerateToken(user.Id, user.Username, roleNames, _jwtSecretKey);
+
+           
         }
     }
 }

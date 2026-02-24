@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using System.ComponentModel.DataAnnotations;
+using Entity.Enums;
 
 namespace EntityLayer.Entities
 {
@@ -18,8 +19,7 @@ namespace EntityLayer.Entities
         public string Name { get; set; }
 
         [Required]
-        [MaxLength(50)]
-        public string Type { get; set; } 
+        public AnimalType Type { get; set; }
 
         public decimal Price { get; set; }
 
@@ -36,5 +36,7 @@ namespace EntityLayer.Entities
         
         public Farm Farm { get; set; }
         public List<Product> Products { get; set; }
+
+       
     }
 }

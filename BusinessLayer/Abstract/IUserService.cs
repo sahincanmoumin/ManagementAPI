@@ -14,5 +14,7 @@ namespace BusinessLayer.Abstract
         User GetById(int id);
         void UpdateUser(int id, UpdateUserDto dto);
         decimal GetBalance(int id);
+        List<User> GetAllUsers();
+
     }
 }
