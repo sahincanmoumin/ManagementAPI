@@ -1,11 +1,11 @@
-﻿using System;
+﻿using EntityLayer.DTOs.Animal;
+using EntityLayer.DTOs.Pagination;
+using EntityLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using EntityLayer.DTOs.Animal;
-using EntityLayer.Entities;
 
 namespace BusinessLayer.Abstract
 {
@@ -13,7 +13,8 @@ namespace BusinessLayer.Abstract
     {
         Animal BuyAnimal(int userId, BuyAnimalDto dto);
         void SellAnimal(int userId, int animalId);
-        List<Animal> GetFarmAnimals(int farmId);
+        public PagedResponse<AnimalListDto> GetFarmAnimals(int userId, AnimalFilterDto filter);
         Animal GetById(int id);
+
     }
 }

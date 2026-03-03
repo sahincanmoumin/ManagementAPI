@@ -10,20 +10,14 @@ using EntityLayer.Entities;
 
 namespace DataAccessLayer.Concrete
 {
-    public class AnimalRepository : IAnimalRepository
+    public class AnimalRepository : GenericRepository<Animal> , IAnimalRepository
     {
         private readonly AppDbContext _context;
 
-        public AnimalRepository(AppDbContext context)
+        public AnimalRepository(AppDbContext context) : base(context)
         {
-            _context = context;
+            _context = context; 
         }
-
-        public Animal GetById(int id)
-        {
-            return _context.Animals.Find(id);
-        }
-
         public List<Animal> GetByFarmId(int farmId)
         {
             return _context.Animals.Where(a => a.FarmId == farmId).ToList();
@@ -32,24 +26,6 @@ namespace DataAccessLayer.Concrete
         public List<Animal> GetAll()
         {
             return _context.Animals.ToList();
-        }
-
-        public void Add(Animal animal)
-        {
-            _context.Animals.Add(animal);
-            _context.SaveChanges();
-        }
-
-        public void Update(Animal animal)
-        {
-            _context.Animals.Update(animal);
-            _context.SaveChanges();
-        }
-
-        public void Delete(Animal animal)
-        {
-            _context.Animals.Remove(animal);
-            _context.SaveChanges();
         }
     }
 }

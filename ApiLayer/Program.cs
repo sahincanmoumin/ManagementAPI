@@ -1,14 +1,16 @@
+using ApiLayer.Middlewares;
+using BusinessLayer.Abstract;
+using BusinessLayer.BackgroundServices;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using DataAccessLayer.Context;
-using DataAccessLayer.Abstract;
-using DataAccessLayer.Concrete;
-using BusinessLayer.Abstract;
-using BusinessLayer.Concrete;
-using Serilog;
 using Microsoft.OpenApi.Models;
+using Serilog;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -107,8 +109,10 @@ builder.Services.AddSwaggerGen(c =>
         return order.ContainsKey(controller) ? order[controller].ToString() : "999";
     });
 });
-
+builder.Services.AddHostedService<ProductGenerationService>();
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();//+++++-----+-+-+-+-++
 
 if (app.Environment.IsDevelopment())
 {

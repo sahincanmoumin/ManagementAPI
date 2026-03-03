@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
 using EntityLayer.DTOs.Role;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using static System.Net.WebRequestMethods;
 
 namespace ApiLayer.Controller
 {
@@ -22,48 +23,28 @@ namespace ApiLayer.Controller
         [HttpPost("assign")]
         public IActionResult AssignRole([FromBody] AssignRoleDto dto)
         {
-            try
-            {
-                _roleService.AssignRole(dto);
-                _logger.LogInformation($"Role '{dto.RoleName}' assigned to user {dto.UserId}");
-                return Ok(new { message = $"Role '{dto.RoleName}' assigned successfully" });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Assign role failed");
-                return BadRequest(new { message = ex.Message });
-            }
+
+            _roleService.AssignRole(dto);
+            _logger.LogInformation($"Role '{dto.RoleName}' assigned to user {dto.UserId}");
+            return Ok(new { message = $"Role '{dto.RoleName}' assigned successfully" });
+
         }
 
         [HttpPost("remove")]
         public IActionResult RemoveRole([FromBody] RemoveRoleDto dto)
         {
-            try
-            {
-                _roleService.RemoveRole(dto);
-                _logger.LogInformation($"Role '{dto.RoleName}' removed from user {dto.UserId}");
-                return Ok(new { message = $"Role '{dto.RoleName}' removed successfully" });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Remove role failed");
-                return BadRequest(new { message = ex.Message });
-            }
+
+            _roleService.RemoveRole(dto);
+            _logger.LogInformation($"Role '{dto.RoleName}' removed from user {dto.UserId}");
+            return Ok(new { message = $"Role '{dto.RoleName}' removed successfully" });
+
         }
 
-        [HttpGet("user/{userId}")]
-        public IActionResult GetUserRoles(int userId)
+        [HttpGet("user")]
+        public IActionResult GetUserRoles([FromQuery] RoleFilterDto filter)
         {
-            try
-            {
-                var roles = _roleService.GetUserRoles(userId);
-                return Ok(new { userId, roles });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Get user roles failed");
-                return BadRequest(new { message = ex.Message });
-            }
+            var roles = _roleService.GetUserRoles(filter);
+            return Ok(new { roles });
         }
     }
 }

@@ -1,19 +1,20 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Context;
+using EntityLayer.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EntityLayer.Entities;
 
 namespace DataAccessLayer.Concrete
 {
-    public class RoleRepository : IRoleRepository
+    public class RoleRepository : GenericRepository<Role> , IRoleRepository
     {
         private readonly AppDbContext _context;
 
-        public RoleRepository(AppDbContext context)
+        public RoleRepository(AppDbContext context) : base(context)
         {
             _context = context;
         }
@@ -32,5 +33,7 @@ namespace DataAccessLayer.Concrete
         {
             return _context.Roles.ToList();
         }
+        
+
     }
 }

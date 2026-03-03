@@ -1,0 +1,66 @@
+2026-02-25 11:19:40.657 +03:00 [INF] Farm Management API started
+2026-02-25 11:19:40.843 +03:00 [INF] User profile is available. Using 'C:\Users\sahin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-25 11:19:41.381 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-25 11:19:41.385 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-25 11:19:41.670 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-25 11:19:41.674 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-25 11:19:41.686 +03:00 [INF] Hosting environment: Development
+2026-02-25 11:19:41.688 +03:00 [INF] Content root path: C:\Users\sahin\source\repos\Farm\ApiLayer
+2026-02-25 11:19:42.108 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 456.7606ms
+2026-02-25 11:19:42.162 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-25 11:19:42.162 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-25 11:19:42.182 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 19.6841ms
+2026-02-25 11:19:42.218 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - null null
+2026-02-25 11:19:42.233 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 70.5386ms
+2026-02-25 11:19:42.363 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - 200 null text/javascript; charset=UTF-8 144.5948ms
+2026-02-25 11:19:42.739 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-25 11:19:42.773 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 34.2818ms
+2026-02-25 11:19:47.296 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 50
+2026-02-25 11:19:47.498 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-25 11:19:47.541 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(EntityLayer.DTOs.Auth.LoginDto) on controller ApiLayer.Controller.AuthController (ApiLayer).
+2026-02-25 11:19:49.655 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-02-25 11:19:50.314 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Name`
+FROM `UserRoles` AS `u`
+INNER JOIN `Roles` AS `r` ON `u`.`RoleId` = `r`.`Id`
+WHERE `u`.`UserId` = @__userId_0
+2026-02-25 11:19:50.364 +03:00 [INF] User string logged in successfully
+2026-02-25 11:19:50.373 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-25 11:19:50.387 +03:00 [INF] Executed action ApiLayer.Controller.AuthController.Login (ApiLayer) in 2835.5172ms
+2026-02-25 11:19:50.391 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.AuthController.Login (ApiLayer)'
+2026-02-25 11:19:50.406 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 3109.6377ms
+2026-02-25 11:20:08.757 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Product/unsold - null null
+2026-02-25 11:20:08.883 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.ProductController.GetUnsoldProducts (ApiLayer)'
+2026-02-25 11:20:08.886 +03:00 [INF] Route matched with {action = "GetUnsoldProducts", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUnsoldProducts() on controller ApiLayer.Controller.ProductController (ApiLayer).
+2026-02-25 11:21:51.792 +03:00 [INF] Executed action ApiLayer.Controller.ProductController.GetUnsoldProducts (ApiLayer) in 102900.8407ms
+2026-02-25 11:21:51.814 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.ProductController.GetUnsoldProducts (ApiLayer)'
+2026-02-25 11:21:51.859 +03:00 [ERR] Sistemde bir hata yakalandı: Global hata testi patladı!
+2026-02-25 11:21:51.865 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Product/unsold - 500 null application/json 103108.172ms
+2026-02-25 13:48:00.626 +03:00 [INF] Farm Management API started
+2026-02-25 13:48:00.722 +03:00 [INF] User profile is available. Using 'C:\Users\sahin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-25 13:48:01.023 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-25 13:48:01.026 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-25 13:48:01.112 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-25 13:48:01.115 +03:00 [INF] Hosting environment: Development
+2026-02-25 13:48:01.116 +03:00 [INF] Content root path: C:\Users\sahin\source\repos\Farm\ApiLayer
+2026-02-25 23:32:49.621 +03:00 [INF] Farm Management API started
+2026-02-25 23:32:49.873 +03:00 [INF] User profile is available. Using 'C:\Users\sahin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-25 23:32:50.543 +03:00 [INF] Now listening on: https://localhost:7026
+2026-02-25 23:32:50.547 +03:00 [INF] Now listening on: http://localhost:5183
+2026-02-25 23:32:50.789 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-02-25 23:32:51.185 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-25 23:32:51.187 +03:00 [INF] Hosting environment: Development
+2026-02-25 23:32:51.189 +03:00 [INF] Content root path: C:\Users\sahin\source\repos\Farm\ApiLayer
+2026-02-25 23:32:51.314 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 554.3067ms
+2026-02-25 23:32:51.368 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-02-25 23:32:51.368 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-25 23:32:51.381 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 12.5927ms
+2026-02-25 23:32:51.404 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 36.1037ms
+2026-02-25 23:32:51.467 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - null null
+2026-02-25 23:32:51.551 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - 200 null text/javascript; charset=UTF-8 84.7437ms
+2026-02-25 23:32:51.943 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-02-25 23:32:51.978 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 35.1007ms

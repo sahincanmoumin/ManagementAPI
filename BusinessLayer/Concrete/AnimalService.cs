@@ -1,14 +1,18 @@
-﻿using System;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
+using Entity.Enums;
+using EntityLayer.Constants;
+using EntityLayer.DTOs.Animal;
+using EntityLayer.DTOs.Pagination;
+using EntityLayer.Entities;
+using EntityLayer.Exceptions;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using BusinessLayer.Abstract;
-using DataAccessLayer.Abstract;
-using EntityLayer.DTOs.Animal;
-using EntityLayer.Entities;
-using Entity.Enums;
+using System.Linq;
 
 namespace BusinessLayer.Concrete
 {
@@ -26,22 +30,15 @@ namespace BusinessLayer.Concrete
         }
 
         public Animal BuyAnimal(int userId, BuyAnimalDto dto)
-        {
-            var user = _userRepository.GetById(userId);
-            if (user == null)
-                throw new Exception("User not found");
+        {   
+            var user = _userRepository.GetById(userId) ?? throw new BusinessException(ErrorKeys.UserNotFound);
+            var farm = _farmRepository.GetById(dto.FarmId) ?? throw new BusinessException(ErrorKeys.FarmNotFound);
 
-            var farm = _farmRepository.GetById(dto.FarmId);
-            if (farm == null || farm.UserId != userId)
-                throw new Exception("Farm not found or not owned by user");
-
-            
             decimal animalPrice = GetAnimalPrice(dto.Type);
 
             if (user.Balance < animalPrice)
-                throw new Exception("Insufficient balance");
+                throw new BusinessException(ErrorKeys.InsufficientBalance);
 
-            
             user.Balance -= animalPrice;
             _userRepository.Update(user);
 
@@ -64,19 +61,15 @@ namespace BusinessLayer.Concrete
 
         public void SellAnimal(int userId, int animalId)
         {
-            var user = _userRepository.GetById(userId);
-            if (user == null)
-                throw new Exception("User not found");
+            var user = _userRepository.GetById(userId) ?? throw new BusinessException(ErrorKeys.UserNotFound);
 
-            var animal = _animalRepository.GetById(animalId);
-            if (animal == null)
-                throw new Exception("Animal not found");
+            var animal = _animalRepository.GetById(animalId) ?? throw new BusinessException(ErrorKeys.AnimalNotFound);
 
-            var farm = _farmRepository.GetById(animal.FarmId);
+            var farm = _farmRepository.GetById(animal.FarmId) ?? throw new BusinessException(ErrorKeys.FarmNotFound);
+
             if (farm.UserId != userId)
-                throw new Exception("Animal not owned by user");
+                throw new BusinessException(ErrorKeys.FarmNotFound);
 
-            
             decimal sellPrice = animal.Price * 0.7m;
             user.Balance += sellPrice;
             _userRepository.Update(user);
@@ -84,16 +77,54 @@ namespace BusinessLayer.Concrete
             _animalRepository.Delete(animal);
         }
 
-        public List<Animal> GetFarmAnimals(int farmId)
+        public PagedResponse<AnimalListDto> GetFarmAnimals(int userId, AnimalFilterDto filter)
         {
-            return _animalRepository.GetByFarmId(farmId);
+            var query = _farmRepository.GetQueryable()
+                .Where(f => f.UserId == userId)
+                .SelectMany(f => f.Animals);
+
+            if (!string.IsNullOrWhiteSpace(filter.Name))
+            {
+                query = query.Where(a => a.Name.Contains(filter.Name));
+            }
+
+            if (filter.Type.HasValue)
+            {
+                query = query.Where(a => a.Type == filter.Type.Value);
+            }
+
+            if (filter.MinPrice.HasValue)
+            {
+                query = query.Where(a => a.Price >= filter.MinPrice.Value);
+            }
+
+            if (filter.MaxPrice.HasValue)
+            {
+                query = query.Where(a => a.Price <= filter.MaxPrice.Value);
+            }
+
+            var totalRecords = query.Count();
+
+            var pagedData = query
+                .OrderBy(a => a.Id)
+                .Skip((filter.PageNumber - 1) * filter.PageSize)
+                .Take(filter.PageSize)
+                .Select(a => new AnimalListDto
+                {
+                    Id = a.Id,
+                    Name = a.Name,
+                    Type = a.Type,
+                    Price = a.Price,
+                    FarmId = a.FarmId
+                })
+                .ToList();
+
+            return new PagedResponse<AnimalListDto>(pagedData, totalRecords, filter.PageNumber, filter.PageSize);
         }
 
         public Animal GetById(int id)
         {
-            var animal = _animalRepository.GetById(id);
-            if (animal == null)
-                throw new Exception("Animal not found");
+            var animal = _animalRepository.GetById(id) ?? throw new BusinessException(ErrorKeys.AnimalNotFound);
             return animal;
         }
 
@@ -113,9 +144,9 @@ namespace BusinessLayer.Concrete
         {
             return type switch
             {
-                AnimalType.Cow => 0,      
-                AnimalType.Chicken => 12,  // 12 saatte bir yumurta
-                AnimalType.Sheep => 48,    // 48 saatte bir yün
+                AnimalType.Cow => 1,      
+                AnimalType.Chicken => 1,  // 12 saatte bir yumurta
+                AnimalType.Sheep => 1,    // 48 saatte bir yün
                 _ => 24
             };
         }

@@ -3,4 +3,5 @@
   <Project Path="BusinessLayer/BusinessLayer.csproj" Id="a0d9d8c0-b869-4248-b038-58a8eed123e5" />
   <Project Path="DataAccessLayer/DataAccessLayer.csproj" Id="7b1f9eee-f166-4fa2-9b90-82e36a097365" />
   <Project Path="EntityLayer/EntityLayer.csproj" Id="b3e0d48d-4b25-4ccb-8a23-d95d2fd78065" />
+  <Project Path="FarmApi.Tests/FarmApi.Tests.csproj" Id="6d0259f5-dc4c-4637-b0e1-5f629e0068a5" />
 </Solution>

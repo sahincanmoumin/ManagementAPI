@@ -8,13 +8,9 @@ using EntityLayer.Entities;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IUserRepository
+    public interface IUserRepository : IGenericRepository<User>
     {
-        User GetById(int id);
         User GetByUsername(string username);
         List<User> GetAll();
-        void Add(User user);
-        void Update(User user);
-        void Delete(User user);
     }
 }

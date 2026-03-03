@@ -26,12 +26,13 @@ namespace BusinessLayer.BackgroundServices
             {
                 try
                 {
+
                     using (var scope = _serviceProvider.CreateScope())
                     {
                         var animalRepository = scope.ServiceProvider.GetRequiredService<IAnimalRepository>();
                         var productRepository = scope.ServiceProvider.GetRequiredService<IProductRepository>();
 
-                        var animals = animalRepository.GetAll();
+                        var animals = animalRepository.GetQueryable().ToList();
 
                         foreach (var animal in animals)
                         {
@@ -41,7 +42,7 @@ namespace BusinessLayer.BackgroundServices
                             {
                                 var product = new Product
                                 {
-                                    Name = GetProductName(animal.Type), 
+                                    Name = GetProductName(animal.Type),
                                     Price = GetProductPrice(animal.Type),
                                     AnimalId = animal.Id,
                                     ProducedAt = DateTime.Now,
@@ -57,13 +58,14 @@ namespace BusinessLayer.BackgroundServices
                             }
                         }
                     }
+                
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex, "Error in ProductGenerationService");
                 }
 
-                await Task.Delay(TimeSpan.FromMinutes(2), stoppingToken);
+                await Task.Delay(TimeSpan.FromMinutes(10), stoppingToken);
             }
         }
 

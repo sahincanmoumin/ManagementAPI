@@ -4,6 +4,8 @@ using BusinessLayer.Abstract;
 using EntityLayer.DTOs.Farm;
 using System.Security.Claims;
 using EntityLayer.Extensions;
+using EntityLayer.Exceptions;
+using EntityLayer.Constants;
 
 namespace ApiLayer.Controller
 {
@@ -24,111 +26,72 @@ namespace ApiLayer.Controller
         [HttpPost]
         public IActionResult CreateFarm([FromBody] CreateFarmDto dto)
         {
-            try
-            {
-                var userId = CurrentUserId;
-                var farm = _farmService.CreateFarm(userId, dto);
-                _logger.LogInformation($"Farm {farm.Name} created by user {userId}");
-                return Ok(new { message = "Farm created successfully", farmId = farm.Id });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Create farm failed");
-                return BadRequest(new { message = ex.Message });
-            }
+           
+            var farm = _farmService.CreateFarm(CurrentUserId, dto);
+            _logger.LogInformation($"Farm {farm.Name} created by user {CurrentUserId}");
+            return Ok(new { message = "Farm created successfully", farmId = farm.Id });
+            
         }
 
         [HttpGet("{id}")]
         public IActionResult GetFarm(int id)
         {
-            try
+            var farm = _farmService.GetById(id);
+ 
+            if (!User.IsAdmin() && farm.UserId != CurrentUserId)
             {
-                var farm = _farmService.GetById(id);
-
-                if (farm == null)
-                {
-                    return NotFound(new { message = "Çiftlik bulunamadı." });
-                }
-
-                
-                if (!User.IsAdmin() && farm.UserId != CurrentUserId)
-                {
-                    return Forbid();
-                }
-
-                return Ok(farm);
+                throw new BusinessException(ErrorKeys.UnauthorizedAction);
             }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Get farm failed");
-                return BadRequest(new { message = ex.Message }); // Hata durumunda BadRequest daha uygundur
-            }
+
+            return Ok(farm);
+            
         }
 
         [HttpGet("my-farms")]
-        public IActionResult GetMyFarms()
+        public IActionResult GetMyFarms([FromQuery] FarmFilterDto filter)
         {
-            try
-            {
-                var farms = _farmService.GetUserFarms(CurrentUserId);
-                return Ok(farms);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Get user farms failed");
-                return BadRequest(new { message = ex.Message });
-            }
+            
+            filter ??= new FarmFilterDto();
+
+            
+            var result = _farmService.GetUserFarms(CurrentUserId, filter);
+
+            
+            return Ok(result);
         }
 
         [HttpPut("{id}")]
         public IActionResult UpdateFarm(int id, [FromBody] UpdateFarmDto dto)
         {
-            try
-            {
-                var farm = _farmService.GetById(id);
+            
+            var farm = _farmService.GetById(id);
 
-                if (farm == null)
-                {
-                    return NotFound(new { message = "Güncellenecek çiftlik bulunamadı." });
-                }
-                if (!IsAdmin && farm.UserId != CurrentUserId)
-                {
-                    return Forbid();
-                }
-
-                _farmService.UpdateFarm(id, dto);
-                _logger.LogInformation($"Farm {id} updated");
-                return Ok(new { message = "Farm updated successfully" });
-            }
-            catch (Exception ex)
+            if (!IsAdmin && farm.UserId != CurrentUserId)
             {
-                _logger.LogError(ex, "Update farm failed");
-                return BadRequest(new { message = ex.Message });
+                throw new BusinessException(ErrorKeys.UnauthorizedAction);
             }
+
+            _farmService.UpdateFarm(id, dto);
+            _logger.LogInformation($"Farm {id} updated");
+            return Ok(new { message = "Farm updated successfully" });
+           
         }
             
         [HttpDelete("{id}")]
         public IActionResult DeleteFarm(int id)
         {
-            try
+            
+            var farm = _farmService.GetById(id);
+                
+            if (!IsAdmin && farm.UserId != CurrentUserId)
             {
-                var farm = _farmService.GetById(id);
-                if (farm == null) {
-                    return NotFound(new { message = "Silinecek çiftlik bulunamadı." });
-                }
-                if (!IsAdmin && farm.UserId != CurrentUserId)
-                {
-                    return Forbid();
-                }
-                _farmService.DeleteFarm(id);
-                _logger.LogInformation($"Farm {id} deleted");
-                return Ok(new { message = "Farm deleted successfully" });
+                throw new BusinessException(ErrorKeys.UnauthorizedAction);
             }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Delete farm failed");
-                return BadRequest(new { message = ex.Message });
-            }
+
+            _farmService.DeleteFarm(id);
+            _logger.LogInformation($"Farm {id} deleted");
+            return Ok(new { message = "Farm deleted successfully" });
+            
         }
     }
 }

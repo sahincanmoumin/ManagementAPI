@@ -45,15 +45,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\ErrorKeys.cs" />
+    <Compile Include="DTOs\Animal\AnimalFilterDto.cs" />
+    <Compile Include="DTOs\Animal\AnimalListDto.cs" />
     <Compile Include="DTOs\Animal\BuyAnimalDto.cs" />
     <Compile Include="DTOs\Auth\LoginDto.cs" />
     <Compile Include="DTOs\Auth\RegisterDto.cs" />
+    <Compile Include="DTOs\ErrorDetails\ErrorDetails.cs" />
     <Compile Include="DTOs\Farm\CreateFarmDto.cs" />
+    <Compile Include="DTOs\Farm\FarmFilterDto.cs" />
+    <Compile Include="DTOs\Farm\FarmListDto.cs" />
     <Compile Include="DTOs\Farm\UpdateFarmDto.cs" />
+    <Compile Include="DTOs\Pagination\PagedResponse.cs" />
+    <Compile Include="DTOs\Pagination\PaginationFilter.cs" />
+    <Compile Include="DTOs\Product\ProductFilterDto.cs" />
+    <Compile Include="DTOs\Product\ProductListDto.cs" />
     <Compile Include="DTOs\Product\SellProductDto.cs" />
     <Compile Include="DTOs\Role\AssignRoleDto.cs" />
     <Compile Include="DTOs\Role\RemoveRoleDto.cs" />
+    <Compile Include="DTOs\Role\RoleFilterDto.cs" />
+    <Compile Include="DTOs\Role\RoleListDto.cs" />
     <Compile Include="DTOs\User\UpdateUserDto.cs" />
+    <Compile Include="DTOs\User\UserFilterDto.cs" />
+    <Compile Include="DTOs\User\UserListDto.cs" />
     <Compile Include="Entities\Animal.cs" />
     <Compile Include="Entities\Farm.cs" />
     <Compile Include="Entities\Product.cs" />
@@ -61,6 +75,7 @@
     <Compile Include="Entities\UserRole.cs" />
     <Compile Include="Enums\AnimalType.cs" />
     <Compile Include="Enums\ProductType.cs" />
+    <Compile Include="Exceptions\BusinessException.cs" />
     <Compile Include="Extensions\UserExtentions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\User.cs" />

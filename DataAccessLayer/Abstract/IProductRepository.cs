@@ -7,15 +7,11 @@ using EntityLayer.Entities;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IProductRepository
+    public interface IProductRepository : IGenericRepository<Product>
     {
-        Product GetById(int id);
         List<Product> GetByAnimalId(int animalId);
         List<Product> GetUnsoldProducts();
-        List<Product> GetAll();
         Product GetByIdWithDetails(int id);
-        void Add(Product product);
-        void Update(Product product);
-        void Delete(Product product);
+        
     }
 }

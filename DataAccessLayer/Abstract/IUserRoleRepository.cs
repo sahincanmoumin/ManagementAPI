@@ -7,13 +7,13 @@ using EntityLayer.Entities;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IUserRoleRepository
+    public interface IUserRoleRepository : IGenericRepository<UserRole>
     {
-        List<Role> GetUserRoles(int userId);
         void AddUserRole(int userId, int roleId);
         void RemoveUserRole(int userId, int roleId);
         bool HasRole(int userId, string roleName);
+        List<Role> GetRoles(int userId);
 
-       
+
     }
 }

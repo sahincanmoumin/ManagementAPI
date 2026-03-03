@@ -1,0 +1,83 @@
+2026-03-03 15:15:32.975 +03:00 [INF] Farm Management API started
+2026-03-03 15:15:33.052 +03:00 [INF] User profile is available. Using 'C:\Users\sahin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-03 15:15:33.095 +03:00 [INF] Product Generation Service started
+2026-03-03 15:15:33.774 +03:00 [INF] Now listening on: https://localhost:7026
+2026-03-03 15:15:33.777 +03:00 [INF] Now listening on: http://localhost:5183
+2026-03-03 15:15:33.964 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-03 15:15:33.966 +03:00 [INF] Hosting environment: Development
+2026-03-03 15:15:33.968 +03:00 [INF] Content root path: C:\Users\sahin\source\repos\Farm\ApiLayer
+2026-03-03 15:15:34.986 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-03-03 15:15:35.225 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-03-03 15:15:35.257 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-03-03 15:15:35.264 +03:00 [INF] Product Milk generated from string1 (ID: 1)
+2026-03-03 15:15:35.268 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-03-03 15:15:35.276 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-03-03 15:15:35.278 +03:00 [INF] Product Milk generated from string21 (ID: 2)
+2026-03-03 15:15:35.282 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-03-03 15:15:35.289 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-03-03 15:15:35.291 +03:00 [INF] Product Milk generated from string2 (ID: 3)
+2026-03-03 15:15:35.294 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-03-03 15:15:35.302 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-03-03 15:15:35.305 +03:00 [INF] Product Egg generated from string3 (ID: 4)
+2026-03-03 15:15:35.309 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-03-03 15:15:35.316 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-03-03 15:15:35.319 +03:00 [INF] Product Wool generated from string3 (ID: 5)
+2026-03-03 15:15:35.322 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-03-03 15:15:35.330 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-03-03 15:15:35.332 +03:00 [INF] Product Milk generated from animaltest10 (ID: 6)

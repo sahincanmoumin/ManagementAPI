@@ -10,19 +10,15 @@ using EntityLayer.Entities;
 
 namespace DataAccessLayer.Concrete
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : GenericRepository<User> , IUserRepository
     {
         private readonly AppDbContext _context;
 
-        public UserRepository(AppDbContext context)
+        public UserRepository(AppDbContext context) : base(context)
         {
             _context = context;
         }
 
-        public User GetById(int id)
-        {
-            return _context.Users.Find(id);
-        }
 
         public User GetByUsername(string username)
         {
@@ -32,24 +28,6 @@ namespace DataAccessLayer.Concrete
         public List<User> GetAll()
         {
             return _context.Users.ToList();
-        }
-
-        public void Add(User user)
-        {
-            _context.Users.Add(user);
-            _context.SaveChanges();
-        }
-
-        public void Update(User user)
-        {
-            _context.Users.Update(user);
-            _context.SaveChanges();
-        }
-
-        public void Delete(User user)
-        {
-            _context.Users.Remove(user);
-            _context.SaveChanges();
         }
     }
 }

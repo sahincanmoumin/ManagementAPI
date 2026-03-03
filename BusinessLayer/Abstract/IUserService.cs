@@ -1,11 +1,11 @@
-﻿using System;
+﻿using EntityLayer.DTOs.Pagination;
+using EntityLayer.DTOs.User;
+using EntityLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using EntityLayer.DTOs.User;
-using EntityLayer.Entities;
 
 namespace BusinessLayer.Abstract
 {
@@ -14,7 +14,7 @@ namespace BusinessLayer.Abstract
         User GetById(int id);
         void UpdateUser(int id, UpdateUserDto dto);
         decimal GetBalance(int id);
-        List<User> GetAllUsers();
+        PagedResponse<UserListDto> GetAllUsers(UserFilterDto filter);
 
     }
 }

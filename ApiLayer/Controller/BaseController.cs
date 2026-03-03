@@ -10,4 +10,4 @@ namespace ApiLayer.Controller
         protected int CurrentUserId => User.GetUserId();
         protected bool IsAdmin => User.IsAdmin();
     }
-}
+}   

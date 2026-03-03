@@ -10,18 +10,13 @@ using EntityLayer.Entities;
 
 namespace DataAccessLayer.Concrete
 {
-    public class FarmRepository : IFarmRepository
+    public class FarmRepository : GenericRepository<Farm>,IFarmRepository 
     {
         private readonly AppDbContext _context;
 
-        public FarmRepository(AppDbContext context)
+        public FarmRepository(AppDbContext context) : base(context)
         {
             _context = context;
-        }
-
-        public Farm GetById(int id)
-        {
-            return _context.Farms.Find(id);
         }
 
         public List<Farm> GetByUserId(int userId)
@@ -32,24 +27,6 @@ namespace DataAccessLayer.Concrete
         public List<Farm> GetAll()
         {
             return _context.Farms.ToList();
-        }
-
-        public void Add(Farm farm)
-        {
-            _context.Farms.Add(farm);
-            _context.SaveChanges();
-        }
-
-        public void Update(Farm farm)
-        {
-            _context.Farms.Update(farm);
-            _context.SaveChanges();
-        }
-
-        public void Delete(Farm farm)
-        {
-            _context.Farms.Remove(farm);
-            _context.SaveChanges();
         }
     }
 }

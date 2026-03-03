@@ -8,13 +8,10 @@ using EntityLayer.Entities;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IAnimalRepository
+    public interface IAnimalRepository : IGenericRepository<Animal>
     {
-        Animal GetById(int id);
         List<Animal> GetByFarmId(int farmId);
         List<Animal> GetAll();
-        void Add(Animal animal);
-        void Update(Animal animal);
-        void Delete(Animal animal);
+        
     }
 }

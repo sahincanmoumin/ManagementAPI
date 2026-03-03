@@ -8,13 +8,10 @@ using EntityLayer.Entities;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IFarmRepository
+    public interface IFarmRepository : IGenericRepository<Farm>
     {
-        Farm GetById(int id);
         List<Farm> GetByUserId(int userId);
         List<Farm> GetAll();
-        void Add(Farm farm);
-        void Update(Farm farm);
-        void Delete(Farm farm);
+
     }
 }

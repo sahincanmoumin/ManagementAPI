@@ -10,16 +10,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Concrete
 {
-    public class UserRoleRepository : IUserRoleRepository
+    public class UserRoleRepository : GenericRepository<UserRole> , IUserRoleRepository
     {
         private readonly AppDbContext _context;
 
-        public UserRoleRepository(AppDbContext context)
+        public UserRoleRepository(AppDbContext context) : base(context) 
         {
             _context = context;
         }
 
-        public List<Role> GetUserRoles(int userId)
+        public List<Role> GetRoles(int userId)
         {
             return _context.UserRoles
                 .Where(ur => ur.UserId == userId)
@@ -27,7 +27,6 @@ namespace DataAccessLayer.Concrete
                 .Select(ur => ur.Role)
                 .ToList();
         }
-
         public void AddUserRole(int userId, int roleId)
         {
             var userRole = new UserRole

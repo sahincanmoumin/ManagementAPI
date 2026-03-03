@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EntityLayer.DTOs.User
+{
+    public class UserListDto
+    {
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public decimal Balance { get; set; }
+        public List<string> Roles { get; set; }
+    }
+}

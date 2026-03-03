@@ -1,9 +1,11 @@
-﻿using System;
+﻿using EntityLayer.DTOs.Pagination;
+using EntityLayer.DTOs.Role;
+using EntityLayer.DTOs.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EntityLayer.DTOs.Role;
 
 namespace BusinessLayer.Abstract
 {
@@ -11,7 +13,9 @@ namespace BusinessLayer.Abstract
     {
         void AssignRole(AssignRoleDto dto);
         void RemoveRole(RemoveRoleDto dto);
-        
-        List<string> GetUserRoles(int userId);
+        PagedResponse<UserListDto> GetUserRoles(RoleFilterDto filter);
+        List<string> GetRoles(int userId);
+
+
     }
 }

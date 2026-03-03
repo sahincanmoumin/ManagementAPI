@@ -4,6 +4,8 @@ using BusinessLayer.Abstract;
 using EntityLayer.DTOs.User;
 using EntityLayer.Extensions;
 using System.Security.Claims;
+using EntityLayer.Exceptions;
+using EntityLayer.Constants;
 
 namespace ApiLayer.Controller
 {
@@ -26,105 +28,73 @@ namespace ApiLayer.Controller
         [HttpGet("profile")]
         public IActionResult GetProfile()
         {
-            try
-            {
-                var userId = CurrentUserId;
-                var user = _userService.GetById(userId);
-                var roles = _roleService.GetUserRoles(userId);
 
-                return Ok(new
-                {
-                    user.Id,
-                    user.Username,
-                    user.Balance,
-                    user.CreatedAt,
-                    roles
-                });
-            }
-            catch (Exception ex)
+            var userId = CurrentUserId;
+            var user = _userService.GetById(userId);
+            var roles = _roleService.GetRoles(userId);
+
+            return Ok(new
             {
-                _logger.LogError(ex, "Get profile failed");
-                return BadRequest(new { message = ex.Message });
-            }
+                user.Id,
+                user.Username,
+                user.Balance,
+                user.CreatedAt,
+                roles
+            });
+
+
         }
 
         [HttpPut("profile")]
         public IActionResult UpdateProfile([FromBody] UpdateUserDto dto)
         {
-            try
-            {
-                var userId = CurrentUserId;
-                _userService.UpdateUser(userId, dto);
-                _logger.LogInformation($"User {userId} updated profile");
-                return Ok(new { message = "Profile updated successfully" });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Update profile failed");
-                return BadRequest(new { message = ex.Message });
-            }
+            var userId = CurrentUserId;
+            _userService.UpdateUser(userId, dto);
+            _logger.LogInformation($"User {userId} updated profile");
+            return Ok(new { message = "Profile updated successfully" });
+            
         }
 
         [HttpGet("balance")]
         public IActionResult GetBalance()
         {
-            try
-            {
-                var userId = CurrentUserId;
-                var balance = _userService.GetBalance(userId);
-                return Ok(new { balance });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Get balance failed");
-                return BadRequest(new { message = ex.Message });
-            }
+
+            var userId = CurrentUserId;
+            var balance = _userService.GetBalance(userId);
+            return Ok(new { balance });
+
         }
 
         [HttpGet("{id}")]
         public IActionResult GetUser(int id)
         {
-            try
-            {
-       
-                if (!IsAdmin && CurrentUserId != id)
-                {
-                    return Forbid();
-                }
 
-                var user = _userService.GetById(id);
-                var roles = _roleService.GetUserRoles(id);
-
-                return Ok(new
-                {
-                    user.Id,
-                    user.Username,
-                    user.Balance,
-                    user.CreatedAt,
-                    roles
-                });
-            }
-            catch (Exception ex)
+            if (!IsAdmin && CurrentUserId != id)
             {
-                _logger.LogError(ex, "Get user failed");
-                return BadRequest(new { message = ex.Message });
+                throw new BusinessException(ErrorKeys.UnauthorizedAction);
             }
+
+            var user = _userService.GetById(id);
+            var roles = _roleService.GetRoles(id);
+
+            return Ok(new
+            {
+                user.Id,
+                user.Username,
+                user.Balance,
+                user.CreatedAt,
+                roles
+            });
+
+
         }
 
-        [HttpGet("all")]
+        [HttpGet]
         [Authorize(Roles = "Admin")]
-        public IActionResult GetAllUsers()
+        public IActionResult GetAllUsers([FromQuery] UserFilterDto filter)
         {
-            try
-            {
-                var users = _userService.GetAllUsers();
-                return Ok(users);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Get all users failed");
-                return BadRequest(new { message = ex.Message });
-            }
+            var users = _userService.GetAllUsers(filter);
+            return Ok(users);
         }
     }
 }
