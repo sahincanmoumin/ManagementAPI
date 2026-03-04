@@ -1,78 +1,63 @@
-﻿using BusinessLayer.Abstract;
-using EntityLayer.Constants; 
+﻿using ApiLayer.Controller;
+using BusinessLayer.Abstract;
+using EntityLayer.Constants;
 using EntityLayer.DTOs.Animal;
-using EntityLayer.Extensions;
+using EntityLayer.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
-using EntityLayer.Exceptions;
 
-namespace ApiLayer.Controller
+[Route("api/[controller]")]
+[ApiController]
+[Authorize]
+public class AnimalController : BaseController
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    [Authorize]
-    public class AnimalController : BaseController
+    private readonly IAnimalService _animalService;
+    private readonly IFarmService _farmService;
+    private readonly ILogger<AnimalController> _logger;
+
+    public AnimalController(IAnimalService animalService, IFarmService farmService, ILogger<AnimalController> logger)
     {
-        private readonly IAnimalService _animalService;
-        private readonly IFarmService _farmservice;
-        private readonly ILogger<AnimalController> _logger;
+        _animalService = animalService;
+        _farmService = farmService;
+        _logger = logger;
+    }
 
-        public AnimalController(IAnimalService animalService, IFarmService farmService, ILogger<AnimalController> logger)
-        {
-            _animalService = animalService;
-            _farmservice = farmService;
-            _logger = logger;
-        }
+    [HttpPost("buy")]
+    public async Task<IActionResult> BuyAnimal([FromBody] BuyAnimalDto dto)
+    {
+        var animal = await _animalService.BuyAnimalAsync(CurrentUserId, dto)
+                     ?? throw new BusinessException(ErrorKeys.AnimalBuyingFailed);
 
-        [HttpPost("buy")]
-        public IActionResult BuyAnimal([FromBody] BuyAnimalDto dto)
-        {
+        _logger.LogInformation($"User {CurrentUserId} bought animal {animal.Name}");
+        return Ok(new { message = "Animal purchased successfully", animalId = animal.Id });
+    }
 
-            var userId = CurrentUserId;
-            var animal = _animalService.BuyAnimal(userId, dto) ?? throw new BusinessException(ErrorKeys.AnimalBuyingFailed);
+    [HttpDelete("{id}/sell")]
+    public async Task<IActionResult> SellAnimal(int id)
+    {
+        var animal = await _animalService.GetByIdAsync(id);
+        var farm = await _farmService.GetByIdAsync(animal.FarmId);
 
-            _logger.LogInformation($"User {userId} bought animal {animal.Name}");
-            return Ok(new { message = "Animal purchased successfully", animalId = animal.Id });
-        }
+        if (!IsAdmin && CurrentUserId != farm.UserId)
+            throw new BusinessException(ErrorKeys.UnauthorizedAction);
 
-        [HttpDelete("{id}/sell")]
-        public IActionResult SellAnimal(int id)
-        {
+        await _animalService.SellAnimalAsync(CurrentUserId, id);
+        _logger.LogInformation($"User {CurrentUserId} sold animal {id}");
+        return Ok(new { message = "Animal sold successfully" });
+    }
 
-            var animal = _animalService.GetById(id);
-            var farm = _farmservice.GetById(animal.FarmId);
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetAnimal(int id)
+    {
+        var animal = await _animalService.GetByIdAsync(id);
+        return Ok(animal);
+    }
 
-            if (!IsAdmin && CurrentUserId != farm.UserId)
-            {
-                throw new BusinessException(ErrorKeys.UnauthorizedAction);
-            }
-
-            _animalService.SellAnimal(CurrentUserId, id);
-            _logger.LogInformation($"User {CurrentUserId} sold animal {id}");
-            return Ok(new { message = "Animal sold successfully" });
-
-
-        }
-
-        [HttpGet("{id}")]
-        public IActionResult GetAnimal(int id)
-        {
-            var animal = _animalService.GetById(id);
-            return Ok(animal);
-
-        }
-
-        [HttpGet("my-animals")]
-        public IActionResult GetMyAnimals([FromQuery] AnimalFilterDto filter)
-        {
-           
-            filter ??= new AnimalFilterDto();
-
-            
-            var result = _animalService.GetFarmAnimals(CurrentUserId, filter);
-
-            return Ok(result);
-        }
+    [HttpGet("my-animals")]
+    public async Task<IActionResult> GetMyAnimals([FromQuery] AnimalFilterDto filter)
+    {
+        filter ??= new AnimalFilterDto();
+        var result = await _animalService.GetFarmAnimalsAsync(CurrentUserId, filter);
+        return Ok(result);
     }
 }

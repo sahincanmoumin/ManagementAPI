@@ -1,0 +1,150 @@
+2026-03-04 09:34:14.760 +03:00 [INF] Farm Management API started
+2026-03-04 09:34:14.920 +03:00 [INF] User profile is available. Using 'C:\Users\sahin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-04 09:34:14.991 +03:00 [INF] Product Generation Service started
+2026-03-04 09:34:15.532 +03:00 [INF] Now listening on: https://localhost:7026
+2026-03-04 09:34:15.535 +03:00 [INF] Now listening on: http://localhost:5183
+2026-03-04 09:34:15.758 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-04 09:34:15.761 +03:00 [INF] Hosting environment: Development
+2026-03-04 09:34:15.763 +03:00 [INF] Content root path: C:\Users\sahin\source\repos\Farm\ApiLayer
+2026-03-04 09:34:17.220 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`FarmId`, `a`.`LastProductionDate`, `a`.`LifeSpanDays`, `a`.`Name`, `a`.`Price`, `a`.`ProductionIntervalHours`, `a`.`PurchaseDate`, `a`.`Type`
+FROM `Animals` AS `a`
+2026-03-04 09:34:17.519 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-03-04 09:34:17.562 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-03-04 09:34:17.570 +03:00 [INF] Product Milk generated from string1 (ID: 1)
+2026-03-04 09:34:17.576 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-03-04 09:34:17.583 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-03-04 09:34:17.586 +03:00 [INF] Product Milk generated from string21 (ID: 2)
+2026-03-04 09:34:17.588 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-03-04 09:34:17.595 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-03-04 09:34:17.598 +03:00 [INF] Product Milk generated from string2 (ID: 3)
+2026-03-04 09:34:17.600 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-03-04 09:34:17.606 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-03-04 09:34:17.610 +03:00 [INF] Product Egg generated from string3 (ID: 4)
+2026-03-04 09:34:17.613 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Products` (`AnimalId`, `IsSold`, `Name`, `Price`, `ProducedAt`, `SoldAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT `Id`
+FROM `Products`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-03-04 09:34:17.619 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 50), @p4='?' (DbType = Decimal), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Animals` SET `FarmId` = @p0, `LastProductionDate` = @p1, `LifeSpanDays` = @p2, `Name` = @p3, `Price` = @p4, `ProductionIntervalHours` = @p5, `PurchaseDate` = @p6, `Type` = @p7
+WHERE `Id` = @p8;
+SELECT ROW_COUNT();
+2026-03-04 09:34:17.621 +03:00 [INF] Product Milk generated from animaltest10 (ID: 6)
+2026-03-04 09:34:27.716 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - null null
+2026-03-04 09:34:27.989 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - 200 null text/html;charset=utf-8 281.0848ms
+2026-03-04 09:34:28.028 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.js - null null
+2026-03-04 09:34:28.028 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-04 09:34:28.036 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.js - 200 null application/javascript;charset=utf-8 8.1764ms
+2026-03-04 09:34:28.058 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - 200 16501 application/javascript; charset=utf-8 29.8234ms
+2026-03-04 09:34:28.096 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - null null
+2026-03-04 09:34:28.175 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - 200 null text/javascript; charset=UTF-8 79.2861ms
+2026-03-04 09:34:28.295 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - null null
+2026-03-04 09:34:28.326 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.3825ms
+2026-03-04 09:34:32.005 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/login - application/json 50
+2026-03-04 09:34:33.365 +03:00 [INF] Executing endpoint 'AuthController.Login (ApiLayer)'
+2026-03-04 09:34:33.383 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(EntityLayer.DTOs.Auth.LoginDto) on controller AuthController (ApiLayer).
+2026-03-04 09:34:33.549 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Username` = @__username_0
+LIMIT 1
+2026-03-04 09:34:34.170 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Name`
+FROM `UserRoles` AS `u`
+INNER JOIN `Roles` AS `r` ON `u`.`RoleId` = `r`.`Id`
+WHERE `u`.`UserId` = @__userId_0
+2026-03-04 09:34:34.242 +03:00 [INF] User string logged in successfully
+2026-03-04 09:34:34.253 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 09:34:34.263 +03:00 [INF] Executed action AuthController.Login (ApiLayer) in 874.3313ms
+2026-03-04 09:34:34.266 +03:00 [INF] Executed endpoint 'AuthController.Login (ApiLayer)'
+2026-03-04 09:34:34.272 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/login - 200 null application/json; charset=utf-8 2267.2425ms
+2026-03-04 09:34:52.368 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/User/profile - null null
+2026-03-04 09:34:52.411 +03:00 [INF] Executing endpoint 'UserController.GetProfile (ApiLayer)'
+2026-03-04 09:34:52.417 +03:00 [INF] Route matched with {action = "GetProfile", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile() on controller UserController (ApiLayer).
+2026-03-04 09:34:52.452 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Balance`, `u`.`CreatedAt`, `u`.`PasswordHash`, `u`.`Username`
+FROM `Users` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-03-04 09:34:52.461 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Name`
+FROM `UserRoles` AS `u`
+INNER JOIN `Roles` AS `r` ON `u`.`RoleId` = `r`.`Id`
+WHERE `u`.`UserId` = @__userId_0
+2026-03-04 09:34:52.466 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`5[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 09:34:52.476 +03:00 [INF] Executed action UserController.GetProfile (ApiLayer) in 55.0164ms
+2026-03-04 09:34:52.478 +03:00 [INF] Executed endpoint 'UserController.GetProfile (ApiLayer)'
+2026-03-04 09:34:52.480 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/User/profile - 200 null application/json; charset=utf-8 112.4831ms
+2026-03-04 09:35:03.243 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Farm/1 - null null
+2026-03-04 09:35:03.252 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.GetFarm (ApiLayer)'
+2026-03-04 09:35:03.263 +03:00 [INF] Route matched with {action = "GetFarm", controller = "Farm"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFarm(Int32) on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-03-04 09:35:03.288 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f`.`Id`, `f`.`CreatedAt`, `f`.`Name`, `f`.`UserId`
+FROM `Farms` AS `f`
+WHERE `f`.`Id` = @__p_0
+LIMIT 1
+2026-03-04 09:35:03.298 +03:00 [INF] Executing OkObjectResult, writing value of type 'EntityLayer.Entities.Farm'.
+2026-03-04 09:35:03.316 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.GetFarm (ApiLayer) in 49.8608ms
+2026-03-04 09:35:03.320 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.GetFarm (ApiLayer)'
+2026-03-04 09:35:03.322 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Farm/1 - 200 null application/json; charset=utf-8 79.2263ms
+2026-03-04 09:35:11.394 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Farm/my-farms - null null
+2026-03-04 09:35:11.401 +03:00 [INF] Executing endpoint 'ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer)'
+2026-03-04 09:35:11.407 +03:00 [INF] Route matched with {action = "GetMyFarms", controller = "Farm"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMyFarms(EntityLayer.DTOs.Farm.FarmFilterDto) on controller ApiLayer.Controller.FarmController (ApiLayer).
+2026-03-04 09:35:11.443 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Farms` AS `f`
+WHERE `f`.`UserId` = @__userId_0
+2026-03-04 09:35:11.460 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-03-04 09:35:11.463 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-03-04 09:35:11.478 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `f0`.`Id`, `f0`.`Name`, `f0`.`UserId`, `u`.`Username` AS `UserName`
+FROM (
+    SELECT `f`.`Id`, `f`.`Name`, `f`.`UserId`
+    FROM `Farms` AS `f`
+    WHERE `f`.`UserId` = @__userId_0
+    LIMIT @__p_2 OFFSET @__p_1
+) AS `f0`
+INNER JOIN `Users` AS `u` ON `f0`.`UserId` = `u`.`Id`
+2026-03-04 09:35:11.483 +03:00 [INF] Executing OkObjectResult, writing value of type 'EntityLayer.DTOs.Pagination.PagedResponse`1[[EntityLayer.DTOs.Farm.FarmListDto, EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-04 09:35:11.490 +03:00 [INF] Executed action ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer) in 79.5967ms
+2026-03-04 09:35:11.492 +03:00 [INF] Executed endpoint 'ApiLayer.Controller.FarmController.GetMyFarms (ApiLayer)'
+2026-03-04 09:35:11.494 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Farm/my-farms - 200 null application/json; charset=utf-8 99.932ms

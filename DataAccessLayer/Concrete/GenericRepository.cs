@@ -1,6 +1,8 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
@@ -19,26 +21,33 @@ namespace DataAccessLayer.Concrete
         {
             return _dbSet.AsQueryable();
         }
-        public T GetById(int id)
+
+        public async Task<T> GetByIdAsync(int id)
         {
-            return _dbSet.Find(id);
-        }
-        public void Add(T entity)
-        {
-            _dbSet.Add(entity);
-            _context.SaveChanges();
+            return await _dbSet.FindAsync(id);
         }
 
-        public void Update(T entity)
+        public async Task AddAsync(T entity)
+        {
+            await _dbSet.AddAsync(entity);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(T entity)
         {
             _dbSet.Update(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync(); 
         }
 
-        public void Delete(T entity)
+        public async Task DeleteAsync(T entity)
         {
             _dbSet.Remove(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync(); 
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }

@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using BusinessLayer.Abstract;
 using EntityLayer.DTOs.Farm;
-using System.Security.Claims;
 using EntityLayer.Extensions;
 using EntityLayer.Exceptions;
 using EntityLayer.Constants;
+using System.Threading.Tasks;
 
 namespace ApiLayer.Controller
 {
@@ -24,74 +24,66 @@ namespace ApiLayer.Controller
         }
 
         [HttpPost]
-        public IActionResult CreateFarm([FromBody] CreateFarmDto dto)
+        public async Task<IActionResult> CreateFarm([FromBody] CreateFarmDto dto)
         {
-           
-            var farm = _farmService.CreateFarm(CurrentUserId, dto);
+            var farm = await _farmService.CreateFarmAsync(CurrentUserId, dto);
             _logger.LogInformation($"Farm {farm.Name} created by user {CurrentUserId}");
+
             return Ok(new { message = "Farm created successfully", farmId = farm.Id });
-            
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetFarm(int id)
+        public async Task<IActionResult> GetFarm(int id)
         {
-            var farm = _farmService.GetById(id);
- 
-            if (!User.IsAdmin() && farm.UserId != CurrentUserId)
+            var farm = await _farmService.GetByIdAsync(id);
+
+            if (!IsAdmin && farm.UserId != CurrentUserId)
             {
                 throw new BusinessException(ErrorKeys.UnauthorizedAction);
             }
 
             return Ok(farm);
-            
         }
 
         [HttpGet("my-farms")]
-        public IActionResult GetMyFarms([FromQuery] FarmFilterDto filter)
+        public async Task<IActionResult> GetMyFarms([FromQuery] FarmFilterDto filter)
         {
-            
             filter ??= new FarmFilterDto();
 
-            
-            var result = _farmService.GetUserFarms(CurrentUserId, filter);
-
-            
+            var result = await _farmService.GetUserFarmsAsync(CurrentUserId, filter);
             return Ok(result);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateFarm(int id, [FromBody] UpdateFarmDto dto)
+        public async Task<IActionResult> UpdateFarm(int id, [FromBody] UpdateFarmDto dto)
         {
-            
-            var farm = _farmService.GetById(id);
+            var farm = await _farmService.GetByIdAsync(id);
 
             if (!IsAdmin && farm.UserId != CurrentUserId)
             {
                 throw new BusinessException(ErrorKeys.UnauthorizedAction);
             }
 
-            _farmService.UpdateFarm(id, dto);
-            _logger.LogInformation($"Farm {id} updated");
+            await _farmService.UpdateFarmAsync(id, dto);
+            _logger.LogInformation($"Farm {id} updated by user {CurrentUserId}");
+
             return Ok(new { message = "Farm updated successfully" });
-           
         }
-            
+
         [HttpDelete("{id}")]
-        public IActionResult DeleteFarm(int id)
+        public async Task<IActionResult> DeleteFarm(int id)
         {
-            
-            var farm = _farmService.GetById(id);
-                
+            var farm = await _farmService.GetByIdAsync(id);
+
             if (!IsAdmin && farm.UserId != CurrentUserId)
             {
                 throw new BusinessException(ErrorKeys.UnauthorizedAction);
             }
 
-            _farmService.DeleteFarm(id);
-            _logger.LogInformation($"Farm {id} deleted");
+            await _farmService.DeleteFarmAsync(id);
+            _logger.LogInformation($"Farm {id} deleted by user {CurrentUserId}");
+
             return Ok(new { message = "Farm deleted successfully" });
-            
         }
     }
 }

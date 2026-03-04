@@ -1,60 +1,51 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using ApiLayer.Controller;
 using BusinessLayer.Abstract;
-using System.Security.Claims;
+using EntityLayer.Constants;
 using EntityLayer.DTOs.Product;
 using EntityLayer.Exceptions;
-using EntityLayer.Constants;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-namespace ApiLayer.Controller
+[Route("api/[controller]")]
+[ApiController]
+[Authorize]
+public class ProductController : BaseController
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    [Authorize]
-    public class ProductController : BaseController
+    private readonly IProductService _productService;
+    private readonly ILogger<ProductController> _logger;
+
+    public ProductController(IProductService productService, ILogger<ProductController> logger)
     {
-        private readonly IProductService _productService;
-        private readonly IFarmService _farmService;
-        private readonly IAnimalService _animalService;
-        private readonly ILogger<ProductController> _logger;
-        
-        public ProductController(IProductService productService,IFarmService farmService,IAnimalService animaService, ILogger<ProductController> logger)
+        _productService = productService;
+        _logger = logger;
+    }
+
+    [HttpPost("{id}/sell")]
+    public async Task<IActionResult> SellProduct(int id)
+    {
+        var product = await _productService.GetProductWithOwnershipAsync(id);
+
+        if (!IsAdmin && CurrentUserId != product.Animal.Farm.UserId)
         {
-            _productService = productService;
-            _farmService = farmService;
-            _animalService = animaService;
-            _logger = logger;
-        }
-        
-        [HttpPost("{id}/sell")]
-        public IActionResult SellProduct(int id)
-        {
-
-            var product = _productService.GetProductWithOwnership(id);
-
-            if (!IsAdmin && CurrentUserId != product.Animal.Farm.UserId) {//**********************************
-
-                throw new BusinessException(ErrorKeys.UnauthorizedAction);
-            }
-
-            _productService.SellProduct(CurrentUserId, id);
-            _logger.LogInformation($"User {CurrentUserId} sold product {id}");
-            return Ok(new { message = "Product sold successfully" });
-            
+            throw new BusinessException(ErrorKeys.UnauthorizedAction);
         }
 
-        [HttpGet]
-        public IActionResult GetProducts([FromQuery] ProductFilterDto filter, [FromQuery] int? animalId = null)
-        {
-            var products = _productService.GetAnimalProducts(CurrentUserId, filter, animalId);
-            return Ok(products);
-        }
+        await _productService.SellProductAsync(CurrentUserId, id);
+        _logger.LogInformation($"User {CurrentUserId} sold product {id}");
+        return Ok(new { message = "Product sold successfully" });
+    }
 
-        [HttpGet("unsold")]
-        public IActionResult GetUnsoldProducts([FromQuery] ProductFilterDto filter)
-        {
-            var products = _productService.GetUnsoldProducts(CurrentUserId, filter);
-            return Ok(products);
-        }
+    [HttpGet]
+    public async Task<IActionResult> GetProducts([FromQuery] ProductFilterDto filter, [FromQuery] int? animalId = null)
+    {
+        var products = await _productService.GetAnimalProductsAsync(CurrentUserId, filter, animalId);
+        return Ok(products);
+    }
+
+    [HttpGet("unsold")]
+    public async Task<IActionResult> GetUnsoldProducts([FromQuery] ProductFilterDto filter)
+    {
+        var products = await _productService.GetUnsoldProductsAsync(CurrentUserId, filter);
+        return Ok(products);
     }
 }

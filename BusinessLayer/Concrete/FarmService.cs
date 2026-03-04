@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.DTOs.Farm;
 using EntityLayer.Entities;
 using EntityLayer.Exceptions;
-using EntityLayer.Exceptions;
 using EntityLayer.Constants;
 using EntityLayer.DTOs.Pagination;
-                
+using Microsoft.EntityFrameworkCore;
+
 namespace BusinessLayer.Concrete
 {
-    public class FarmService :IFarmService
+    public class FarmService : IFarmService
     {
         private readonly IFarmRepository _farmRepository;
         private readonly IUserRepository _userRepository;
@@ -25,9 +24,9 @@ namespace BusinessLayer.Concrete
             _userRepository = userRepository;
         }
 
-        public Farm CreateFarm(int userId, CreateFarmDto dto)
+        public async Task<Farm> CreateFarmAsync(int userId, CreateFarmDto dto)
         {
-            var user = _userRepository.GetById(userId) ?? throw new BusinessException(ErrorKeys.UserNotFound);
+            var user = await _userRepository.GetByIdAsync(userId) ?? throw new BusinessException(ErrorKeys.UserNotFound);
 
             var farm = new Farm
             {
@@ -36,52 +35,54 @@ namespace BusinessLayer.Concrete
                 CreatedAt = DateTime.Now
             };
 
-            _farmRepository.Add(farm);
+            await _farmRepository.AddAsync(farm);
             return farm;
         }
 
-        public Farm GetById(int id)
+        public async Task<Farm> GetByIdAsync(int id)
         {
-            var farm = _farmRepository.GetById(id)?? throw new BusinessException(ErrorKeys.FarmNotFound);
+            var farm = await _farmRepository.GetByIdAsync(id) ?? throw new BusinessException(ErrorKeys.FarmNotFound);
             return farm;
-        }       
+        }
 
-
-        public PagedResponse<FarmListDto> GetUserFarms(int userId, FarmFilterDto filter)
+        public async Task<PagedResponse<FarmListDto>> GetUserFarmsAsync(int userId, FarmFilterDto filter)
         {
             var query = _farmRepository.GetQueryable()
-                                       .Where(f => f.UserId == userId); 
+                                       .Where(f => f.UserId == userId);
+
             if (!string.IsNullOrEmpty(filter.Name))
             {
                 query = query.Where(f => f.Name.Contains(filter.Name));
             }
-            var totalRecords = query.Count();
 
-            var farms = query.Skip((filter.PageNumber - 1) * filter.PageSize)
-                             .Take(filter.PageSize)
-                             .Select(f => new FarmListDto
-                             {
-                                 Id = f.Id,
-                                 Name = f.Name,
-                                 UserId = f.UserId,
-                                 UserName = f.User.Username
-                             })
-                             .ToList();
+            var totalRecords = await query.CountAsync();
+
+            var farms = await query.Skip((filter.PageNumber - 1) * filter.PageSize)
+                                 .Take(filter.PageSize)
+                                 .Select(f => new FarmListDto
+                                 {
+                                     Id = f.Id,
+                                     Name = f.Name,
+                                     UserId = f.UserId,
+                                     UserName = f.User.Username
+                                 })
+                                 .ToListAsync();
+
             return new PagedResponse<FarmListDto>(farms, totalRecords, filter.PageNumber, filter.PageSize);
         }
 
-        public void UpdateFarm(int id, UpdateFarmDto dto)
+        public async Task UpdateFarmAsync(int id, UpdateFarmDto dto)
         {
-            var farm = _farmRepository.GetById(id) ?? throw new BusinessException(ErrorKeys.FarmNotFound);
+            var farm = await _farmRepository.GetByIdAsync(id) ?? throw new BusinessException(ErrorKeys.FarmNotFound);
 
             farm.Name = dto.Name;
-            _farmRepository.Update(farm);
+            await _farmRepository.UpdateAsync(farm);
         }
 
-        public void DeleteFarm(int id)
+        public async Task DeleteFarmAsync(int id)
         {
-            var farm = _farmRepository.GetById(id) ?? throw new BusinessException(ErrorKeys.FarmNotFound);
-            _farmRepository.Delete(farm);
+            var farm = await _farmRepository.GetByIdAsync(id) ?? throw new BusinessException(ErrorKeys.FarmNotFound);
+            await _farmRepository.DeleteAsync(farm);
         }
     }
 }

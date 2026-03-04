@@ -1,33 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using DataAccessLayer.Abstract;
+﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Context;
 using EntityLayer.Entities;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class UserRepository : GenericRepository<User> , IUserRepository
+    public class UserRepository : GenericRepository<User>, IUserRepository
     {
-        private readonly AppDbContext _context;
-
         public UserRepository(AppDbContext context) : base(context)
         {
-            _context = context;
         }
 
-
-        public User GetByUsername(string username)
+        public async Task<User> GetByUsernameAsync(string username)
         {
-            return _context.Users.FirstOrDefault(u => u.Username == username);
+            return await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
         }
 
-        public List<User> GetAll()
+        public async Task<List<User>> GetAllAsync()
         {
-            return _context.Users.ToList();
+            return await _context.Users.ToListAsync();
         }
     }
 }

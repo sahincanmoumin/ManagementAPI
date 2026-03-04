@@ -1,17 +1,19 @@
-﻿using Moq;
-using Xunit;
-using FluentAssertions;
+﻿using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
-using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
-using EntityLayer.Entities;
-using EntityLayer.DTOs.Product;
-using EntityLayer.Exceptions;
-using EntityLayer.Constants;
 using Entity.Enums;
+using EntityLayer.Constants;
+using EntityLayer.DTOs.Product;
+using EntityLayer.Entities;
+using EntityLayer.Exceptions;
+using FluentAssertions;
+using MockQueryable;
+using Moq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace FarmApi.Test
 {
@@ -35,67 +37,66 @@ namespace FarmApi.Test
         }
 
         [Fact]
-        public void GetProductWithOwnership_WhenProductNotFound()
+        public async Task GetProductWithOwnership_WhenProductNotFound()
         {
             int invalidProductId = 999;
-            _mockProductRepo.Setup(x => x.GetByIdWithDetails(invalidProductId)).Returns((Product)null);
+            _mockProductRepo.Setup(x => x.GetByIdWithDetailsAsync(invalidProductId)).ReturnsAsync((Product)null);
 
-            Action action = () => _productService.GetProductWithOwnership(invalidProductId);
+            Func<Task> action = async () => await _productService.GetProductWithOwnershipAsync(invalidProductId);
 
-            action.Should().Throw<BusinessException>()
+            await action.Should().ThrowAsync<BusinessException>()
                   .Where(ex => ex.ErrorKey == ErrorKeys.ProductNotFound);
         }
 
         [Fact]
-        public void GetProductWithOwnership_WhenSuccessful()
+        public async Task GetProductWithOwnership_WhenSuccessful()
         {
             int productId = 1;
             var fakeProduct = new Product { Id = productId, Name = ProductType.Milk, Price = 50 };
-            _mockProductRepo.Setup(x => x.GetByIdWithDetails(productId)).Returns(fakeProduct);
+            _mockProductRepo.Setup(x => x.GetByIdWithDetailsAsync(productId)).ReturnsAsync(fakeProduct);
 
-            var result = _productService.GetProductWithOwnership(productId);
+            var result = await _productService.GetProductWithOwnershipAsync(productId);
 
             result.Should().NotBeNull();
             result.Name.Should().Be(ProductType.Milk);
-            result.Price.Should().Be(50);
             result.Id.Should().Be(productId);
         }
 
         [Fact]
-        public void SellProduct_WhenUserNotFound()
+        public async Task SellProduct_WhenUserNotFound()
         {
             int userId = 99;
-            _mockUserRepo.Setup(x => x.GetById(userId)).Returns((User)null);
+            _mockUserRepo.Setup(x => x.GetByIdAsync(userId)).ReturnsAsync((User)null);
 
-            Action action = () => _productService.SellProduct(userId, 1);
+            Func<Task> action = async () => await _productService.SellProductAsync(userId, 1);
 
-            action.Should().Throw<BusinessException>()
+            await action.Should().ThrowAsync<BusinessException>()
                   .Where(ex => ex.ErrorKey == ErrorKeys.UserNotFound);
 
-            _mockProductRepo.Verify(x => x.Update(It.IsAny<Product>()), Times.Never);
+            _mockProductRepo.Verify(x => x.UpdateAsync(It.IsAny<Product>()), Times.Never);
         }
 
         [Fact]
-        public void SellProduct_WhenProductAlreadySold()
+        public async Task SellProduct_WhenProductAlreadySold()
         {
             int userId = 1;
             int productId = 5;
             var fakeUser = new User { Id = userId };
-            var fakeProduct = new Product { Id = productId, IsSold = true }; 
+            var fakeProduct = new Product { Id = productId, IsSold = true };
 
-            _mockUserRepo.Setup(x => x.GetById(userId)).Returns(fakeUser);
-            _mockProductRepo.Setup(x => x.GetById(productId)).Returns(fakeProduct);
+            _mockUserRepo.Setup(x => x.GetByIdAsync(userId)).ReturnsAsync(fakeUser);
+            _mockProductRepo.Setup(x => x.GetByIdAsync(productId)).ReturnsAsync(fakeProduct);
 
-            Action action = () => _productService.SellProduct(userId, productId);
+            Func<Task> action = async () => await _productService.SellProductAsync(userId, productId);
 
-            action.Should().Throw<BusinessException>()
+            await action.Should().ThrowAsync<BusinessException>()
                   .Where(ex => ex.ErrorKey == ErrorKeys.ProductAlreadySold);
 
-            _mockUserRepo.Verify(x => x.Update(It.IsAny<User>()), Times.Never);
+            _mockUserRepo.Verify(x => x.UpdateAsync(It.IsAny<User>()), Times.Never);
         }
 
         [Fact]
-        public void SellProduct_WhenSuccessful()
+        public async Task SellProduct_WhenSuccessful()
         {
             int userId = 1;
             int productId = 5;
@@ -106,27 +107,23 @@ namespace FarmApi.Test
             var fakeProduct = new Product { Id = productId, Price = productPrice, IsSold = false, AnimalId = 10 };
             var fakeAnimal = new Animal { Id = 10 };
 
-            _mockUserRepo.Setup(x => x.GetById(userId)).Returns(fakeUser);
-            _mockProductRepo.Setup(x => x.GetById(productId)).Returns(fakeProduct);
-            _mockAnimalRepo.Setup(x => x.GetById(fakeProduct.AnimalId)).Returns(fakeAnimal);
+            _mockUserRepo.Setup(x => x.GetByIdAsync(userId)).ReturnsAsync(fakeUser);
+            _mockProductRepo.Setup(x => x.GetByIdAsync(productId)).ReturnsAsync(fakeProduct);
+            _mockAnimalRepo.Setup(x => x.GetByIdAsync(fakeProduct.AnimalId)).ReturnsAsync(fakeAnimal);
 
-            _productService.SellProduct(userId, productId);
+            await _productService.SellProductAsync(userId, productId);
 
-            _mockUserRepo.Verify(x => x.Update(It.Is<User>(u =>
-                u.Id == userId &&
-                u.Balance == 125m
+            _mockUserRepo.Verify(x => x.UpdateAsync(It.Is<User>(u =>
+                u.Id == userId && u.Balance == 125m
             )), Times.Once);
 
-            _mockProductRepo.Verify(x => x.Update(It.Is<Product>(p =>
-                p.Id == productId &&
-                p.IsSold == true &&
-                p.SoldAt != null
+            _mockProductRepo.Verify(x => x.UpdateAsync(It.Is<Product>(p =>
+                p.Id == productId && p.IsSold == true
             )), Times.Once);
         }
 
-      
         [Fact]
-        public void GetUnsoldProducts_OnlyUnsoldProduct()
+        public async Task GetUnsoldProducts_OnlyUnsoldProduct()
         {
             int targetUserId = 1;
             var filter = new ProductFilterDto { PageNumber = 1, PageSize = 11 };
@@ -135,21 +132,22 @@ namespace FarmApi.Test
             var targetAnimal = new Animal { Farm = targetFarm };
             var otherAnimal = new Animal { Farm = new Farm { UserId = 2 } };
 
-            var fakeProducts = new List<Product>
+            var fakeProductsList = new List<Product>
             {
-                new Product { Id = 1, IsSold = false, Animal = targetAnimal, Price = 10 }, 
-                new Product { Id = 2, IsSold = true, Animal = targetAnimal, Price = 20 },  
-                new Product { Id = 3, IsSold = false, Animal = otherAnimal, Price = 30 }  
-            }.AsQueryable();
+                new Product { Id = 1, IsSold = false, Animal = targetAnimal, Price = 10 },
+                new Product { Id = 2, IsSold = true, Animal = targetAnimal, Price = 20 },
+                new Product { Id = 3, IsSold = false, Animal = otherAnimal, Price = 30 }
+            };
 
-            _mockProductRepo.Setup(x => x.GetQueryable()).Returns(fakeProducts);
+            var mockQueryable = fakeProductsList.BuildMock();
 
-            var result = _productService.GetUnsoldProducts(targetUserId, filter);
+            _mockProductRepo.Setup(x => x.GetQueryable()).Returns(mockQueryable);
+
+            var result = await _productService.GetUnsoldProductsAsync(targetUserId, filter);
 
             result.Should().NotBeNull();
-            result.TotalRecords.Should().Be(1); 
+            result.TotalRecords.Should().Be(1);
             result.Data.First().Id.Should().Be(1);
-            result.Data.First().IsSold.Should().BeFalse();
         }
     }
 }

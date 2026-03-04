@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-
 using EntityLayer.Entities;
 
 namespace DataAccessLayer.Abstract
 {
     public interface IUserRepository : IGenericRepository<User>
     {
-        User GetByUsername(string username);
-        List<User> GetAll();
+        Task<User> GetByUsernameAsync(string username);
+        Task<List<User>> GetAllAsync();
     }
 }

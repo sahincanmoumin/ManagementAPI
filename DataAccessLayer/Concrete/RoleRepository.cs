@@ -2,15 +2,13 @@
 using DataAccessLayer.Context;
 using EntityLayer.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class RoleRepository : GenericRepository<Role> , IRoleRepository
+    public class RoleRepository : GenericRepository<Role>, IRoleRepository
     {
         private readonly AppDbContext _context;
 
@@ -19,21 +17,19 @@ namespace DataAccessLayer.Concrete
             _context = context;
         }
 
-        public Role GetById(int id)
+        public async Task<Role> GetByIdAsync(int id)
         {
-            return _context.Roles.Find(id);
+            return await _context.Roles.FindAsync(id);
         }
 
-        public Role GetByName(string name)
+        public async Task<Role> GetByNameAsync(string name)
         {
-            return _context.Roles.FirstOrDefault(rol => rol.Name == name);
-        }   
-
-        public List<Role> GetAll()
-        {
-            return _context.Roles.ToList();
+            return await _context.Roles.FirstOrDefaultAsync(rol => rol.Name == name);
         }
-        
 
+        public async Task<List<Role>> GetAllAsync()
+        {
+            return await _context.Roles.ToListAsync();
+        }
     }
 }

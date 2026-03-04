@@ -10,9 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace BusinessLayer.Concrete
 {
@@ -29,10 +27,10 @@ namespace BusinessLayer.Concrete
             _farmRepository = farmRepository;
         }
 
-        public Animal BuyAnimal(int userId, BuyAnimalDto dto)
-        {   
-            var user = _userRepository.GetById(userId) ?? throw new BusinessException(ErrorKeys.UserNotFound);
-            var farm = _farmRepository.GetById(dto.FarmId) ?? throw new BusinessException(ErrorKeys.FarmNotFound);
+        public async Task<Animal> BuyAnimalAsync(int userId, BuyAnimalDto dto)
+        {
+            var user = await _userRepository.GetByIdAsync(userId) ?? throw new BusinessException(ErrorKeys.UserNotFound);
+            var farm = await _farmRepository.GetByIdAsync(dto.FarmId) ?? throw new BusinessException(ErrorKeys.FarmNotFound);
 
             decimal animalPrice = GetAnimalPrice(dto.Type);
 
@@ -40,9 +38,8 @@ namespace BusinessLayer.Concrete
                 throw new BusinessException(ErrorKeys.InsufficientBalance);
 
             user.Balance -= animalPrice;
-            _userRepository.Update(user);
+            await _userRepository.UpdateAsync(user);
 
-            
             var animal = new Animal
             {
                 Name = dto.Name,
@@ -55,29 +52,27 @@ namespace BusinessLayer.Concrete
                 FarmId = dto.FarmId
             };
 
-            _animalRepository.Add(animal);
+            await _animalRepository.AddAsync(animal);
             return animal;
         }
 
-        public void SellAnimal(int userId, int animalId)
+        public async Task SellAnimalAsync(int userId, int animalId)
         {
-            var user = _userRepository.GetById(userId) ?? throw new BusinessException(ErrorKeys.UserNotFound);
-
-            var animal = _animalRepository.GetById(animalId) ?? throw new BusinessException(ErrorKeys.AnimalNotFound);
-
-            var farm = _farmRepository.GetById(animal.FarmId) ?? throw new BusinessException(ErrorKeys.FarmNotFound);
+            var user = await _userRepository.GetByIdAsync(userId) ?? throw new BusinessException(ErrorKeys.UserNotFound);
+            var animal = await _animalRepository.GetByIdAsync(animalId) ?? throw new BusinessException(ErrorKeys.AnimalNotFound);
+            var farm = await _farmRepository.GetByIdAsync(animal.FarmId) ?? throw new BusinessException(ErrorKeys.FarmNotFound);
 
             if (farm.UserId != userId)
                 throw new BusinessException(ErrorKeys.FarmNotFound);
 
             decimal sellPrice = animal.Price * 0.7m;
             user.Balance += sellPrice;
-            _userRepository.Update(user);
+            await _userRepository.UpdateAsync(user);
 
-            _animalRepository.Delete(animal);
+            await _animalRepository.DeleteAsync(animal);
         }
 
-        public PagedResponse<AnimalListDto> GetFarmAnimals(int userId, AnimalFilterDto filter)
+        public async Task<PagedResponse<AnimalListDto>> GetFarmAnimalsAsync(int userId, AnimalFilterDto filter)
         {
             var query = _farmRepository.GetQueryable()
                 .Where(f => f.UserId == userId)
@@ -103,9 +98,9 @@ namespace BusinessLayer.Concrete
                 query = query.Where(a => a.Price <= filter.MaxPrice.Value);
             }
 
-            var totalRecords = query.Count();
+            var totalRecords = await query.CountAsync();
 
-            var pagedData = query
+            var pagedData = await query
                 .OrderBy(a => a.Id)
                 .Skip((filter.PageNumber - 1) * filter.PageSize)
                 .Take(filter.PageSize)
@@ -117,18 +112,17 @@ namespace BusinessLayer.Concrete
                     Price = a.Price,
                     FarmId = a.FarmId
                 })
-                .ToList();
+                .ToListAsync();
 
             return new PagedResponse<AnimalListDto>(pagedData, totalRecords, filter.PageNumber, filter.PageSize);
         }
 
-        public Animal GetById(int id)
+        public async Task<Animal> GetByIdAsync(int id)
         {
-            var animal = _animalRepository.GetById(id) ?? throw new BusinessException(ErrorKeys.AnimalNotFound);
+            var animal = await _animalRepository.GetByIdAsync(id) ?? throw new BusinessException(ErrorKeys.AnimalNotFound);
             return animal;
         }
 
-        
         private decimal GetAnimalPrice(AnimalType type)
         {
             return type switch
@@ -144,9 +138,9 @@ namespace BusinessLayer.Concrete
         {
             return type switch
             {
-                AnimalType.Cow => 1,      
-                AnimalType.Chicken => 1,  // 12 saatte bir yumurta
-                AnimalType.Sheep => 1,    // 48 saatte bir yün
+                AnimalType.Cow => 1,
+                AnimalType.Chicken => 1,
+                AnimalType.Sheep => 1,
                 _ => 24
             };
         }
@@ -155,9 +149,9 @@ namespace BusinessLayer.Concrete
         {
             return type switch
             {
-                AnimalType.Cow => 365,     // 1 yıl
-                AnimalType.Chicken => 180, // 6 ay
-                AnimalType.Sheep => 270,   // 9 ay
+                AnimalType.Cow => 365,
+                AnimalType.Chicken => 180,
+                AnimalType.Sheep => 270,
                 _ => 365
             };
         }

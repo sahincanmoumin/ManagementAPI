@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-
 using EntityLayer.Entities;
 
 namespace DataAccessLayer.Abstract
 {
     public interface IAnimalRepository : IGenericRepository<Animal>
     {
-        List<Animal> GetByFarmId(int farmId);
-        List<Animal> GetAll();
-        
+        Task<List<Animal>> GetByFarmIdAsync(int farmId);
+        Task<List<Animal>> GetAllAsync();
     }
 }

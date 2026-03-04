@@ -1,100 +1,69 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using ApiLayer.Controller;
 using BusinessLayer.Abstract;
-using EntityLayer.DTOs.User;
-using EntityLayer.Extensions;
-using System.Security.Claims;
-using EntityLayer.Exceptions;
 using EntityLayer.Constants;
+using EntityLayer.DTOs.User;
+using EntityLayer.Exceptions;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-namespace ApiLayer.Controller
+[Route("api/[controller]")]
+[ApiController]
+[Authorize]
+public class UserController : BaseController
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    [Authorize]
-    public class UserController : BaseController
+    private readonly IUserService _userService;
+    private readonly IRoleService _roleService;
+    private readonly ILogger<UserController> _logger;
+
+    public UserController(IUserService userService, IRoleService roleService, ILogger<UserController> logger)
     {
-        private readonly IUserService _userService;
-        private readonly IRoleService _roleService;
-        private readonly ILogger<UserController> _logger;
+        _userService = userService;
+        _roleService = roleService;
+        _logger = logger;
+    }
 
-        public UserController(IUserService userService, IRoleService roleService, ILogger<UserController> logger)
-        {
-            _userService = userService;
-            _roleService = roleService;
-            _logger = logger;
-        }
+    [HttpGet("profile")]
+    public async Task<IActionResult> GetProfile()
+    {
+        var userId = CurrentUserId;
+        var user = await _userService.GetByIdAsync(userId);
+        var roles = await _roleService.GetRolesAsync(userId);
 
-        [HttpGet("profile")]
-        public IActionResult GetProfile()
-        {
+        return Ok(new { user.Id, user.Username, user.Balance, user.CreatedAt, roles });
+    }
 
-            var userId = CurrentUserId;
-            var user = _userService.GetById(userId);
-            var roles = _roleService.GetRoles(userId);
+    [HttpPut("profile")]
+    public async Task<IActionResult> UpdateProfile([FromBody] UpdateUserDto dto)
+    {
+        await _userService.UpdateUserAsync(CurrentUserId, dto);
+        _logger.LogInformation($"User {CurrentUserId} updated profile");
+        return Ok(new { message = "Profile updated successfully" });
+    }
 
-            return Ok(new
-            {
-                user.Id,
-                user.Username,
-                user.Balance,
-                user.CreatedAt,
-                roles
-            });
+    [HttpGet("balance")]
+    public async Task<IActionResult> GetBalance()
+    {
+        var balance = await _userService.GetBalanceAsync(CurrentUserId);
+        return Ok(new { balance });
+    }
 
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetUser(int id)
+    {
+        if (!IsAdmin && CurrentUserId != id)
+            throw new BusinessException(ErrorKeys.UnauthorizedAction);
 
-        }
+        var user = await _userService.GetByIdAsync(id);
+        var roles = await _roleService.GetRolesAsync(id);
 
-        [HttpPut("profile")]
-        public IActionResult UpdateProfile([FromBody] UpdateUserDto dto)
-        {
-            var userId = CurrentUserId;
-            _userService.UpdateUser(userId, dto);
-            _logger.LogInformation($"User {userId} updated profile");
-            return Ok(new { message = "Profile updated successfully" });
-            
-        }
+        return Ok(new { user.Id, user.Username, user.Balance, user.CreatedAt, roles });
+    }
 
-        [HttpGet("balance")]
-        public IActionResult GetBalance()
-        {
-
-            var userId = CurrentUserId;
-            var balance = _userService.GetBalance(userId);
-            return Ok(new { balance });
-
-        }
-
-        [HttpGet("{id}")]
-        public IActionResult GetUser(int id)
-        {
-
-            if (!IsAdmin && CurrentUserId != id)
-            {
-                throw new BusinessException(ErrorKeys.UnauthorizedAction);
-            }
-
-            var user = _userService.GetById(id);
-            var roles = _roleService.GetRoles(id);
-
-            return Ok(new
-            {
-                user.Id,
-                user.Username,
-                user.Balance,
-                user.CreatedAt,
-                roles
-            });
-
-
-        }
-
-        [HttpGet]
-        [Authorize(Roles = "Admin")]
-        public IActionResult GetAllUsers([FromQuery] UserFilterDto filter)
-        {
-            var users = _userService.GetAllUsers(filter);
-            return Ok(users);
-        }
+    [HttpGet]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> GetAllUsers([FromQuery] UserFilterDto filter)
+    {
+        var users = await _userService.GetAllUsersAsync(filter);
+        return Ok(users);
     }
 }

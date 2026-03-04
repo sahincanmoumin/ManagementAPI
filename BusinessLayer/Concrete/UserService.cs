@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Abstract;
 using BusinessLayer.Utilities;
@@ -11,6 +10,7 @@ using EntityLayer.Entities;
 using EntityLayer.Exceptions;
 using EntityLayer.Constants;
 using EntityLayer.DTOs.Pagination;
+using Microsoft.EntityFrameworkCore;
 
 namespace BusinessLayer.Concrete
 {
@@ -22,16 +22,16 @@ namespace BusinessLayer.Concrete
         {
             _userRepository = userRepository;
         }
-            
-        public User GetById(int id)
+
+        public async Task<User> GetByIdAsync(int id)
         {
-            var user = _userRepository.GetById(id) ?? throw new BusinessException(ErrorKeys.UserNotFound);
+            var user = await _userRepository.GetByIdAsync(id) ?? throw new BusinessException(ErrorKeys.UserNotFound);
             return user;
         }
 
-        public void UpdateUser(int id, UpdateUserDto dto)
+        public async Task UpdateUserAsync(int id, UpdateUserDto dto)
         {
-            var user = _userRepository.GetById(id) ?? throw new BusinessException(ErrorKeys.UserNotFound);
+            var user = await _userRepository.GetByIdAsync(id) ?? throw new BusinessException(ErrorKeys.UserNotFound);
 
             if (!string.IsNullOrEmpty(dto.Username))
                 user.Username = dto.Username;
@@ -39,15 +39,16 @@ namespace BusinessLayer.Concrete
             if (!string.IsNullOrEmpty(dto.Password))
                 user.PasswordHash = PasswordHelper.HashPassword(dto.Password);
 
-            _userRepository.Update(user);
+            await _userRepository.UpdateAsync(user);
         }
 
-        public decimal GetBalance(int id)
+        public async Task<decimal> GetBalanceAsync(int id)
         {
-            var user = _userRepository.GetById(id) ?? throw new BusinessException(ErrorKeys.UserNotFound);
+            var user = await _userRepository.GetByIdAsync(id) ?? throw new BusinessException(ErrorKeys.UserNotFound);
             return user.Balance;
         }
-        public PagedResponse<UserListDto> GetAllUsers(UserFilterDto filter)
+
+        public async Task<PagedResponse<UserListDto>> GetAllUsersAsync(UserFilterDto filter)
         {
             var query = _userRepository.GetQueryable();
 
@@ -55,14 +56,15 @@ namespace BusinessLayer.Concrete
             {
                 query = query.Where(u => u.Id == filter.Id.Value);
             }
+
             if (!string.IsNullOrWhiteSpace(filter.UserName))
             {
                 query = query.Where(u => u.Username.Contains(filter.UserName));
             }
 
-            int totalRecords = query.Count();
+            int totalRecords = await query.CountAsync();
 
-            var users = query
+            var users = await query
                 .OrderBy(u => u.Id)
                 .Skip((filter.PageNumber - 1) * filter.PageSize)
                 .Take(filter.PageSize)
@@ -70,10 +72,10 @@ namespace BusinessLayer.Concrete
                 {
                     Id = u.Id,
                     Username = u.Username,
-                    Balance = u.Balance 
-                }).ToList();
+                    Balance = u.Balance
+                }).ToListAsync();
 
             return new PagedResponse<UserListDto>(users, totalRecords, filter.PageNumber, filter.PageSize);
         }
-    }   
+    }
 }

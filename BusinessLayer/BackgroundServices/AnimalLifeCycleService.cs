@@ -2,6 +2,11 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace BusinessLayer.BackgroundServices
 {
@@ -18,7 +23,7 @@ namespace BusinessLayer.BackgroundServices
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _logger.LogInformation("Animal LifeCycle Service started");
+            _logger.LogInformation("Animal LifeCycle Service is starting.");
 
             while (!stoppingToken.IsCancellationRequested)
             {
@@ -27,27 +32,27 @@ namespace BusinessLayer.BackgroundServices
                     using (var scope = _serviceProvider.CreateScope())
                     {
                         var animalRepository = scope.ServiceProvider.GetRequiredService<IAnimalRepository>();
-                        var animals = animalRepository.GetAll();
 
-                        foreach (var animal in animals)
+                        var expiredAnimals = await animalRepository.GetQueryable()
+                            .Where(a => EF.Functions.DateDiffDay(a.PurchaseDate, DateTime.Now) >= a.LifeSpanDays)
+                            .ToListAsync(stoppingToken);
+
+                        foreach (var animal in expiredAnimals)
                         {
-                            var daysSincePurchase = (DateTime.Now - animal.PurchaseDate).Days;
-
-                            if (daysSincePurchase >= animal.LifeSpanDays)
-                            {
-                                animalRepository.Delete(animal);
-                                _logger.LogInformation($"Animal {animal.Name} (ID: {animal.Id}) died after {daysSincePurchase} days");
-                            }
+                            await animalRepository.DeleteAsync(animal);
+                            _logger.LogInformation($"Animal {animal.Name} (ID: {animal.Id}) has reached its lifespan and was removed.");
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error in AnimalLifeCycleService");
+                    _logger.LogError(ex, "An error occurred while processing animal lifecycles.");
                 }
 
                 await Task.Delay(TimeSpan.FromHours(1), stoppingToken);
             }
+
+            _logger.LogInformation("Animal LifeCycle Service is stopping.");
         }
     }
 }

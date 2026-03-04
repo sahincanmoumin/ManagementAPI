@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Entity.Enums;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 
 namespace BusinessLayer.BackgroundServices
 {
@@ -26,13 +27,12 @@ namespace BusinessLayer.BackgroundServices
             {
                 try
                 {
-
                     using (var scope = _serviceProvider.CreateScope())
                     {
                         var animalRepository = scope.ServiceProvider.GetRequiredService<IAnimalRepository>();
                         var productRepository = scope.ServiceProvider.GetRequiredService<IProductRepository>();
 
-                        var animals = animalRepository.GetQueryable().ToList();
+                        var animals = await animalRepository.GetQueryable().ToListAsync(stoppingToken);
 
                         foreach (var animal in animals)
                         {
@@ -49,16 +49,16 @@ namespace BusinessLayer.BackgroundServices
                                     IsSold = false
                                 };
 
-                                productRepository.Add(product);
+                                await productRepository.AddAsync(product);
 
                                 animal.LastProductionDate = DateTime.Now;
-                                animalRepository.Update(animal);
+
+                                await animalRepository.UpdateAsync(animal);
 
                                 _logger.LogInformation($"Product {product.Name} generated from {animal.Name} (ID: {animal.Id})");
                             }
                         }
                     }
-                
                 }
                 catch (Exception ex)
                 {

@@ -5,12 +5,12 @@ using BusinessLayer.Concrete;
 using DataAccessLayer.Abstract;
 using EntityLayer.Entities;
 using EntityLayer.DTOs.Role;
-using EntityLayer.DTOs.User;
 using EntityLayer.Exceptions;
 using EntityLayer.Constants;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using System.Threading.Tasks;
 
 namespace FarmApi.Test
 {
@@ -34,78 +34,77 @@ namespace FarmApi.Test
         }
 
         [Fact]
-        public void AssignRole_WhenUserAlreadyHasRole()
+        public async Task AssignRole_WhenUserAlreadyHasRole()
         {
             var dto = new AssignRoleDto { UserId = 1, RoleName = "Admin" };
             var fakeUser = new User { Id = 1 };
             var fakeRole = new Role { Id = 2, Name = "Admin" };
 
-            _mockUserRepo.Setup(x => x.GetById(dto.UserId)).Returns(fakeUser);
-            _mockRoleRepo.Setup(x => x.GetByName(dto.RoleName)).Returns(fakeRole);
+            _mockUserRepo.Setup(x => x.GetByIdAsync(dto.UserId)).ReturnsAsync(fakeUser);
+            _mockRoleRepo.Setup(x => x.GetByNameAsync(dto.RoleName)).ReturnsAsync(fakeRole);
+            _mockUserRoleRepo.Setup(x => x.HasRoleAsync(dto.UserId, dto.RoleName)).ReturnsAsync(true);
 
-            _mockUserRoleRepo.Setup(x => x.HasRole(dto.UserId, dto.RoleName)).Returns(true);
+            Func<Task> action = async () => await _roleService.AssignRoleAsync(dto);
 
-            Action action = () => _roleService.AssignRole(dto);
-
-            action.Should().Throw<BusinessException>()
+            await action.Should().ThrowAsync<BusinessException>()
                   .Where(ex => ex.ErrorKey == ErrorKeys.UserAlreadyHasRole);
 
-            _mockUserRoleRepo.Verify(x => x.AddUserRole(It.IsAny<int>(), It.IsAny<int>()), Times.Never);
+            _mockUserRoleRepo.Verify(x => x.AddUserRoleAsync(It.IsAny<int>(), It.IsAny<int>()), Times.Never);
         }
 
         [Fact]
-        public void AssignRole_Successful()
+        public async Task AssignRole_Successful()
         {
             var dto = new AssignRoleDto { UserId = 1, RoleName = "Admin" };
             var fakeUser = new User { Id = 1 };
             var fakeRole = new Role { Id = 5, Name = "Admin" };
 
-            _mockUserRepo.Setup(x => x.GetById(dto.UserId)).Returns(fakeUser);
-            _mockRoleRepo.Setup(x => x.GetByName(dto.RoleName)).Returns(fakeRole);
-            _mockUserRoleRepo.Setup(x => x.HasRole(dto.UserId, dto.RoleName)).Returns(false);
+            _mockUserRepo.Setup(x => x.GetByIdAsync(dto.UserId)).ReturnsAsync(fakeUser);
+            _mockRoleRepo.Setup(x => x.GetByNameAsync(dto.RoleName)).ReturnsAsync(fakeRole);
+            _mockUserRoleRepo.Setup(x => x.HasRoleAsync(dto.UserId, dto.RoleName)).ReturnsAsync(false);
 
-            _roleService.AssignRole(dto);
+            await _roleService.AssignRoleAsync(dto);
 
-            _mockUserRoleRepo.Verify(x => x.AddUserRole(dto.UserId, fakeRole.Id), Times.Once);
+            _mockUserRoleRepo.Verify(x => x.AddUserRoleAsync(dto.UserId, fakeRole.Id), Times.Once);
         }
 
         [Fact]
-        public void RemoveRole_UserDoesNotHaveRole()
+        public async Task RemoveRole_UserDoesNotHaveRole()
         {
             var dto = new RemoveRoleDto { UserId = 1, RoleName = "Admin" };
             var fakeUser = new User { Id = 1 };
             var fakeRole = new Role { Id = 2, Name = "Admin" };
 
-            _mockUserRepo.Setup(x => x.GetById(dto.UserId)).Returns(fakeUser);
-            _mockRoleRepo.Setup(x => x.GetByName(dto.RoleName)).Returns(fakeRole);
-            _mockUserRoleRepo.Setup(x => x.HasRole(dto.UserId, dto.RoleName)).Returns(false);
+            _mockUserRepo.Setup(x => x.GetByIdAsync(dto.UserId)).ReturnsAsync(fakeUser);
+            _mockRoleRepo.Setup(x => x.GetByNameAsync(dto.RoleName)).ReturnsAsync(fakeRole);
+            _mockUserRoleRepo.Setup(x => x.HasRoleAsync(dto.UserId, dto.RoleName)).ReturnsAsync(false);
 
-            Action action = () => _roleService.RemoveRole(dto);
+            Func<Task> action = async () => await _roleService.RemoveRoleAsync(dto);
 
-            action.Should().Throw<BusinessException>()
+            await action.Should().ThrowAsync<BusinessException>()
                   .Where(ex => ex.ErrorKey == ErrorKeys.UserDoesNotHaveRole);
 
-            _mockUserRoleRepo.Verify(x => x.RemoveUserRole(It.IsAny<int>(), It.IsAny<int>()), Times.Never);
+            _mockUserRoleRepo.Verify(x => x.RemoveUserRoleAsync(It.IsAny<int>(), It.IsAny<int>()), Times.Never);
         }
 
         [Fact]
-        public void RemoveRole_Successful()
+        public async Task RemoveRole_Successful()
         {
             var dto = new RemoveRoleDto { UserId = 1, RoleName = "Admin" };
             var fakeUser = new User { Id = 1 };
             var fakeRole = new Role { Id = 2, Name = "Admin" };
 
-            _mockUserRepo.Setup(x => x.GetById(dto.UserId)).Returns(fakeUser);
-            _mockRoleRepo.Setup(x => x.GetByName(dto.RoleName)).Returns(fakeRole);
-            _mockUserRoleRepo.Setup(x => x.HasRole(dto.UserId, dto.RoleName)).Returns(true);
+            _mockUserRepo.Setup(x => x.GetByIdAsync(dto.UserId)).ReturnsAsync(fakeUser);
+            _mockRoleRepo.Setup(x => x.GetByNameAsync(dto.RoleName)).ReturnsAsync(fakeRole);
+            _mockUserRoleRepo.Setup(x => x.HasRoleAsync(dto.UserId, dto.RoleName)).ReturnsAsync(true);
 
-            _roleService.RemoveRole(dto);
+            await _roleService.RemoveRoleAsync(dto);
 
-            _mockUserRoleRepo.Verify(x => x.RemoveUserRole(dto.UserId, fakeRole.Id), Times.Once);
+            _mockUserRoleRepo.Verify(x => x.RemoveUserRoleAsync(dto.UserId, fakeRole.Id), Times.Once);
         }
 
         [Fact]
-        public void GetRoles_ReturnListOfRoleNames()
+        public async Task GetRoles_ReturnListOfRoleNames()
         {
             int userId = 1;
             var fakeRoles = new List<Role>
@@ -114,9 +113,9 @@ namespace FarmApi.Test
                 new Role { Name = "Mod" }
             };
 
-            _mockUserRoleRepo.Setup(x => x.GetRoles(userId)).Returns(fakeRoles);
+            _mockUserRoleRepo.Setup(x => x.GetRolesAsync(userId)).ReturnsAsync(fakeRoles);
 
-            var result = _roleService.GetRoles(userId);
+            var result = await _roleService.GetRolesAsync(userId);
 
             result.Should().HaveCount(2);
             result.Should().Contain("Admin");

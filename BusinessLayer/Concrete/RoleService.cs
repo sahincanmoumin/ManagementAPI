@@ -6,13 +6,9 @@ using EntityLayer.DTOs.Role;
 using EntityLayer.DTOs.User;
 using EntityLayer.Exceptions;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
 
 namespace BusinessLayer.Concrete
 {
@@ -32,31 +28,31 @@ namespace BusinessLayer.Concrete
             _userRoleRepository = userRoleRepository;
         }
 
-        public void AssignRole(AssignRoleDto dto)
+        public async Task AssignRoleAsync(AssignRoleDto dto)
         {
-            var user = _userRepository.GetById(dto.UserId) ?? throw new BusinessException(ErrorKeys.UserNotFound);
+            var user = await _userRepository.GetByIdAsync(dto.UserId) ?? throw new BusinessException(ErrorKeys.UserNotFound);
 
-            var role = _roleRepository.GetByName(dto.RoleName) ?? throw new BusinessException(ErrorKeys.RoleNotFound);
+            var role = await _roleRepository.GetByNameAsync(dto.RoleName) ?? throw new BusinessException(ErrorKeys.RoleNotFound);
 
-            if (_userRoleRepository.HasRole(dto.UserId, dto.RoleName))
+            if (await _userRoleRepository.HasRoleAsync(dto.UserId, dto.RoleName))
                 throw new BusinessException(ErrorKeys.UserAlreadyHasRole);
 
-            _userRoleRepository.AddUserRole(dto.UserId, role.Id);
+            await _userRoleRepository.AddUserRoleAsync(dto.UserId, role.Id);
         }
 
-        public void RemoveRole(RemoveRoleDto dto)
+        public async Task RemoveRoleAsync(RemoveRoleDto dto)
         {
-            var user = _userRepository.GetById(dto.UserId) ?? throw new BusinessException(ErrorKeys.UserNotFound);
+            var user = await _userRepository.GetByIdAsync(dto.UserId) ?? throw new BusinessException(ErrorKeys.UserNotFound);
 
-            var role = _roleRepository.GetByName(dto.RoleName) ?? throw new BusinessException(ErrorKeys.RoleNotFound);
+            var role = await _roleRepository.GetByNameAsync(dto.RoleName) ?? throw new BusinessException(ErrorKeys.RoleNotFound);
 
-            if (!_userRoleRepository.HasRole(dto.UserId, dto.RoleName))  
-                    throw new BusinessException(ErrorKeys.UserDoesNotHaveRole);
+            if (!await _userRoleRepository.HasRoleAsync(dto.UserId, dto.RoleName))
+                throw new BusinessException(ErrorKeys.UserDoesNotHaveRole);
 
-            _userRoleRepository.RemoveUserRole(dto.UserId, role.Id);
+            await _userRoleRepository.RemoveUserRoleAsync(dto.UserId, role.Id);
         }
 
-        public PagedResponse<UserListDto> GetUserRoles(RoleFilterDto filter)
+        public async Task<PagedResponse<UserListDto>> GetUserRolesAsync(RoleFilterDto filter)
         {
             var query = _userRepository.GetQueryable()
                 .Include(u => u.UserRoles)
@@ -68,9 +64,9 @@ namespace BusinessLayer.Concrete
                 query = query.Where(u => u.UserRoles.Any(ur => ur.Role.Name == filter.Name));
             }
 
-            var totalRecords = query.Count();
+            var totalRecords = await query.CountAsync();
 
-            var users = query
+            var users = await query
                 .OrderBy(u => u.Id)
                 .Skip((filter.PageNumber - 1) * filter.PageSize)
                 .Take(filter.PageSize)
@@ -79,18 +75,15 @@ namespace BusinessLayer.Concrete
                     Id = u.Id,
                     Username = u.Username,
                     Roles = u.UserRoles.Select(ur => ur.Role.Name).ToList()
-                }).ToList();
+                }).ToListAsync();
 
             return new PagedResponse<UserListDto>(users, totalRecords, filter.PageNumber, filter.PageSize);
         }
-        public List<string> GetRoles(int userId)
 
+        public async Task<List<string>> GetRolesAsync(int userId)
         {
-
-            var roles = _userRoleRepository.GetRoles(userId);
-
+            var roles = await _userRoleRepository.GetRolesAsync(userId);
             return roles.Select(r => r.Name).ToList();
-
         }
     }
 }

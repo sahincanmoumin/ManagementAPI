@@ -1,32 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using DataAccessLayer.Abstract;
+﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Context;
 using EntityLayer.Entities;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class FarmRepository : GenericRepository<Farm>,IFarmRepository 
+    public class FarmRepository : GenericRepository<Farm>, IFarmRepository
     {
-        private readonly AppDbContext _context;
-
         public FarmRepository(AppDbContext context) : base(context)
         {
-            _context = context;
         }
 
-        public List<Farm> GetByUserId(int userId)
+        public async Task<List<Farm>> GetByUserIdAsync(int userId)
         {
-            return _context.Farms.Where(f => f.UserId == userId).ToList();
+            return await _context.Farms.Where(x => x.UserId == userId).ToListAsync();
         }
 
-        public List<Farm> GetAll()
+        public async Task<List<Farm>> GetAllAsync()
         {
-            return _context.Farms.ToList();
+            return await _context.Farms.ToListAsync();
         }
     }
 }
