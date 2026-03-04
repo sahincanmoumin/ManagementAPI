@@ -1,3 +1,6 @@
+## 🏛️ Technical Architecture
+
+Bu proje, **Separation of Concerns (SoC)** ve **Dependency Inversion (DIP)** prensiplerine dayalı, 4 katmanlı kurumsal bir mimari üzerine inşa edilmiştir.
 
 ### Layered Strategy
 * **Presentation (Web API):** RESTful standartlarına uygun, `Middleware` tabanlı merkezi hata yönetimi ve akıllı filtreleme yapılarını barındıran giriş katmanıdır.
@@ -7,7 +10,7 @@
 
 ---
 
-## Uygulama
+## Implementation
 
 Projenin teknik derinliğini yansıtan kritik detaylar şunlardır:
 
