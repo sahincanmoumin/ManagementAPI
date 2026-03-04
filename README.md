@@ -1,34 +1,29 @@
-## 🏛️ Technical Architecture
 
-Bu proje, **Separation of Concerns (SoC)** ve **Dependency Inversion (DIP)** prensiplerine dayalı, 4 katmanlı kurumsal bir mimari üzerine inşa edilmiştir. Sistem, yüksek trafikli senaryolarda kaynak tüketimini optimize etmek için uçtan uca **non-blocking asynchronous** yapıda kurgulanmıştır.
-
-
-
-### 🏗️ Layered Strategy
-* **Presentation (Web API):** RESTful standartlarına uygun, `Middleware` tabanlı global hata yönetimi (Global Exception Handling) ve merkezi `ActionFilter` yapılarını barındıran giriş katmanıdır.
-* **Business Logic (Services):** İş kurallarının izole edildiği, `Result Pattern` ile servis yanıtlarının standardize edildiği ve mülkiyet (Ownership) kontrollerinin yapıldığı çekirdek katmandır.
-* **Data Access (Persistence):** `Generic Repository Pattern` ve `Unit of Work` yaklaşımlarıyla veritabanı işlemlerinin soyutlandığı katman. EfCore üzerinden `IQueryable` desteği ile veritabanı seviyesinde filtreleme performansı hedeflenmiştir.
-* **Core (Entities & DTOs):** Bağımlılığı olmayan, tüm katmanlarca kullanılan Domain modelleri ve katmanlar arası veri taşıma yükünü optimize eden **DTO (Data Transfer Object)** yapılarını içerir.
+### Layered Strategy
+* **Presentation (Web API):** RESTful standartlarına uygun, `Middleware` tabanlı merkezi hata yönetimi ve akıllı filtreleme yapılarını barındıran giriş katmanıdır.
+* **Business Logic (Services):** İş kurallarının izole edildiği, `Result Pattern` ile servis yanıtlarının standart hale getirildiği ve mülkiyet (Ownership) kontrollerinin yapıldığı çekirdek bölümdür.
+* **Data Access (Persistence):** `Generic Repository` ve `Unit of Work` yaklaşımlarıyla veritabanı işlemlerinin soyutlandığı katman. EF Core üzerinden `IQueryable` desteği ile veritabanı seviyesinde yüksek performanslı sorgulama hedeflenmiştir.
+* **Core (Entities & DTOs):** Hiçbir katmana bağımlılığı olmayan; Domain modellerini ve veri taşıma yükünü optimize eden **DTO (Data Transfer Object)** yapılarını içerir.
 
 ---
 
-## 🛠️ Implementation & Advanced Engineering
+## Uygulama
 
-Projenin profesyonel derinliğini yansıtan kritik teknik detaylar şunlardır:
+Projenin teknik derinliğini yansıtan kritik detaylar şunlardır:
 
-### ⚡ Async-First Approach
-Sistemdeki tüm I/O işlemleri (Database, Role Management, Auth) `Task` tabanlı asenkron yapıda inşa edilmiştir. Bu, sunucu üzerindeki **Thread Pool** kaynaklarının verimli kullanılmasını sağlayarak ölçeklenebilirliği (**Scalability**) artırır.
+### Async-First Approach
+Sistemdeki tüm veri tabanı, rol yönetimi ve yetkilendirme işlemleri `Task` tabanlı asenkron yapıda (`async/await`) inşa edilmiştir. Bu sayede sunucu kaynakları (Thread Pool) verimli kullanılarak uygulamanın **ölçeklenebilirliği** artırılmıştır.
 
-### 🛡️ Global Exception & Error Handling
-Uygulama genelinde `try-catch` blokları yerine merkezi bir `ErrorMiddleware` kullanılmıştır. Fırlatılan tüm `BusinessException` hataları, kullanıcı dostu ve önceden tanımlanmış `ErrorKeys` üzerinden standardize edilerek döndürülür.
+### Global Exception & Error Handling
+Uygulama genelinde karmaşık kod blokları yerine merkezi bir `ErrorMiddleware` yapısı kurulmuştur. Tüm iş mantığı hataları `BusinessException` sınıfı üzerinden yakalanır ve önceden tanımlanmış hata anahtarları (örn: `FarmNotFound`, `InsufficientBalance`) ile istemciye tutarlı yanıtlar döner.
 
-### 🧪 Advanced Unit Testing Strategy
-Kod kalitesi, kapsamlı bir unit test süiti ile garanti altına alınmıştır:
-* **Mocking:** `Moq` kütüphanesi ile repository bağımlılıkları tamamen izole edilmiştir.
-* **Async Provider Simulation:** Entity Framework Core'un asenkron metotlarını (`ToListAsync`, `CountAsync`) unit testlerde simüle edebilmek için `MockQueryable.Moq` entegrasyonu ile **IAsyncQueryProvider** implementasyonu yapılmıştır.
-* **Fluent Verification:** `FluentAssertions` kullanılarak testlerin okunabilirliği ve doğrulanabilirliği artırılmıştır.
+### Advanced Unit Testing Strategy
+Kod kalitesi ve güvenilirliği, kapsamlı bir test süiti ile garanti altına alınmıştır:
+* **Mocklama:** `Moq` kütüphanesi ile tüm veri tabanı bağımlılıkları izole edilerek sadece iş mantığı test edilmiştir.
+* **Asenkron Sorgu Simülasyonu:** EF Core'un asenkron metotlarını (`ToListAsync`, `CountAsync`) test ortamında çalıştırabilmek için `MockQueryable.Moq` kullanılarak **IAsyncQueryProvider** entegrasyonu yapılmıştır.
+* **Akıcı Doğrulama:** `FluentAssertions` kullanılarak testlerin okunabilirliği ve sonuçların doğruluğu en üst seviyeye çıkarılmıştır.
 
 
 
 ### 📊 Generic Filtering & Pagination
-Büyük veri setleri ile çalışırken performansı korumak adına tüm liste istekleri `FilterDto` sınıfları üzerinden yönetilir. Filtreleme işlemleri veritabanı seviyesinde (Server-side) yapılır ve sadece ihtiyaç duyulan sayfa boyutu kadar veri belleğe alınır.
+Sunucu tarafındaki yükü azaltmak amacıyla tüm liste istekleri `FilterDto` sınıfları üzerinden yönetilir. Filtreleme işlemleri doğrudan veritabanı seviyesinde (Server-side) yapılır ve sadece talep edilen sayfa boyutu kadar veri belleğe alınır.
